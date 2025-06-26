@@ -1,0 +1,31 @@
+DirectoryIndex index.php
+
+<IfModule mod_headers.c>
+    SetEnvIf Origin "http(s)?://(.*)" ORIGIN_DOMAIN=$0
+    Header always set Access-Control-Allow-Origin "%{ORIGIN_DOMAIN}e" env=ORIGIN_DOMAIN
+    Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE"
+    Header always set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+    Header always set Access-Control-Allow-Credentials "true"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Handle preflight
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule ^(.*)$ index.php [R=200,L]
+
+    # Route API: /api/v1/anything → api/v1/index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} ^(.*)api/v([0-9]+)/
+    RewriteRule ^(.*)api/v([0-9]+)/(.*)$ api/v$2/index.php [L,QSA]
+
+    # Route page: /page/xyz → index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} ^(.*)page/
+    RewriteRule ^(.*)page/(.*)$ index.php [L,QSA]
+
+    # Fallback
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php [L,QSA]
+</IfModule>

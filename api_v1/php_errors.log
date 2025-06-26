@@ -1,0 +1,887 @@
+[25-Jun-2025 09:42:38 UTC] 🔥 Debug Start: index.php running
+[25-Jun-2025 09:42:38 UTC] === NEW REQUEST ===
+[25-Jun-2025 09:42:38 UTC] Method: POST
+[25-Jun-2025 09:42:38 UTC] URI: /raimona_water_park_api/api_v1/login
+[25-Jun-2025 09:42:38 UTC] Content-Type: multipart/form-data; boundary=--------------------------312884332122346748324313
+[25-Jun-2025 09:42:38 UTC] Raw input: 
+[25-Jun-2025 09:42:38 UTC] Processed URI: /login
+[25-Jun-2025 09:42:38 UTC] Method: POST
+[25-Jun-2025 09:42:38 UTC] Including required files...
+[25-Jun-2025 09:42:38 UTC] ✓ database.php included
+[25-Jun-2025 09:42:38 UTC] ✓ jwt.php included
+[25-Jun-2025 09:42:38 UTC] ✓ User.php included
+[25-Jun-2025 09:42:38 UTC] ✓ AuthController.php included
+[25-Jun-2025 09:42:38 UTC] ✓ JWTMiddleware.php included
+[25-Jun-2025 09:42:38 UTC] ✓ Booking files included
+[25-Jun-2025 09:42:38 UTC] All files included successfully
+[25-Jun-2025 09:42:38 UTC] Testing database connection...
+[25-Jun-2025 09:42:38 UTC] ✓ Database connection successful
+[25-Jun-2025 09:42:38 UTC] Initializing AuthController...
+[25-Jun-2025 09:42:38 UTC] ✓ AuthController initialized
+[25-Jun-2025 09:42:38 UTC] Processing route: /login
+[25-Jun-2025 09:42:38 UTC] Calling login method...
+[25-Jun-2025 09:42:38 UTC] === LOGIN DEBUG START ===
+[25-Jun-2025 09:42:38 UTC] REQUEST_METHOD: POST
+[25-Jun-2025 09:42:38 UTC] CONTENT_TYPE: multipart/form-data; boundary=--------------------------312884332122346748324313
+[25-Jun-2025 09:42:38 UTC] RAW LOGIN INPUT: 
+[25-Jun-2025 09:42:38 UTC] LOGIN INPUT LENGTH: 0
+[25-Jun-2025 09:42:38 UTC] ERROR: Empty login input received
+[25-Jun-2025 09:46:09 UTC] 🔥 Debug Start: index.php running
+[25-Jun-2025 09:46:09 UTC] === NEW REQUEST ===
+[25-Jun-2025 09:46:09 UTC] Method: POST
+[25-Jun-2025 09:46:09 UTC] URI: /raimona_water_park_api/api_v1/login
+[25-Jun-2025 09:46:09 UTC] Content-Type: application/json
+[25-Jun-2025 09:46:09 UTC] Raw input: { 
+    "email": "gwkhrwngbasumatary99@gmail.com",
+    "password": "Abcd@123"
+}
+[25-Jun-2025 09:46:09 UTC] Processed URI: /login
+[25-Jun-2025 09:46:09 UTC] Method: POST
+[25-Jun-2025 09:46:09 UTC] Including required files...
+[25-Jun-2025 09:46:09 UTC] ✓ database.php included
+[25-Jun-2025 09:46:09 UTC] ✓ jwt.php included
+[25-Jun-2025 09:46:09 UTC] ✓ User.php included
+[25-Jun-2025 09:46:09 UTC] ✓ AuthController.php included
+[25-Jun-2025 09:46:09 UTC] ✓ JWTMiddleware.php included
+[25-Jun-2025 09:46:09 UTC] ✓ Booking files included
+[25-Jun-2025 09:46:09 UTC] All files included successfully
+[25-Jun-2025 09:46:09 UTC] Testing database connection...
+[25-Jun-2025 09:46:09 UTC] ✓ Database connection successful
+[25-Jun-2025 09:46:09 UTC] Initializing AuthController...
+[25-Jun-2025 09:46:09 UTC] ✓ AuthController initialized
+[25-Jun-2025 09:46:09 UTC] Processing route: /login
+[25-Jun-2025 09:46:09 UTC] Calling login method...
+[25-Jun-2025 09:46:09 UTC] === LOGIN DEBUG START ===
+[25-Jun-2025 09:46:09 UTC] REQUEST_METHOD: POST
+[25-Jun-2025 09:46:09 UTC] CONTENT_TYPE: application/json
+[25-Jun-2025 09:46:09 UTC] RAW LOGIN INPUT: { 
+    "email": "gwkhrwngbasumatary99@gmail.com",
+    "password": "Abcd@123"
+}
+[25-Jun-2025 09:46:09 UTC] LOGIN INPUT LENGTH: 81
+[25-Jun-2025 09:46:09 UTC] LOGIN JSON_DECODE_RESULT: SUCCESS
+[25-Jun-2025 09:46:09 UTC] LOGIN JSON_LAST_ERROR: 0
+[25-Jun-2025 09:46:09 UTC] LOGIN DECODED_DATA: Array
+(
+    [email] => gwkhrwngbasumatary99@gmail.com
+    [password] => Abcd@123
+)
+
+[25-Jun-2025 09:46:09 UTC] ATTEMPTING LOGIN FOR: gwkhrwngbasumatary99@gmail.com
+[25-Jun-2025 09:46:09 UTC] Login successful for: gwkhrwngbasumatary99@gmail.com
+[25-Jun-2025 09:46:09 UTC] Generating JWT token for user: gwkhrwngbasumatary99@gmail.com
+[25-Jun-2025 09:46:09 UTC] JWT token generated successfully
+[25-Jun-2025 09:46:09 UTC] LOGIN SUCCESS for: gwkhrwngbasumatary99@gmail.com
+[25-Jun-2025 09:46:09 UTC] === LOGIN DEBUG END ===
+[25-Jun-2025 10:40:06 UTC] 🔥 Debug Start: index.php running
+[25-Jun-2025 10:40:06 UTC] === NEW REQUEST ===
+[25-Jun-2025 10:40:06 UTC] Method: GET
+[25-Jun-2025 10:40:06 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[25-Jun-2025 10:40:06 UTC] Content-Type: not set
+[25-Jun-2025 10:40:06 UTC] Raw input: 
+[25-Jun-2025 10:40:06 UTC] Processed URI: /manage/base/price
+[25-Jun-2025 10:40:06 UTC] Method: GET
+[25-Jun-2025 10:40:06 UTC] Including required files...
+[25-Jun-2025 10:40:06 UTC] ✓ database.php included
+[25-Jun-2025 10:40:06 UTC] ✓ jwt.php included
+[25-Jun-2025 10:40:06 UTC] ✓ User.php included
+[25-Jun-2025 10:40:06 UTC] ✓ AuthController.php included
+[25-Jun-2025 10:40:06 UTC] ✓ JWTMiddleware.php included
+[25-Jun-2025 10:40:06 UTC] ✓ Booking files included
+[25-Jun-2025 10:40:06 UTC] All files included successfully
+[25-Jun-2025 10:40:06 UTC] Testing database connection...
+[25-Jun-2025 10:40:06 UTC] ✓ Database connection successful
+[25-Jun-2025 10:40:06 UTC] Initializing AuthController...
+[25-Jun-2025 10:40:06 UTC] ✓ AuthController initialized
+[25-Jun-2025 10:40:06 UTC] Processing route: /manage/base/price
+[25-Jun-2025 10:40:27 UTC] 🔥 Debug Start: index.php running
+[25-Jun-2025 10:40:27 UTC] === NEW REQUEST ===
+[25-Jun-2025 10:40:27 UTC] Method: GET
+[25-Jun-2025 10:40:27 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[25-Jun-2025 10:40:27 UTC] Content-Type: not set
+[25-Jun-2025 10:40:27 UTC] Raw input: 
+[25-Jun-2025 10:40:27 UTC] Processed URI: /manage/base/price
+[25-Jun-2025 10:40:27 UTC] Method: GET
+[25-Jun-2025 10:40:27 UTC] Including required files...
+[25-Jun-2025 10:40:27 UTC] ✓ database.php included
+[25-Jun-2025 10:40:27 UTC] ✓ jwt.php included
+[25-Jun-2025 10:40:27 UTC] ✓ User.php included
+[25-Jun-2025 10:40:27 UTC] ✓ AuthController.php included
+[25-Jun-2025 10:40:27 UTC] ✓ JWTMiddleware.php included
+[25-Jun-2025 10:40:27 UTC] ✓ Booking files included
+[25-Jun-2025 10:40:27 UTC] All files included successfully
+[25-Jun-2025 10:40:27 UTC] Testing database connection...
+[25-Jun-2025 10:40:27 UTC] ✓ Database connection successful
+[25-Jun-2025 10:40:27 UTC] Initializing AuthController...
+[25-Jun-2025 10:40:27 UTC] ✓ AuthController initialized
+[25-Jun-2025 10:40:27 UTC] Processing route: /manage/base/price
+[25-Jun-2025 10:40:41 UTC] 🔥 Debug Start: index.php running
+[25-Jun-2025 10:40:41 UTC] === NEW REQUEST ===
+[25-Jun-2025 10:40:41 UTC] Method: POST
+[25-Jun-2025 10:40:41 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[25-Jun-2025 10:40:41 UTC] Content-Type: not set
+[25-Jun-2025 10:40:41 UTC] Raw input: 
+[25-Jun-2025 10:40:41 UTC] Processed URI: /manage/base/price
+[25-Jun-2025 10:40:41 UTC] Method: POST
+[25-Jun-2025 10:40:41 UTC] Including required files...
+[25-Jun-2025 10:40:41 UTC] ✓ database.php included
+[25-Jun-2025 10:40:41 UTC] ✓ jwt.php included
+[25-Jun-2025 10:40:41 UTC] ✓ User.php included
+[25-Jun-2025 10:40:41 UTC] ✓ AuthController.php included
+[25-Jun-2025 10:40:41 UTC] ✓ JWTMiddleware.php included
+[25-Jun-2025 10:40:41 UTC] ✓ Booking files included
+[25-Jun-2025 10:40:41 UTC] All files included successfully
+[25-Jun-2025 10:40:41 UTC] Testing database connection...
+[25-Jun-2025 10:40:41 UTC] ✓ Database connection successful
+[25-Jun-2025 10:40:41 UTC] Initializing AuthController...
+[25-Jun-2025 10:40:41 UTC] ✓ AuthController initialized
+[25-Jun-2025 10:40:41 UTC] Processing route: /manage/base/price
+[25-Jun-2025 10:47:15 UTC] 🔥 Debug Start: index.php running
+[25-Jun-2025 10:47:15 UTC] === NEW REQUEST ===
+[25-Jun-2025 10:47:15 UTC] Method: POST
+[25-Jun-2025 10:47:15 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[25-Jun-2025 10:47:15 UTC] Content-Type: not set
+[25-Jun-2025 10:47:15 UTC] Raw input: 
+[25-Jun-2025 10:47:15 UTC] Processed URI: /manage/base/price
+[25-Jun-2025 10:47:15 UTC] Method: POST
+[25-Jun-2025 10:47:15 UTC] Including required files...
+[25-Jun-2025 10:47:15 UTC] ✓ database.php included
+[25-Jun-2025 10:47:15 UTC] ✓ jwt.php included
+[25-Jun-2025 10:47:15 UTC] ✓ User.php included
+[25-Jun-2025 10:47:15 UTC] ✓ AuthController.php included
+[25-Jun-2025 10:47:15 UTC] ✓ JWTMiddleware.php included
+[25-Jun-2025 10:47:15 UTC] ✓ Booking files included
+[25-Jun-2025 10:47:15 UTC] All files included successfully
+[25-Jun-2025 10:47:15 UTC] Testing database connection...
+[25-Jun-2025 10:47:15 UTC] ✓ Database connection successful
+[25-Jun-2025 10:47:15 UTC] Initializing AuthController...
+[25-Jun-2025 10:47:15 UTC] ✓ AuthController initialized
+[25-Jun-2025 10:47:15 UTC] Processing route: /manage/base/price
+[25-Jun-2025 10:47:15 UTC] Calling /manage/base/price method...
+[25-Jun-2025 10:47:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method AuthController::updateBasePrice() in D:\workspace\gwkhrwng\raimona_water_park_api\api_v1\index.php:475
+Stack trace:
+#0 {main}
+  thrown in D:\workspace\gwkhrwng\raimona_water_park_api\api_v1\index.php on line 475
+[25-Jun-2025 10:48:48 UTC] 🔥 Debug Start: index.php running
+[25-Jun-2025 10:48:48 UTC] === NEW REQUEST ===
+[25-Jun-2025 10:48:48 UTC] Method: POST
+[25-Jun-2025 10:48:48 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[25-Jun-2025 10:48:48 UTC] Content-Type: not set
+[25-Jun-2025 10:48:48 UTC] Raw input: 
+[25-Jun-2025 10:48:48 UTC] Processed URI: /manage/base/price
+[25-Jun-2025 10:48:48 UTC] Method: POST
+[25-Jun-2025 10:48:48 UTC] Including required files...
+[25-Jun-2025 10:48:48 UTC] ✓ database.php included
+[25-Jun-2025 10:48:48 UTC] ✓ jwt.php included
+[25-Jun-2025 10:48:48 UTC] ✓ User.php included
+[25-Jun-2025 10:48:48 UTC] ✓ AuthController.php included
+[25-Jun-2025 10:48:48 UTC] ✓ JWTMiddleware.php included
+[25-Jun-2025 10:48:48 UTC] ✓ Booking files included
+[25-Jun-2025 10:48:48 UTC] All files included successfully
+[25-Jun-2025 10:48:48 UTC] Testing database connection...
+[25-Jun-2025 10:48:48 UTC] ✓ Database connection successful
+[25-Jun-2025 10:48:48 UTC] Initializing AuthController...
+[25-Jun-2025 10:48:48 UTC] PHP Fatal error:  Uncaught Error: Class "AdminController" not found in D:\workspace\gwkhrwng\raimona_water_park_api\api_v1\index.php:205
+Stack trace:
+#0 {main}
+  thrown in D:\workspace\gwkhrwng\raimona_water_park_api\api_v1\index.php on line 205
+[25-Jun-2025 10:50:23 UTC] 🔥 Debug Start: index.php running
+[25-Jun-2025 10:50:23 UTC] === NEW REQUEST ===
+[25-Jun-2025 10:50:23 UTC] Method: POST
+[25-Jun-2025 10:50:23 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[25-Jun-2025 10:50:23 UTC] Content-Type: not set
+[25-Jun-2025 10:50:23 UTC] Raw input: 
+[25-Jun-2025 10:50:23 UTC] Processed URI: /manage/base/price
+[25-Jun-2025 10:50:23 UTC] Method: POST
+[25-Jun-2025 10:50:23 UTC] Including required files...
+[25-Jun-2025 10:50:23 UTC] ✓ database.php included
+[25-Jun-2025 10:50:23 UTC] ✓ jwt.php included
+[25-Jun-2025 10:50:23 UTC] ✓ User.php included
+[25-Jun-2025 10:50:23 UTC] ✓ AuthController.php included
+[25-Jun-2025 10:50:23 UTC] ✓ AdminController.php included
+[25-Jun-2025 10:50:23 UTC] ✓ JWTMiddleware.php included
+[25-Jun-2025 10:50:23 UTC] ✓ Booking files included
+[25-Jun-2025 10:50:23 UTC] All files included successfully
+[25-Jun-2025 10:50:23 UTC] Testing database connection...
+[25-Jun-2025 10:50:23 UTC] ✓ Database connection successful
+[25-Jun-2025 10:50:23 UTC] Initializing AuthController...
+[25-Jun-2025 10:50:24 UTC] ✓ AuthController initialized
+[25-Jun-2025 10:50:24 UTC] Processing route: /manage/base/price
+[25-Jun-2025 10:50:24 UTC] Calling /manage/base/price method...
+[25-Jun-2025 10:50:24 UTC] No authorization token found in any method
+[25-Jun-2025 10:50:24 UTC] Available $_SERVER keys with HTTP_: HTTP_USER_AGENT, HTTP_ACCEPT, HTTP_CACHE_CONTROL, HTTP_POSTMAN_TOKEN, HTTP_HOST, HTTP_ACCEPT_ENCODING, HTTP_CONNECTION
+[25-Jun-2025 10:50:24 UTC] Token from headers: null
+[25-Jun-2025 10:50:24 UTC] No token found in headers
+[25-Jun-2025 10:53:57 UTC] 🔥 Debug Start: index.php running
+[25-Jun-2025 10:53:57 UTC] === NEW REQUEST ===
+[25-Jun-2025 10:53:57 UTC] Method: POST
+[25-Jun-2025 10:53:57 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[25-Jun-2025 10:53:57 UTC] Content-Type: not set
+[25-Jun-2025 10:53:57 UTC] Raw input: 
+[25-Jun-2025 10:53:57 UTC] Processed URI: /manage/base/price
+[25-Jun-2025 10:53:57 UTC] Method: POST
+[25-Jun-2025 10:53:57 UTC] Including required files...
+[25-Jun-2025 10:53:57 UTC] ✓ database.php included
+[25-Jun-2025 10:53:57 UTC] ✓ jwt.php included
+[25-Jun-2025 10:53:57 UTC] ✓ User.php included
+[25-Jun-2025 10:53:57 UTC] ✓ AuthController.php included
+[25-Jun-2025 10:53:57 UTC] ✓ AdminController.php included
+[25-Jun-2025 10:53:57 UTC] ✓ JWTMiddleware.php included
+[25-Jun-2025 10:53:57 UTC] ✓ Booking files included
+[25-Jun-2025 10:53:57 UTC] All files included successfully
+[25-Jun-2025 10:53:57 UTC] Testing database connection...
+[25-Jun-2025 10:53:57 UTC] ✓ Database connection successful
+[25-Jun-2025 10:53:57 UTC] Initializing AuthController...
+[25-Jun-2025 10:53:57 UTC] ✓ AuthController initialized
+[25-Jun-2025 10:53:57 UTC] Processing route: /manage/base/price
+[25-Jun-2025 10:53:57 UTC] Calling /manage/base/price method...
+[25-Jun-2025 10:53:57 UTC] No authorization token found in any method
+[25-Jun-2025 10:53:57 UTC] Available $_SERVER keys with HTTP_: HTTP_USER_AGENT, HTTP_ACCEPT, HTTP_CACHE_CONTROL, HTTP_POSTMAN_TOKEN, HTTP_HOST, HTTP_ACCEPT_ENCODING, HTTP_CONNECTION
+[25-Jun-2025 10:53:57 UTC] Token from headers: null
+[25-Jun-2025 10:53:57 UTC] No token found in headers
+[25-Jun-2025 10:54:04 UTC] 🔥 Debug Start: index.php running
+[25-Jun-2025 10:54:04 UTC] === NEW REQUEST ===
+[25-Jun-2025 10:54:04 UTC] Method: POST
+[25-Jun-2025 10:54:04 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[25-Jun-2025 10:54:04 UTC] Content-Type: not set
+[25-Jun-2025 10:54:04 UTC] Raw input: 
+[25-Jun-2025 10:54:04 UTC] Processed URI: /manage/base/price
+[25-Jun-2025 10:54:04 UTC] Method: POST
+[25-Jun-2025 10:54:04 UTC] Including required files...
+[25-Jun-2025 10:54:04 UTC] ✓ database.php included
+[25-Jun-2025 10:54:04 UTC] ✓ jwt.php included
+[25-Jun-2025 10:54:04 UTC] ✓ User.php included
+[25-Jun-2025 10:54:04 UTC] ✓ AuthController.php included
+[25-Jun-2025 10:54:04 UTC] ✓ AdminController.php included
+[25-Jun-2025 10:54:04 UTC] ✓ JWTMiddleware.php included
+[25-Jun-2025 10:54:04 UTC] ✓ Booking files included
+[25-Jun-2025 10:54:04 UTC] All files included successfully
+[25-Jun-2025 10:54:04 UTC] Testing database connection...
+[25-Jun-2025 10:54:04 UTC] ✓ Database connection successful
+[25-Jun-2025 10:54:04 UTC] Initializing AuthController...
+[25-Jun-2025 10:54:04 UTC] ✓ AuthController initialized
+[25-Jun-2025 10:54:04 UTC] Processing route: /manage/base/price
+[25-Jun-2025 10:54:04 UTC] Calling /manage/base/price method...
+[25-Jun-2025 10:54:04 UTC] No authorization token found in any method
+[25-Jun-2025 10:54:04 UTC] Available $_SERVER keys with HTTP_: HTTP_USER_AGENT, HTTP_ACCEPT, HTTP_CACHE_CONTROL, HTTP_POSTMAN_TOKEN, HTTP_HOST, HTTP_ACCEPT_ENCODING, HTTP_CONNECTION
+[25-Jun-2025 10:54:04 UTC] Token from headers: null
+[25-Jun-2025 10:54:04 UTC] No token found in headers
+[25-Jun-2025 10:56:45 UTC] 🔥 Debug Start: index.php running
+[25-Jun-2025 10:56:45 UTC] === NEW REQUEST ===
+[25-Jun-2025 10:56:45 UTC] Method: POST
+[25-Jun-2025 10:56:45 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[25-Jun-2025 10:56:45 UTC] Content-Type: not set
+[25-Jun-2025 10:56:45 UTC] Raw input: 
+[25-Jun-2025 10:56:45 UTC] Processed URI: /manage/base/price
+[25-Jun-2025 10:56:45 UTC] Method: POST
+[25-Jun-2025 10:56:45 UTC] Including required files...
+[25-Jun-2025 10:56:45 UTC] ✓ database.php included
+[25-Jun-2025 10:56:45 UTC] ✓ jwt.php included
+[25-Jun-2025 10:56:45 UTC] ✓ User.php included
+[25-Jun-2025 10:56:45 UTC] ✓ AuthController.php included
+[25-Jun-2025 10:56:45 UTC] ✓ AdminController.php included
+[25-Jun-2025 10:56:45 UTC] ✓ JWTMiddleware.php included
+[25-Jun-2025 10:56:45 UTC] ✓ Booking files included
+[25-Jun-2025 10:56:45 UTC] All files included successfully
+[25-Jun-2025 10:56:45 UTC] Testing database connection...
+[25-Jun-2025 10:56:45 UTC] ✓ Database connection successful
+[25-Jun-2025 10:56:45 UTC] Initializing AuthController...
+[25-Jun-2025 10:56:45 UTC] ✓ AuthController initialized
+[25-Jun-2025 10:56:45 UTC] Processing route: /manage/base/price
+[25-Jun-2025 10:56:45 UTC] Calling /manage/base/price method...
+[25-Jun-2025 10:56:45 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[25-Jun-2025 10:56:45 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[25-Jun-2025 10:56:45 UTC] JWT validation error: Expired token
+[25-Jun-2025 10:56:45 UTC] Token validation failed
+[25-Jun-2025 10:57:07 UTC] 🔥 Debug Start: index.php running
+[25-Jun-2025 10:57:07 UTC] === NEW REQUEST ===
+[25-Jun-2025 10:57:07 UTC] Method: POST
+[25-Jun-2025 10:57:07 UTC] URI: /raimona_water_park_api/api_v1/login
+[25-Jun-2025 10:57:07 UTC] Content-Type: application/json
+[25-Jun-2025 10:57:07 UTC] Raw input: { 
+    "email": "gwkhrwngbasumatary99@gmail.com",
+    "password": "Abcd@123"
+}
+[25-Jun-2025 10:57:07 UTC] Processed URI: /login
+[25-Jun-2025 10:57:07 UTC] Method: POST
+[25-Jun-2025 10:57:07 UTC] Including required files...
+[25-Jun-2025 10:57:07 UTC] ✓ database.php included
+[25-Jun-2025 10:57:07 UTC] ✓ jwt.php included
+[25-Jun-2025 10:57:07 UTC] ✓ User.php included
+[25-Jun-2025 10:57:07 UTC] ✓ AuthController.php included
+[25-Jun-2025 10:57:07 UTC] ✓ AdminController.php included
+[25-Jun-2025 10:57:07 UTC] ✓ JWTMiddleware.php included
+[25-Jun-2025 10:57:07 UTC] ✓ Booking files included
+[25-Jun-2025 10:57:07 UTC] All files included successfully
+[25-Jun-2025 10:57:07 UTC] Testing database connection...
+[25-Jun-2025 10:57:07 UTC] ✓ Database connection successful
+[25-Jun-2025 10:57:07 UTC] Initializing AuthController...
+[25-Jun-2025 10:57:07 UTC] ✓ AuthController initialized
+[25-Jun-2025 10:57:07 UTC] Processing route: /login
+[25-Jun-2025 10:57:07 UTC] Calling login method...
+[25-Jun-2025 10:57:07 UTC] === LOGIN DEBUG START ===
+[25-Jun-2025 10:57:07 UTC] REQUEST_METHOD: POST
+[25-Jun-2025 10:57:07 UTC] CONTENT_TYPE: application/json
+[25-Jun-2025 10:57:07 UTC] RAW LOGIN INPUT: { 
+    "email": "gwkhrwngbasumatary99@gmail.com",
+    "password": "Abcd@123"
+}
+[25-Jun-2025 10:57:07 UTC] LOGIN INPUT LENGTH: 81
+[25-Jun-2025 10:57:07 UTC] LOGIN JSON_DECODE_RESULT: SUCCESS
+[25-Jun-2025 10:57:07 UTC] LOGIN JSON_LAST_ERROR: 0
+[25-Jun-2025 10:57:07 UTC] LOGIN DECODED_DATA: Array
+(
+    [email] => gwkhrwngbasumatary99@gmail.com
+    [password] => Abcd@123
+)
+
+[25-Jun-2025 10:57:07 UTC] ATTEMPTING LOGIN FOR: gwkhrwngbasumatary99@gmail.com
+[25-Jun-2025 10:57:07 UTC] Login successful for: gwkhrwngbasumatary99@gmail.com
+[25-Jun-2025 10:57:07 UTC] Generating JWT token for user: gwkhrwngbasumatary99@gmail.com
+[25-Jun-2025 10:57:07 UTC] JWT token generated successfully
+[25-Jun-2025 10:57:07 UTC] LOGIN SUCCESS for: gwkhrwngbasumatary99@gmail.com
+[25-Jun-2025 10:57:07 UTC] === LOGIN DEBUG END ===
+[25-Jun-2025 10:57:27 UTC] 🔥 Debug Start: index.php running
+[25-Jun-2025 10:57:27 UTC] === NEW REQUEST ===
+[25-Jun-2025 10:57:27 UTC] Method: POST
+[25-Jun-2025 10:57:27 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[25-Jun-2025 10:57:27 UTC] Content-Type: not set
+[25-Jun-2025 10:57:27 UTC] Raw input: 
+[25-Jun-2025 10:57:27 UTC] Processed URI: /manage/base/price
+[25-Jun-2025 10:57:27 UTC] Method: POST
+[25-Jun-2025 10:57:27 UTC] Including required files...
+[25-Jun-2025 10:57:27 UTC] ✓ database.php included
+[25-Jun-2025 10:57:27 UTC] ✓ jwt.php included
+[25-Jun-2025 10:57:27 UTC] ✓ User.php included
+[25-Jun-2025 10:57:27 UTC] ✓ AuthController.php included
+[25-Jun-2025 10:57:27 UTC] ✓ AdminController.php included
+[25-Jun-2025 10:57:27 UTC] ✓ JWTMiddleware.php included
+[25-Jun-2025 10:57:27 UTC] ✓ Booking files included
+[25-Jun-2025 10:57:27 UTC] All files included successfully
+[25-Jun-2025 10:57:27 UTC] Testing database connection...
+[25-Jun-2025 10:57:27 UTC] ✓ Database connection successful
+[25-Jun-2025 10:57:27 UTC] Initializing AuthController...
+[25-Jun-2025 10:57:27 UTC] ✓ AuthController initialized
+[25-Jun-2025 10:57:27 UTC] Processing route: /manage/base/price
+[25-Jun-2025 10:57:27 UTC] Calling /manage/base/price method...
+[25-Jun-2025 10:57:27 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[25-Jun-2025 10:57:27 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[25-Jun-2025 11:23:07 UTC] 🔥 Debug Start: index.php running
+[25-Jun-2025 11:23:07 UTC] === NEW REQUEST ===
+[25-Jun-2025 11:23:07 UTC] Method: GET
+[25-Jun-2025 11:23:07 UTC] URI: /raimona_water_park_api/api_v1/all-pricing
+[25-Jun-2025 11:23:07 UTC] Content-Type: not set
+[25-Jun-2025 11:23:07 UTC] Raw input: 
+[25-Jun-2025 11:23:07 UTC] Processed URI: /all-pricing
+[25-Jun-2025 11:23:07 UTC] Method: GET
+[25-Jun-2025 11:23:07 UTC] Including required files...
+[25-Jun-2025 11:23:07 UTC] ✓ database.php included
+[25-Jun-2025 11:23:07 UTC] ✓ jwt.php included
+[25-Jun-2025 11:23:07 UTC] ✓ User.php included
+[25-Jun-2025 11:23:07 UTC] ✓ AuthController.php included
+[25-Jun-2025 11:23:07 UTC] ✓ AdminController.php included
+[25-Jun-2025 11:23:07 UTC] ✓ JWTMiddleware.php included
+[25-Jun-2025 11:23:07 UTC] ✓ Booking files included
+[25-Jun-2025 11:23:07 UTC] All files included successfully
+[25-Jun-2025 11:23:07 UTC] Testing database connection...
+[25-Jun-2025 11:23:07 UTC] ✓ Database connection successful
+[25-Jun-2025 11:23:07 UTC] Initializing AuthController...
+[25-Jun-2025 11:23:07 UTC] ✓ AuthController initialized
+[25-Jun-2025 11:23:07 UTC] Processing route: /all-pricing
+[25-Jun-2025 11:23:07 UTC] Calling all pricing method...
+[25-Jun-2025 11:23:07 UTC] No authorization token found in any method
+[25-Jun-2025 11:23:07 UTC] Available $_SERVER keys with HTTP_: HTTP_HOST, HTTP_CONNECTION, HTTP_UPGRADE_INSECURE_REQUESTS, HTTP_USER_AGENT, HTTP_ACCEPT, HTTP_ACCEPT_ENCODING, HTTP_ACCEPT_LANGUAGE
+[25-Jun-2025 11:23:07 UTC] Token from headers: null
+[25-Jun-2025 11:23:07 UTC] No token found in headers
+[25-Jun-2025 11:25:14 UTC] 🔥 Debug Start: index.php running
+[25-Jun-2025 11:25:14 UTC] === NEW REQUEST ===
+[25-Jun-2025 11:25:14 UTC] Method: GET
+[25-Jun-2025 11:25:14 UTC] URI: /raimona_water_park_api/api_v1/login
+[25-Jun-2025 11:25:14 UTC] Content-Type: not set
+[25-Jun-2025 11:25:14 UTC] Raw input: 
+[25-Jun-2025 11:25:14 UTC] Processed URI: /login
+[25-Jun-2025 11:25:14 UTC] Method: GET
+[25-Jun-2025 11:25:14 UTC] Including required files...
+[25-Jun-2025 11:25:14 UTC] ✓ database.php included
+[25-Jun-2025 11:25:14 UTC] ✓ jwt.php included
+[25-Jun-2025 11:25:14 UTC] ✓ User.php included
+[25-Jun-2025 11:25:14 UTC] ✓ AuthController.php included
+[25-Jun-2025 11:25:14 UTC] ✓ AdminController.php included
+[25-Jun-2025 11:25:14 UTC] ✓ JWTMiddleware.php included
+[25-Jun-2025 11:25:14 UTC] ✓ Booking files included
+[25-Jun-2025 11:25:14 UTC] All files included successfully
+[25-Jun-2025 11:25:14 UTC] Testing database connection...
+[25-Jun-2025 11:25:14 UTC] ✓ Database connection successful
+[25-Jun-2025 11:25:14 UTC] Initializing AuthController...
+[25-Jun-2025 11:25:15 UTC] ✓ AuthController initialized
+[25-Jun-2025 11:25:15 UTC] Processing route: /login
+[26-Jun-2025 03:57:24 UTC] 🔥 Debug Start: index.php running
+[26-Jun-2025 03:57:24 UTC] === NEW REQUEST ===
+[26-Jun-2025 03:57:24 UTC] Method: GET
+[26-Jun-2025 03:57:24 UTC] URI: /raimona_water_park_api/api_v1/login
+[26-Jun-2025 03:57:24 UTC] Content-Type: not set
+[26-Jun-2025 03:57:24 UTC] Raw input: 
+[26-Jun-2025 03:57:24 UTC] Processed URI: /login
+[26-Jun-2025 03:57:24 UTC] Method: GET
+[26-Jun-2025 03:57:24 UTC] Including required files...
+[26-Jun-2025 03:57:24 UTC] ✓ database.php included
+[26-Jun-2025 03:57:24 UTC] ✓ jwt.php included
+[26-Jun-2025 03:57:24 UTC] ✓ User.php included
+[26-Jun-2025 03:57:24 UTC] ✓ AuthController.php included
+[26-Jun-2025 03:57:24 UTC] ✓ AdminController.php included
+[26-Jun-2025 03:57:24 UTC] ✓ JWTMiddleware.php included
+[26-Jun-2025 03:57:24 UTC] ✓ Booking files included
+[26-Jun-2025 03:57:24 UTC] All files included successfully
+[26-Jun-2025 03:57:24 UTC] Testing database connection...
+[26-Jun-2025 03:57:24 UTC] ✓ Database connection successful
+[26-Jun-2025 03:57:24 UTC] Initializing AuthController...
+[26-Jun-2025 03:57:24 UTC] ✓ AuthController initialized
+[26-Jun-2025 03:57:24 UTC] Processing route: /login
+[26-Jun-2025 04:17:39 UTC] 🔥 Debug Start: index.php running
+[26-Jun-2025 04:17:39 UTC] === NEW REQUEST ===
+[26-Jun-2025 04:17:39 UTC] Method: POST
+[26-Jun-2025 04:17:39 UTC] URI: /raimona_water_park_api/api_v1/login?email=gwkhrwngbasumatary99@gmail.com&password=Abcd@123
+[26-Jun-2025 04:17:39 UTC] Content-Type: application/json
+[26-Jun-2025 04:17:39 UTC] Raw input: { 
+    "email": "gwkhrwngbasumatary99@gmail.com",
+    "password": "Abcd@123"
+}
+[26-Jun-2025 04:17:39 UTC] Processed URI: /login
+[26-Jun-2025 04:17:39 UTC] Method: POST
+[26-Jun-2025 04:17:39 UTC] Including required files...
+[26-Jun-2025 04:17:39 UTC] ✓ database.php included
+[26-Jun-2025 04:17:39 UTC] ✓ jwt.php included
+[26-Jun-2025 04:17:39 UTC] ✓ User.php included
+[26-Jun-2025 04:17:39 UTC] ✓ AuthController.php included
+[26-Jun-2025 04:17:39 UTC] ✓ AdminController.php included
+[26-Jun-2025 04:17:39 UTC] ✓ JWTMiddleware.php included
+[26-Jun-2025 04:17:39 UTC] ✓ Booking files included
+[26-Jun-2025 04:17:39 UTC] All files included successfully
+[26-Jun-2025 04:17:39 UTC] Testing database connection...
+[26-Jun-2025 04:17:39 UTC] ✓ Database connection successful
+[26-Jun-2025 04:17:39 UTC] Initializing AuthController...
+[26-Jun-2025 04:17:39 UTC] ✓ AuthController initialized
+[26-Jun-2025 04:17:39 UTC] Processing route: /login
+[26-Jun-2025 04:17:39 UTC] Calling login method...
+[26-Jun-2025 04:17:39 UTC] === LOGIN DEBUG START ===
+[26-Jun-2025 04:17:39 UTC] REQUEST_METHOD: POST
+[26-Jun-2025 04:17:39 UTC] CONTENT_TYPE: application/json
+[26-Jun-2025 04:17:39 UTC] RAW LOGIN INPUT: { 
+    "email": "gwkhrwngbasumatary99@gmail.com",
+    "password": "Abcd@123"
+}
+[26-Jun-2025 04:17:39 UTC] LOGIN INPUT LENGTH: 81
+[26-Jun-2025 04:17:39 UTC] LOGIN JSON_DECODE_RESULT: SUCCESS
+[26-Jun-2025 04:17:39 UTC] LOGIN JSON_LAST_ERROR: 0
+[26-Jun-2025 04:17:39 UTC] LOGIN DECODED_DATA: Array
+(
+    [email] => gwkhrwngbasumatary99@gmail.com
+    [password] => Abcd@123
+)
+
+[26-Jun-2025 04:17:39 UTC] ATTEMPTING LOGIN FOR: gwkhrwngbasumatary99@gmail.com
+[26-Jun-2025 04:17:39 UTC] Login successful for: gwkhrwngbasumatary99@gmail.com
+[26-Jun-2025 04:17:39 UTC] Generating JWT token for user: gwkhrwngbasumatary99@gmail.com
+[26-Jun-2025 04:17:39 UTC] JWT token generated successfully
+[26-Jun-2025 04:17:39 UTC] LOGIN SUCCESS for: gwkhrwngbasumatary99@gmail.com
+[26-Jun-2025 04:17:39 UTC] === LOGIN DEBUG END ===
+[26-Jun-2025 04:18:14 UTC] 🔥 Debug Start: index.php running
+[26-Jun-2025 04:18:14 UTC] === NEW REQUEST ===
+[26-Jun-2025 04:18:14 UTC] Method: POST
+[26-Jun-2025 04:18:14 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[26-Jun-2025 04:18:14 UTC] Content-Type: not set
+[26-Jun-2025 04:18:14 UTC] Raw input: 
+[26-Jun-2025 04:18:14 UTC] Processed URI: /manage/base/price
+[26-Jun-2025 04:18:14 UTC] Method: POST
+[26-Jun-2025 04:18:14 UTC] Including required files...
+[26-Jun-2025 04:18:14 UTC] ✓ database.php included
+[26-Jun-2025 04:18:14 UTC] ✓ jwt.php included
+[26-Jun-2025 04:18:14 UTC] ✓ User.php included
+[26-Jun-2025 04:18:14 UTC] ✓ AuthController.php included
+[26-Jun-2025 04:18:14 UTC] ✓ AdminController.php included
+[26-Jun-2025 04:18:14 UTC] ✓ JWTMiddleware.php included
+[26-Jun-2025 04:18:14 UTC] ✓ Booking files included
+[26-Jun-2025 04:18:14 UTC] All files included successfully
+[26-Jun-2025 04:18:14 UTC] Testing database connection...
+[26-Jun-2025 04:18:14 UTC] ✓ Database connection successful
+[26-Jun-2025 04:18:14 UTC] Initializing AuthController...
+[26-Jun-2025 04:18:14 UTC] ✓ AuthController initialized
+[26-Jun-2025 04:18:14 UTC] Processing route: /manage/base/price
+[26-Jun-2025 04:18:14 UTC] Calling /manage/base/price method...
+[26-Jun-2025 04:18:14 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[26-Jun-2025 04:18:14 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[26-Jun-2025 04:41:00 UTC] 🔥 Debug Start: index.php running
+[26-Jun-2025 04:41:00 UTC] === NEW REQUEST ===
+[26-Jun-2025 04:41:00 UTC] Method: POST
+[26-Jun-2025 04:41:00 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[26-Jun-2025 04:41:00 UTC] Content-Type: application/json
+[26-Jun-2025 04:41:00 UTC] Raw input: {
+    "ref": "adult_price",
+    "category": "1000"
+}
+[26-Jun-2025 04:41:00 UTC] Processed URI: /manage/base/price
+[26-Jun-2025 04:41:00 UTC] Method: POST
+[26-Jun-2025 04:41:00 UTC] Including required files...
+[26-Jun-2025 04:41:00 UTC] ✓ database.php included
+[26-Jun-2025 04:41:00 UTC] ✓ jwt.php included
+[26-Jun-2025 04:41:00 UTC] ✓ User.php included
+[26-Jun-2025 04:41:00 UTC] ✓ AuthController.php included
+[26-Jun-2025 04:41:00 UTC] ✓ AdminController.php included
+[26-Jun-2025 04:41:00 UTC] ✓ JWTMiddleware.php included
+[26-Jun-2025 04:41:00 UTC] ✓ Booking files included
+[26-Jun-2025 04:41:00 UTC] All files included successfully
+[26-Jun-2025 04:41:00 UTC] Testing database connection...
+[26-Jun-2025 04:41:00 UTC] ✓ Database connection successful
+[26-Jun-2025 04:41:00 UTC] Initializing AuthController...
+[26-Jun-2025 04:41:00 UTC] ✓ AuthController initialized
+[26-Jun-2025 04:41:00 UTC] Processing route: /manage/base/price
+[26-Jun-2025 04:41:00 UTC] Calling /manage/base/price method...
+[26-Jun-2025 04:41:00 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[26-Jun-2025 04:41:00 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[26-Jun-2025 04:42:54 UTC] 🔥 Debug Start: index.php running
+[26-Jun-2025 04:42:54 UTC] === NEW REQUEST ===
+[26-Jun-2025 04:42:54 UTC] Method: POST
+[26-Jun-2025 04:42:54 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[26-Jun-2025 04:42:54 UTC] Content-Type: application/json
+[26-Jun-2025 04:42:54 UTC] Raw input: {
+    "ref": "adult_price",
+    "category": "1000"
+}
+[26-Jun-2025 04:42:54 UTC] Processed URI: /manage/base/price
+[26-Jun-2025 04:42:54 UTC] Method: POST
+[26-Jun-2025 04:42:54 UTC] Including required files...
+[26-Jun-2025 04:42:54 UTC] ✓ database.php included
+[26-Jun-2025 04:42:54 UTC] ✓ jwt.php included
+[26-Jun-2025 04:42:54 UTC] ✓ User.php included
+[26-Jun-2025 04:42:54 UTC] ✓ AuthController.php included
+[26-Jun-2025 04:42:54 UTC] ✓ AdminController.php included
+[26-Jun-2025 04:42:54 UTC] ✓ JWTMiddleware.php included
+[26-Jun-2025 04:42:54 UTC] ✓ Booking files included
+[26-Jun-2025 04:42:54 UTC] All files included successfully
+[26-Jun-2025 04:42:54 UTC] Testing database connection...
+[26-Jun-2025 04:42:54 UTC] ✓ Database connection successful
+[26-Jun-2025 04:42:54 UTC] Initializing AuthController...
+[26-Jun-2025 04:42:54 UTC] ✓ AuthController initialized
+[26-Jun-2025 04:42:54 UTC] Processing route: /manage/base/price
+[26-Jun-2025 04:42:54 UTC] Calling /manage/base/price method...
+[26-Jun-2025 04:42:54 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[26-Jun-2025 04:42:54 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[26-Jun-2025 04:43:16 UTC] 🔥 Debug Start: index.php running
+[26-Jun-2025 04:43:16 UTC] === NEW REQUEST ===
+[26-Jun-2025 04:43:16 UTC] Method: POST
+[26-Jun-2025 04:43:16 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[26-Jun-2025 04:43:16 UTC] Content-Type: application/json
+[26-Jun-2025 04:43:16 UTC] Raw input: {
+    "ref": "adult_price",
+    "price": "1000"
+}
+[26-Jun-2025 04:43:16 UTC] Processed URI: /manage/base/price
+[26-Jun-2025 04:43:16 UTC] Method: POST
+[26-Jun-2025 04:43:16 UTC] Including required files...
+[26-Jun-2025 04:43:16 UTC] ✓ database.php included
+[26-Jun-2025 04:43:16 UTC] ✓ jwt.php included
+[26-Jun-2025 04:43:16 UTC] ✓ User.php included
+[26-Jun-2025 04:43:16 UTC] ✓ AuthController.php included
+[26-Jun-2025 04:43:16 UTC] ✓ AdminController.php included
+[26-Jun-2025 04:43:16 UTC] ✓ JWTMiddleware.php included
+[26-Jun-2025 04:43:16 UTC] ✓ Booking files included
+[26-Jun-2025 04:43:16 UTC] All files included successfully
+[26-Jun-2025 04:43:16 UTC] Testing database connection...
+[26-Jun-2025 04:43:16 UTC] ✓ Database connection successful
+[26-Jun-2025 04:43:16 UTC] Initializing AuthController...
+[26-Jun-2025 04:43:16 UTC] ✓ AuthController initialized
+[26-Jun-2025 04:43:16 UTC] Processing route: /manage/base/price
+[26-Jun-2025 04:43:16 UTC] Calling /manage/base/price method...
+[26-Jun-2025 04:43:16 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[26-Jun-2025 04:43:16 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[26-Jun-2025 04:43:16 UTC] PHP Warning:  Undefined array key "adult_price" in D:\workspace\gwkhrwng\raimona_water_park_api\api_v1\controllers\AdminController.php on line 40
+[26-Jun-2025 04:43:16 UTC] PHP Warning:  Undefined array key "child_price" in D:\workspace\gwkhrwng\raimona_water_park_api\api_v1\controllers\AdminController.php on line 40
+[26-Jun-2025 04:44:34 UTC] 🔥 Debug Start: index.php running
+[26-Jun-2025 04:44:34 UTC] === NEW REQUEST ===
+[26-Jun-2025 04:44:34 UTC] Method: POST
+[26-Jun-2025 04:44:34 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[26-Jun-2025 04:44:34 UTC] Content-Type: application/json
+[26-Jun-2025 04:44:34 UTC] Raw input: {
+    "ref": "adult_price",
+    "price": "1000"
+}
+[26-Jun-2025 04:44:34 UTC] Processed URI: /manage/base/price
+[26-Jun-2025 04:44:34 UTC] Method: POST
+[26-Jun-2025 04:44:34 UTC] Including required files...
+[26-Jun-2025 04:44:34 UTC] ✓ database.php included
+[26-Jun-2025 04:44:34 UTC] ✓ jwt.php included
+[26-Jun-2025 04:44:34 UTC] ✓ User.php included
+[26-Jun-2025 04:44:34 UTC] ✓ AuthController.php included
+[26-Jun-2025 04:44:34 UTC] ✓ AdminController.php included
+[26-Jun-2025 04:44:34 UTC] ✓ JWTMiddleware.php included
+[26-Jun-2025 04:44:34 UTC] ✓ Booking files included
+[26-Jun-2025 04:44:34 UTC] All files included successfully
+[26-Jun-2025 04:44:34 UTC] Testing database connection...
+[26-Jun-2025 04:44:34 UTC] ✓ Database connection successful
+[26-Jun-2025 04:44:34 UTC] Initializing AuthController...
+[26-Jun-2025 04:44:34 UTC] ✓ AuthController initialized
+[26-Jun-2025 04:44:34 UTC] Processing route: /manage/base/price
+[26-Jun-2025 04:44:34 UTC] Calling /manage/base/price method...
+[26-Jun-2025 04:44:34 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[26-Jun-2025 04:44:34 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[26-Jun-2025 04:45:33 UTC] 🔥 Debug Start: index.php running
+[26-Jun-2025 04:45:33 UTC] === NEW REQUEST ===
+[26-Jun-2025 04:45:33 UTC] Method: POST
+[26-Jun-2025 04:45:33 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[26-Jun-2025 04:45:33 UTC] Content-Type: application/json
+[26-Jun-2025 04:45:33 UTC] Raw input: {
+    "ref": "adult_price",
+    "price": "1000"
+}
+[26-Jun-2025 04:45:33 UTC] Processed URI: /manage/base/price
+[26-Jun-2025 04:45:33 UTC] Method: POST
+[26-Jun-2025 04:45:33 UTC] Including required files...
+[26-Jun-2025 04:45:33 UTC] ✓ database.php included
+[26-Jun-2025 04:45:33 UTC] ✓ jwt.php included
+[26-Jun-2025 04:45:33 UTC] ✓ User.php included
+[26-Jun-2025 04:45:33 UTC] ✓ AuthController.php included
+[26-Jun-2025 04:45:33 UTC] ✓ AdminController.php included
+[26-Jun-2025 04:45:33 UTC] ✓ JWTMiddleware.php included
+[26-Jun-2025 04:45:33 UTC] ✓ Booking files included
+[26-Jun-2025 04:45:33 UTC] All files included successfully
+[26-Jun-2025 04:45:33 UTC] Testing database connection...
+[26-Jun-2025 04:45:33 UTC] ✓ Database connection successful
+[26-Jun-2025 04:45:33 UTC] Initializing AuthController...
+[26-Jun-2025 04:45:33 UTC] ✓ AuthController initialized
+[26-Jun-2025 04:45:33 UTC] Processing route: /manage/base/price
+[26-Jun-2025 04:45:33 UTC] Calling /manage/base/price method...
+[26-Jun-2025 04:45:33 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[26-Jun-2025 04:45:33 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[26-Jun-2025 04:45:51 UTC] 🔥 Debug Start: index.php running
+[26-Jun-2025 04:45:51 UTC] === NEW REQUEST ===
+[26-Jun-2025 04:45:51 UTC] Method: POST
+[26-Jun-2025 04:45:51 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[26-Jun-2025 04:45:51 UTC] Content-Type: application/json
+[26-Jun-2025 04:45:51 UTC] Raw input: {
+    "ref": "child_price",
+    "price": "500"
+}
+[26-Jun-2025 04:45:51 UTC] Processed URI: /manage/base/price
+[26-Jun-2025 04:45:51 UTC] Method: POST
+[26-Jun-2025 04:45:51 UTC] Including required files...
+[26-Jun-2025 04:45:51 UTC] ✓ database.php included
+[26-Jun-2025 04:45:51 UTC] ✓ jwt.php included
+[26-Jun-2025 04:45:51 UTC] ✓ User.php included
+[26-Jun-2025 04:45:51 UTC] ✓ AuthController.php included
+[26-Jun-2025 04:45:51 UTC] ✓ AdminController.php included
+[26-Jun-2025 04:45:51 UTC] ✓ JWTMiddleware.php included
+[26-Jun-2025 04:45:51 UTC] ✓ Booking files included
+[26-Jun-2025 04:45:51 UTC] All files included successfully
+[26-Jun-2025 04:45:51 UTC] Testing database connection...
+[26-Jun-2025 04:45:51 UTC] ✓ Database connection successful
+[26-Jun-2025 04:45:51 UTC] Initializing AuthController...
+[26-Jun-2025 04:45:51 UTC] ✓ AuthController initialized
+[26-Jun-2025 04:45:51 UTC] Processing route: /manage/base/price
+[26-Jun-2025 04:45:51 UTC] Calling /manage/base/price method...
+[26-Jun-2025 04:45:51 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[26-Jun-2025 04:45:51 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[26-Jun-2025 04:46:55 UTC] 🔥 Debug Start: index.php running
+[26-Jun-2025 04:46:55 UTC] === NEW REQUEST ===
+[26-Jun-2025 04:46:55 UTC] Method: POST
+[26-Jun-2025 04:46:55 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[26-Jun-2025 04:46:55 UTC] Content-Type: application/json
+[26-Jun-2025 04:46:55 UTC] Raw input: {
+    "ref": "child_price",
+    "price": "600"
+}
+[26-Jun-2025 04:46:55 UTC] Processed URI: /manage/base/price
+[26-Jun-2025 04:46:55 UTC] Method: POST
+[26-Jun-2025 04:46:55 UTC] Including required files...
+[26-Jun-2025 04:46:55 UTC] ✓ database.php included
+[26-Jun-2025 04:46:55 UTC] ✓ jwt.php included
+[26-Jun-2025 04:46:55 UTC] ✓ User.php included
+[26-Jun-2025 04:46:55 UTC] ✓ AuthController.php included
+[26-Jun-2025 04:46:55 UTC] ✓ AdminController.php included
+[26-Jun-2025 04:46:55 UTC] ✓ JWTMiddleware.php included
+[26-Jun-2025 04:46:55 UTC] ✓ Booking files included
+[26-Jun-2025 04:46:55 UTC] All files included successfully
+[26-Jun-2025 04:46:55 UTC] Testing database connection...
+[26-Jun-2025 04:46:55 UTC] ✓ Database connection successful
+[26-Jun-2025 04:46:55 UTC] Initializing AuthController...
+[26-Jun-2025 04:46:55 UTC] ✓ AuthController initialized
+[26-Jun-2025 04:46:55 UTC] Processing route: /manage/base/price
+[26-Jun-2025 04:46:55 UTC] Calling /manage/base/price method...
+[26-Jun-2025 04:46:55 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[26-Jun-2025 04:46:55 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[26-Jun-2025 04:47:09 UTC] 🔥 Debug Start: index.php running
+[26-Jun-2025 04:47:09 UTC] === NEW REQUEST ===
+[26-Jun-2025 04:47:09 UTC] Method: POST
+[26-Jun-2025 04:47:09 UTC] URI: /raimona_water_park_api/api_v1/manage/base/price
+[26-Jun-2025 04:47:09 UTC] Content-Type: application/json
+[26-Jun-2025 04:47:09 UTC] Raw input: {
+    "ref": "adult_price",
+    "price": "1200"
+}
+[26-Jun-2025 04:47:09 UTC] Processed URI: /manage/base/price
+[26-Jun-2025 04:47:09 UTC] Method: POST
+[26-Jun-2025 04:47:09 UTC] Including required files...
+[26-Jun-2025 04:47:09 UTC] ✓ database.php included
+[26-Jun-2025 04:47:09 UTC] ✓ jwt.php included
+[26-Jun-2025 04:47:09 UTC] ✓ User.php included
+[26-Jun-2025 04:47:09 UTC] ✓ AuthController.php included
+[26-Jun-2025 04:47:09 UTC] ✓ AdminController.php included
+[26-Jun-2025 04:47:09 UTC] ✓ JWTMiddleware.php included
+[26-Jun-2025 04:47:09 UTC] ✓ Booking files included
+[26-Jun-2025 04:47:09 UTC] All files included successfully
+[26-Jun-2025 04:47:09 UTC] Testing database connection...
+[26-Jun-2025 04:47:09 UTC] ✓ Database connection successful
+[26-Jun-2025 04:47:09 UTC] Initializing AuthController...
+[26-Jun-2025 04:47:10 UTC] ✓ AuthController initialized
+[26-Jun-2025 04:47:10 UTC] Processing route: /manage/base/price
+[26-Jun-2025 04:47:10 UTC] Calling /manage/base/price method...
+[26-Jun-2025 04:47:10 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[26-Jun-2025 04:47:10 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[26-Jun-2025 04:52:36 UTC] 🔥 Debug Start: index.php running
+[26-Jun-2025 04:52:36 UTC] === NEW REQUEST ===
+[26-Jun-2025 04:52:36 UTC] Method: POST
+[26-Jun-2025 04:52:36 UTC] URI: /raimona_water_park_api/api_v1/login
+[26-Jun-2025 04:52:36 UTC] Content-Type: application/json
+[26-Jun-2025 04:52:36 UTC] Raw input: { 
+    "email": "gwkhrwngbasumatary99@gmail.com",
+    "password": "Abcd@123"
+}
+[26-Jun-2025 04:52:36 UTC] Processed URI: /login
+[26-Jun-2025 04:52:36 UTC] Method: POST
+[26-Jun-2025 04:52:36 UTC] Including required files...
+[26-Jun-2025 04:52:36 UTC] ✓ database.php included
+[26-Jun-2025 04:52:36 UTC] ✓ jwt.php included
+[26-Jun-2025 04:52:36 UTC] ✓ User.php included
+[26-Jun-2025 04:52:36 UTC] ✓ AuthController.php included
+[26-Jun-2025 04:52:36 UTC] ✓ AdminController.php included
+[26-Jun-2025 04:52:36 UTC] ✓ JWTMiddleware.php included
+[26-Jun-2025 04:52:36 UTC] ✓ Booking files included
+[26-Jun-2025 04:52:36 UTC] All files included successfully
+[26-Jun-2025 04:52:36 UTC] Testing database connection...
+[26-Jun-2025 04:52:36 UTC] ✓ Database connection successful
+[26-Jun-2025 04:52:36 UTC] Initializing AuthController...
+[26-Jun-2025 04:52:36 UTC] ✓ AuthController initialized
+[26-Jun-2025 04:52:36 UTC] Processing route: /login
+[26-Jun-2025 04:52:36 UTC] Calling login method...
+[26-Jun-2025 04:52:36 UTC] === LOGIN DEBUG START ===
+[26-Jun-2025 04:52:36 UTC] REQUEST_METHOD: POST
+[26-Jun-2025 04:52:36 UTC] CONTENT_TYPE: application/json
+[26-Jun-2025 04:52:36 UTC] RAW LOGIN INPUT: { 
+    "email": "gwkhrwngbasumatary99@gmail.com",
+    "password": "Abcd@123"
+}
+[26-Jun-2025 04:52:36 UTC] LOGIN INPUT LENGTH: 81
+[26-Jun-2025 04:52:36 UTC] LOGIN JSON_DECODE_RESULT: SUCCESS
+[26-Jun-2025 04:52:36 UTC] LOGIN JSON_LAST_ERROR: 0
+[26-Jun-2025 04:52:36 UTC] LOGIN DECODED_DATA: Array
+(
+    [email] => gwkhrwngbasumatary99@gmail.com
+    [password] => Abcd@123
+)
+
+[26-Jun-2025 04:52:36 UTC] ATTEMPTING LOGIN FOR: gwkhrwngbasumatary99@gmail.com
+[26-Jun-2025 04:52:36 UTC] Login successful for: gwkhrwngbasumatary99@gmail.com
+[26-Jun-2025 04:52:36 UTC] Generating JWT token for user: gwkhrwngbasumatary99@gmail.com
+[26-Jun-2025 04:52:36 UTC] JWT token generated successfully
+[26-Jun-2025 04:52:36 UTC] LOGIN SUCCESS for: gwkhrwngbasumatary99@gmail.com
+[26-Jun-2025 04:52:36 UTC] === LOGIN DEBUG END ===
+[26-Jun-2025 04:52:44 UTC] 🔥 Debug Start: index.php running
+[26-Jun-2025 04:52:44 UTC] === NEW REQUEST ===
+[26-Jun-2025 04:52:44 UTC] Method: POST
+[26-Jun-2025 04:52:44 UTC] URI: /raimona_water_park_api/api_v1/login
+[26-Jun-2025 04:52:44 UTC] Content-Type: application/json
+[26-Jun-2025 04:52:44 UTC] Raw input: { 
+    "email": "gwkhrwngbasumatary99@gmail.com",
+    "password": "Abcd@123"
+}
+[26-Jun-2025 04:52:44 UTC] Processed URI: /login
+[26-Jun-2025 04:52:44 UTC] Method: POST
+[26-Jun-2025 04:52:44 UTC] Including required files...
+[26-Jun-2025 04:52:44 UTC] ✓ database.php included
+[26-Jun-2025 04:52:44 UTC] ✓ jwt.php included
+[26-Jun-2025 04:52:44 UTC] ✓ User.php included
+[26-Jun-2025 04:52:44 UTC] ✓ AuthController.php included
+[26-Jun-2025 04:52:44 UTC] ✓ AdminController.php included
+[26-Jun-2025 04:52:44 UTC] ✓ JWTMiddleware.php included
+[26-Jun-2025 04:52:44 UTC] ✓ Booking files included
+[26-Jun-2025 04:52:44 UTC] All files included successfully
+[26-Jun-2025 04:52:44 UTC] Testing database connection...
+[26-Jun-2025 04:52:44 UTC] ✓ Database connection successful
+[26-Jun-2025 04:52:44 UTC] Initializing AuthController...
+[26-Jun-2025 04:52:44 UTC] ✓ AuthController initialized
+[26-Jun-2025 04:52:44 UTC] Processing route: /login
+[26-Jun-2025 04:52:44 UTC] Calling login method...
+[26-Jun-2025 04:52:44 UTC] === LOGIN DEBUG START ===
+[26-Jun-2025 04:52:44 UTC] REQUEST_METHOD: POST
+[26-Jun-2025 04:52:44 UTC] CONTENT_TYPE: application/json
+[26-Jun-2025 04:52:44 UTC] RAW LOGIN INPUT: { 
+    "email": "gwkhrwngbasumatary99@gmail.com",
+    "password": "Abcd@123"
+}
+[26-Jun-2025 04:52:44 UTC] LOGIN INPUT LENGTH: 81
+[26-Jun-2025 04:52:44 UTC] LOGIN JSON_DECODE_RESULT: SUCCESS
+[26-Jun-2025 04:52:44 UTC] LOGIN JSON_LAST_ERROR: 0
+[26-Jun-2025 04:52:44 UTC] LOGIN DECODED_DATA: Array
+(
+    [email] => gwkhrwngbasumatary99@gmail.com
+    [password] => Abcd@123
+)
+
+[26-Jun-2025 04:52:44 UTC] ATTEMPTING LOGIN FOR: gwkhrwngbasumatary99@gmail.com
+[26-Jun-2025 04:52:45 UTC] Login successful for: gwkhrwngbasumatary99@gmail.com
+[26-Jun-2025 04:52:45 UTC] Generating JWT token for user: gwkhrwngbasumatary99@gmail.com
+[26-Jun-2025 04:52:45 UTC] JWT token generated successfully
+[26-Jun-2025 04:52:45 UTC] LOGIN SUCCESS for: gwkhrwngbasumatary99@gmail.com
+[26-Jun-2025 04:52:45 UTC] === LOGIN DEBUG END ===
+[26-Jun-2025 04:59:42 UTC] 🔥 Debug Start: index.php running
+[26-Jun-2025 04:59:42 UTC] === NEW REQUEST ===
+[26-Jun-2025 04:59:42 UTC] Method: POST
+[26-Jun-2025 04:59:42 UTC] URI: /raimona_water_park_api/api_v1/base/price/manage
+[26-Jun-2025 04:59:42 UTC] Content-Type: application/json
+[26-Jun-2025 04:59:42 UTC] Raw input: {
+    "ref": "adult_price",
+    "price": "1200"
+}
+[26-Jun-2025 04:59:42 UTC] Processed URI: /base/price/manage
+[26-Jun-2025 04:59:42 UTC] Method: POST
+[26-Jun-2025 04:59:42 UTC] Including required files...
+[26-Jun-2025 04:59:42 UTC] ✓ database.php included
+[26-Jun-2025 04:59:42 UTC] ✓ jwt.php included
+[26-Jun-2025 04:59:42 UTC] ✓ User.php included
+[26-Jun-2025 04:59:42 UTC] ✓ AuthController.php included
+[26-Jun-2025 04:59:42 UTC] ✓ AdminController.php included
+[26-Jun-2025 04:59:42 UTC] ✓ JWTMiddleware.php included
+[26-Jun-2025 04:59:42 UTC] ✓ Booking files included
+[26-Jun-2025 04:59:42 UTC] All files included successfully
+[26-Jun-2025 04:59:42 UTC] Testing database connection...
+[26-Jun-2025 04:59:42 UTC] ✓ Database connection successful
+[26-Jun-2025 04:59:42 UTC] Initializing AuthController...
+[26-Jun-2025 04:59:42 UTC] ✓ AuthController initialized
+[26-Jun-2025 04:59:42 UTC] Processing route: /base/price/manage
+[26-Jun-2025 04:59:42 UTC] Calling /base/price/manage method...
+[26-Jun-2025 04:59:42 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[26-Jun-2025 04:59:42 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[26-Jun-2025 05:07:55 UTC] 🔥 Debug Start: index.php running
+[26-Jun-2025 05:07:55 UTC] === NEW REQUEST ===
+[26-Jun-2025 05:07:55 UTC] Method: POST
+[26-Jun-2025 05:07:55 UTC] URI: /raimona_water_park_api/api_v1/base/price/get
+[26-Jun-2025 05:07:55 UTC] Content-Type: not set
+[26-Jun-2025 05:07:55 UTC] Raw input: 
+[26-Jun-2025 05:07:55 UTC] Processed URI: /base/price/get
+[26-Jun-2025 05:07:55 UTC] Method: POST
+[26-Jun-2025 05:07:55 UTC] Including required files...
+[26-Jun-2025 05:07:55 UTC] ✓ database.php included
+[26-Jun-2025 05:07:55 UTC] ✓ jwt.php included
+[26-Jun-2025 05:07:55 UTC] ✓ User.php included
+[26-Jun-2025 05:07:55 UTC] ✓ AuthController.php included
+[26-Jun-2025 05:07:55 UTC] ✓ AdminController.php included
+[26-Jun-2025 05:07:55 UTC] ✓ JWTMiddleware.php included
+[26-Jun-2025 05:07:55 UTC] ✓ Booking files included
+[26-Jun-2025 05:07:55 UTC] All files included successfully
+[26-Jun-2025 05:07:55 UTC] Testing database connection...
+[26-Jun-2025 05:07:55 UTC] ✓ Database connection successful
+[26-Jun-2025 05:07:55 UTC] Initializing AuthController...
+[26-Jun-2025 05:07:55 UTC] ✓ AuthController initialized
+[26-Jun-2025 05:07:55 UTC] Processing route: /base/price/get
+[26-Jun-2025 05:07:55 UTC] Calling /manage/base/get method...
+[26-Jun-2025 05:07:55 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[26-Jun-2025 05:07:55 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY

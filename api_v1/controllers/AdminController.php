@@ -12,6 +12,306 @@ class AdminController {
         $this->admin = new Admin();
     }
 
+    public function normalizeDate(string $input): ?string {
+        if (empty($input)) {
+            return null;
+        }
+
+        // Try a few known patterns:
+        $formats = [
+            'Y-m-d',    // 2025-07-15
+            'd/m/Y',    // 15/07/2025
+            'm-d-Y',    // 07-15-2025
+            'd-M-Y',    // 15-Jul-2025
+        ];
+
+        foreach ($formats as $fmt) {
+            $dt = DateTime::createFromFormat($fmt, $input);
+            if ($dt && $dt->format($fmt) === $input) {
+                return $dt->format('Y-m-d');
+            }
+        }
+
+        throw new \Exception("Unrecognized date format: $input");
+    }
+
+    // Add park status
+    public function addParkStatus(){
+        try {
+            $admin = $this->verifyAdmin();
+
+            $body = json_decode(file_get_contents('php://input'), true) ?? [];
+
+            $required = [
+                'date',
+                'opening_time',
+                'closing_time',
+                'is_open',
+                'closure_reason',
+                'has_special_event',
+                'special_event_details',
+            ];
+            foreach ($required as $field) {
+                if (! isset($body[$field]) || $body[$field] === '') {
+                    http_response_code(400);
+                    header('Content-Type: application/json');
+                    echo json_encode([
+                        'success' => false,
+                        'message' => "Missing required field: $field",
+                    ]);
+                    return;
+                }
+            }
+
+            $date = DateTime::createFromFormat('Y-m-d', $body['date']);
+            if (! $date) {
+                http_response_code(400);
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Invalid date format; expected YYYY-MM-DD',
+                ]);
+                return;
+            }
+
+            $opening = DateTime::createFromFormat('H:i:s', $body['opening_time']);
+            $closing = DateTime::createFromFormat('H:i:s', $body['closing_time']);
+            if (! $opening || ! $closing) {
+                http_response_code(400);
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Invalid time format; expected HH:MM:SS',
+                ]);
+                return;
+            }
+            if ($opening > $closing) {
+                http_response_code(400);
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Opening time must be before closing time',
+                ]);
+                return;
+            }
+
+            $body['is_open'] = in_array(strtolower($body['is_open']), ['yes','1','true'], true) ? 1 : 0;
+            $body['has_special_event'] = in_array(strtolower($body['has_special_event']), ['yes','1','true'], true) ? 1 : 0;
+
+            $this->admin->addParkStatusModel($body, $admin['id']);
+
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => true,
+                'message' => 'Park status added successfully'
+            ]);
+
+        } catch (Exception $e) {
+            http_response_code(400);
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => false,
+                'message' => $e->getMessage()
+            ]);
+        }
+    }
+
+
+    // Get list of park status
+    public function listParkStatus(){
+        try {
+            $this->verifyAdmin();
+
+            $body = json_decode(file_get_contents('php://input'), true) ?? [];
+
+            $filters = $body["filters"] ?? [];
+
+            if(!empty($filters)) {
+                $filters = [
+                    // 'date'         => $filters['date']         ?? date('Y-m-d'),
+                    'date'         => $filters['date'] ?? null,
+                    'is_open' => isset($filters['is_open']) && strtolower($filters['is_open']) == 'yes' ? 1 : 0,
+                ];
+            }
+
+            // print_r($filters);
+            // die();
+
+            $rows = $this->admin->listParkStatusModel($filters);
+
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => true,
+                'data'    => $rows
+            ]);
+        } catch (Exception $e) {
+            http_response_code(400);
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => false,
+                'message' => $e->getMessage()
+            ]);
+        }
+    }
+
+    // Activate/Deactivate Offer Price
+    public function activateDeactivateOfferPrice() {
+        try {
+            $admin = $this->verifyAdmin();
+            $data  = json_decode(file_get_contents('php://input'), true);
+
+            // Validate inputs
+            foreach (['ref', 'activate'] as $field) {
+                if (empty($data[$field])) {
+                    http_response_code(400);
+                    echo json_encode([
+                        'error'   => true,
+                        'message' => "Missing required field: $field",
+                    ]);
+                    return;
+                }
+            }
+
+            $data['activate'] = (strtolower($data['activate']) === 'yes') ? 1 : 0;
+
+            $updated = $this->admin->activateDeactivateOfferPriceModel($data, $admin['id']);
+
+            if ($updated) {
+                echo json_encode([
+                    'success' => true,
+                    'message' => 'Offer status updated successfully',
+                ]);
+            } else {
+                // either no rows changed or the model returned false
+                http_response_code(409); // 409 Conflict: no state change
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'No change made.',
+                ]);
+            }
+
+        } catch (RuntimeException $e) {
+            // this is our sanitized exception
+            http_response_code(500);
+            echo json_encode([
+                'error'   => true,
+                'message' => $e->getMessage(),
+            ]);
+        } catch (Exception $e) {
+            // fallback for anything unexpected
+            error_log("[Controller][activateDeactivateOfferPrice] " . $e->getMessage());
+            http_response_code(500);
+            echo json_encode([
+                'error'   => true,
+                'message' => 'An unexpected error occurred.',
+            ]);
+        }
+    }
+
+    // Get list of offer pricing
+    public function listOfferPricing(){
+        try {
+            $this->verifyAdmin();
+
+            $body = json_decode(file_get_contents('php://input'), true) ?? [];
+
+            // print_r($body);
+            // die();
+
+            $filters = $body["filters"] ?? [];
+
+            if(!empty($filters)) {
+                $filters = [
+                    // 'date'         => $filters['date']         ?? date('Y-m-d'),
+                    'date'         => $filters['date'] ?? null,
+                    'has_discount' => isset($filters['has_discount']) && strtolower($filters['has_discount']) == 'yes' ? 1 : null,
+                    'is_holiday'   => isset($filters['is_holiday']) && strtolower($filters['is_holiday']) == 'yes' ? 1 : null,
+                    'active'       => isset($filters['active']) && strtolower($filters['active']) == 'yes' ? 1 : null,
+                ];
+            }
+            // print_r($filters);
+
+            $rows = $this->admin->listOfferPricingModel($filters);
+
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => true,
+                'data'    => $rows
+            ]);
+        } catch (Exception $e) {
+            http_response_code(400);
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => false,
+                'message' => $e->getMessage()
+            ]);
+        }
+    }
+
+    // Add Daily Price
+    public function addOfferPrice(){
+        // header('Content-Type: application/json');
+
+        try {
+            $admin = $this->verifyAdmin();
+            
+            $data = json_decode(file_get_contents("php://input"), true);
+
+            $requiredFields = ['date_from', 'date_to', 'adult_price', 'child_price'];
+            foreach ($requiredFields as $field) {
+                if (!isset($data[$field]) || empty($data[$field])) {
+                    http_response_code(400);
+                    echo json_encode(['error' => true, 'message' => "Missing required field: $field"]);
+                    return;
+                }
+            }
+
+            // Validate pricing
+            if ($data['adult_price'] < 0 || $data['child_price'] < 0) {
+                http_response_code(400);
+                echo json_encode(['error' => true, 'message' => 'Prices must be non-negative']);
+                return;
+            }
+
+            $data['date_from'] = $this->normalizeDate($data['date_from']);
+            $data['date_to'] = $this->normalizeDate($data['date_to']);
+
+            if($data['date_from'] > $data['date_to']){
+                echo json_encode([
+                    'success' => false,
+                    'error' => true,
+                    'message' => 'Date range is invalid'
+                ]);
+                return;
+            }
+
+            $data['adult_price'] = preg_replace('/\s+/', '', $data['adult_price']);
+            $data['child_price'] = preg_replace('/\s+/', '', $data['child_price']);
+
+            //Non-required fields
+            
+            $data['has_discount'] = isset($data['has_discount']) && !empty($data['has_discount']) && $data['has_discount'] == 'yes' ? 1 : 0;
+            $data['discount_percentage'] = isset($data['discount_percentage']) && !empty($data['discount_percentage']) ? preg_replace('/\s+/', '', $data['discount_percentage']) : 0;
+            $data['discount_reason'] = isset($data['discount_reason']) && !empty($data['discount_reason']) ? preg_replace('/\s+/', ' ', trim($data['discount_reason'])) : null;
+            $data['special_message'] = isset($data['special_message']) && !empty($data['special_message']) ? preg_replace('/\s+/', ' ', trim($data['special_message'])) : null;
+            $data['is_holiday'] = isset($data['is_holiday']) && !empty($data['is_holiday']) && $data['is_holiday'] == 'yes' ? 1 : 0;
+        
+
+            $result = $this->admin->addOfferPriceModel($data, $admin['id']);
+            
+            if ($result) {
+                echo json_encode([
+                    'success' => true,
+                    'message' => 'Offer Price updated successfully'
+                ]);
+            } else {
+                http_response_code(500);
+                echo json_encode(['error' => true, 'message' => 'Failed to update offer price']);
+            }
+
+        } catch (Exception $e) {
+            http_response_code(400);
+            echo json_encode(['error' => true, 'message' => $e->getMessage()]);
+        }
+    }
+
     // Get Base Price
     public function getBasePrice(){
         // header('Content-Type: application/json');
@@ -33,7 +333,6 @@ class AdminController {
             ]);
         }
     }
-
 
     // Update Base Price
     public function updateBasePrice() {

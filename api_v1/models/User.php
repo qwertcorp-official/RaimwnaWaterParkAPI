@@ -265,5 +265,195 @@ class User {
             return false;
         }
     }
+
+
+    public function getAllUsers1($params){
+        try {
+
+            $whereParams = [
+                "name" => "Romio Mosahary",
+                "email" => null,
+                "phone" => "9087654321",
+                "is_active" => null,
+                "role" => null,
+            ];
+
+            $where = [];
+            $params = [];
+
+            foreach ($whereParams as $key => $value) {
+                if (!is_null($value)) {
+                    $where[] = "$key = :$key";
+                    $params[":$key"] = $value;
+                }
+            }
+
+
+            $query = "SELECT id, email, name, phone, date_of_birth, profile_image, 
+                             is_active, email_verified, role, created_at, updated_at 
+                      FROM " . $this->table;
+            
+            if (!empty($where)) {
+                $query .= " WHERE " . implode(" AND ", $where);
+            }
+
+            // print_r($query);
+            // exit();
+
+            $stmt = $this->conn->prepare($query);
+            
+            if (!$stmt) {
+                error_log("Fetching User failed (GetAllUsers method) : " . $this->conn->error);
+                return false;
+            }
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            } else {
+                error_log("🔺Users not found (getUsersMethod) ");
+                return false;
+            }
+        } catch (Exception $e) {
+            error_log("Get All Users method error: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    public function getAllUsers($input = []){
+        try{
+            $defaultConditions = [
+                "name" => null,
+                "email" => null,
+                "phone" => null,
+                "is_active" => null,
+                "role" => null,
+            ];
+
+            $query = "SELECT id, email, name, phone, date_of_birth, profile_image, 
+                    is_active, email_verified, role, created_at, updated_at 
+                    FROM " . $this->table;
+
+            $where = [];
+            $params = [];
+
+            $finalConditions = $defaultConditions;
+            if (!empty($input['conditions']) && is_array($input['conditions'])) {
+                foreach ($input['conditions'] as $key => $value) {
+                    if (strtolower($value) !== 'null') {
+                        $finalConditions[$key] = $value;
+                    }
+                }
+            }
+
+            foreach ($finalConditions as $key => $value) {
+                if (!is_null($value)) {
+                    $where[] = "$key = :$key";
+                    $params[":$key"] = $value;
+                }
+            }
+
+            if (!empty($where)) {
+                $query .= " WHERE " . implode(" AND ", array: $where);
+            }
+
+            if (!empty($input['order-key']) && !empty($input['order-by'])) {
+                $orderKey = trim($input['order-key']);
+                $orderBy = strtoupper(trim($input['order-by']));
+
+                $allowedDirs = ['ASC', 'DESC'];
+                $allowedColumns = ['id', 'email', 'name', 'phone', 'date_of_birth', 'is_active', 'email_verified', 'role', 'created_at', 'updated_at'];
+                
+                if (in_array( $orderBy, $allowedDirs) && in_array($orderKey, $allowedColumns)) {
+                    $query .= " ORDER BY `$orderKey` $orderBy";
+                }
+            }
+
+            $stmt = $this->conn->prepare($query);
+
+            if (!$stmt) {
+                error_log("Fetching User failed (GetAllUsers method) : " . $this->conn->error);
+                return false;
+            }
+
+            foreach ($params as $param => $val) {
+                $stmt->bindValue($param, $val);
+            }
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            } else {
+                error_log("🔺Users not found (getUsersMethod) ");
+                return false;
+            }
+
+        } catch (Exception $e) {
+            error_log("Get All Users method error: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    public function useradd($input = []){
+        try{
+
+            $query = "SELECT COUNT(1) FROM `$this->table` WHERE email = :email";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindValue(":email", $input["email"]);
+            $stmt->execute();
+            $count = $stmt->fetchColumn();
+
+            if($count > 0){
+                return [
+                    "success" => false,
+                    "status" => "failed",
+                    "message" => "User already exists with this email",
+                ];
+            }
+
+            $query = "INSERT INTO `$this->table` (`name`, `email`, `password`, `role`) VALUES(:name, :email, :password, :role)";
+            $stmt = $this->conn->prepare($query);
+
+            if (!$stmt) {
+                error_log("Statement failed (addUser method) : " . $this->conn->error);
+                return false;
+            }
+
+            if ($stmt->execute(
+                array(
+                    ":name" => $input['name'],
+                    ":email" => $input['email'],
+                    ":password" => md5($input['password']),
+                    ":role" => strtolower($input['role'])
+                )
+            )) {
+                return [
+                    "success" => true,
+                    "status" => "success",
+                    "message" => "User inserted successfully",
+                    "insert_id" => $this->conn->lastInsertId()
+                ];
+            } else {
+                error_log("🔺 User Add faied on Execution (getUsersMethod) ");
+                return [
+                    "success" => false,
+                    "status" => "failed",
+                    "message" => "Insert failed",
+                    "error" => $stmt->errorInfo()
+                ];
+            }
+        
+        }catch(Exception $e){
+            error_log("Add User method error: " . $e->getMessage());
+            return [
+                "success" => false,
+                "status" => "failed",
+                "message" => "Insert failed",
+                "error" => $e->getMessage()
+            ];
+        }
+    }
 }
 ?>

@@ -9,7 +9,229 @@ class Admin {
         $this->conn = $database->getConnection();
     }
 
+    // Add park status
+    public function addParkStatusModel(array $data, int $adminId): bool{
+        $sql = "
+            INSERT INTO `park_status` (`date`, `is_open`, `closure_reason`, `has_special_event`, `special_event_details`, `opening_time`, `closing_time`, `created_at`)
+            VALUES
+                (:date,
+                :is_open,
+                :closure_reason,
+                :has_event,
+                :event_details,
+                :opening_time,
+                :closing_time,
+                :created_at)
+        ";
+        $stmt = $this->conn->prepare($sql);
 
+        try {
+            $stmt->execute([
+                ':date'             => $data['date'],
+                ':is_open'          => (int)$data['is_open'],
+                ':closure_reason'   => $data['closure_reason'],
+                ':has_event'        => (int)$data['has_special_event'],
+                ':event_details'    => $data['special_event_details'],
+                ':opening_time'     => $data['opening_time'],
+                ':closing_time'     => $data['closing_time'],
+                ':created_at'       => date('Y-m-d H:i:s'),
+            ]);
+
+            return $stmt->rowCount() > 0;
+
+        } catch (PDOException $e) {
+            // 23000: integrity constraint violation (e.g. duplicate date)
+            if ($e->getCode() === '23000') {
+                throw new RuntimeException('Park status for this date already exists.');
+            }
+            error_log("[ParkStatusModel] Insert failed: " . $e->getMessage());
+            throw new RuntimeException('Could not add park status right now.');
+        }
+    }
+
+
+
+    // List park status model
+    public function listParkStatusModel(array $filters = []){
+        $sql = "
+            SELECT id, date, is_open, closure_reason, max_capacity, has_special_event, special_event_details, created_at, updated_at
+            FROM park_status
+        ";
+
+        $conds  = [];
+        $params = [];
+
+         // 1) date filter (exact match)
+        if (!empty($filters['date'])) {
+            $conds[]            = 'date = :date';
+            $params[':date']    = $filters['date'];
+        }
+
+        // 2) is_open filter (yes/no)
+        if (isset($filters['is_open'])) {
+            $conds[]                = 'is_open = :is_open';
+            $params[':is_open']     = (int)$filters['is_open'];
+        }
+
+        if (count($conds)) {
+            $sql .= ' WHERE ' . implode(' AND ', $conds);
+        }
+
+        $sql .= ' ORDER BY date DESC';
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->execute($params);
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
+    // Activate/Deactivate Offer pricing model
+    public function activateDeactivateOfferPriceModel($data, $adminId){
+
+        try {
+            $this->conn->beginTransaction();
+
+            $stmt = $this->conn->prepare(
+                'UPDATE `offer_pricing`
+                SET `active` = :active
+                WHERE `id` = :ref'
+            );
+            $stmt->bindValue(':active', $data['activate'], PDO::PARAM_INT);
+            $stmt->bindValue(':ref',    $data['ref'],      PDO::PARAM_INT);
+
+            // print_r($stmt);
+            // print_r($data);
+            // die();
+
+            $stmt->execute();
+
+            $affected = $stmt->rowCount();
+            $this->conn->commit();
+
+            if ($affected === 0) {
+                // nothing changed (maybe already in that state)
+                return false;
+            }
+            return true;
+
+        } catch (PDOException $e) {
+            if ($this->conn->inTransaction()) {
+                $this->conn->rollBack();
+            }
+            error_log("[OfferPriceModel] Update failed: " . $e->getMessage());
+            throw new RuntimeException("Could not update offer status right now.");
+        }
+    }
+
+    // List offer pricing model
+    public function listOfferPricingModel(array $filters = []){
+        $sql = "
+            SELECT id, date_from, date_to, adult_price, child_price, has_discount, discount_percentage, discount_reason, special_message, is_holiday, active, created_at, updated_at
+            FROM offer_pricing
+        ";
+
+        $conds  = [];
+        $params = [];
+
+        // 1) single-date filter
+        if (!empty($filters['date'])) {
+            $conds[]         = 'date_from <= :date AND date_to >= :date';
+            $params[':date'] = $filters['date'];
+        }
+
+        // 2) has_discount filter
+        if (isset($filters['has_discount'])) {
+            $conds[]                         = 'has_discount = :has_discount';
+            $params[':has_discount']         = (int)$filters['has_discount'];
+        }
+
+        // 3) is_holiday filter
+        if (isset($filters['is_holiday'])) {
+            $conds[]                         = 'is_holiday = :is_holiday';
+            $params[':is_holiday']           = (int)$filters['is_holiday'];
+        }
+
+        // 4) active filter
+        if (isset($filters['active'])) {
+            $conds[]                         = 'active = :active';
+            $params[':active']               = (int)$filters['active'];
+        }
+
+        if (count($conds)) {
+            $sql .= ' WHERE ' . implode(' AND ', $conds);
+        }
+
+        $sql .= ' ORDER BY date_from DESC';
+
+        $stmt = $this->conn->prepare($sql);
+
+        // print_r($stmt);
+        // print_r($params);
+        // die();
+        $stmt->execute($params);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
+    // Add daily price or offers
+    public function addOfferPriceModel(array $data, int $adminId){
+
+        $overlapSql = "
+            SELECT COUNT(*) 
+            FROM `offer_pricing`
+            WHERE `active` = 1
+            AND date_from <= :new_to
+            AND date_to   >= :new_from
+        ";
+        $stmt = $this->conn->prepare($overlapSql);
+        $stmt->execute([
+            ':new_from' => $data['date_from'],
+            ':new_to'   => $data['date_to'],
+        ]);
+        // print_r($stmt);
+        // print_r($data);
+        // die();
+        $count = (int)$stmt->fetchColumn();
+        if ($count > 0) {
+            throw new RuntimeException('Date range overlaps an existing active offer');
+        }
+        
+        $sql = "
+            INSERT INTO offer_pricing(date_from, date_to, adult_price ,child_price ,has_discount, discount_percentage, discount_reason, special_message, is_holiday, created_at)
+            VALUES
+            (:date_from
+            ,:date_to
+            ,:adult_price
+            ,:child_price
+            ,:has_discount
+            ,:discount_percentage
+            ,:discount_reason
+            ,:special_message
+            ,:is_holiday
+            ,:created_at
+            );
+        ";
+
+        $stmt = $this->conn->prepare($sql);
+
+        return $stmt->execute([
+            // ':date'               => $data['date_from'],
+            ':date_from'          => $data['date_from'],
+            ':date_to'            => $data['date_to'],
+            ':adult_price'        => (int)$data['adult_price'],
+            ':child_price'        => (int)$data['child_price'],
+            ':has_discount'       => (int)$data['has_discount'],
+            ':discount_percentage'=> (int)$data['discount_percentage'],
+            ':discount_reason'    => $data['discount_reason'],
+            ':special_message'    => $data['special_message'],
+            ':is_holiday'         => (int)$data['is_holiday'],
+            ':created_at'         => date('Y-m-d H:i:s')
+        ]);
+    }
+
+    // Get Base pricing
     public function getBasePriceModel(){
         $stmt = $this->conn->prepare("
             SELECT category, price
@@ -22,8 +244,13 @@ class Admin {
 
         return [
             'adult_price' => isset($rows['adult_price']) ? (int)$rows['adult_price'] : null,
-            'child_price' => isset($rows['child_price']) ? (int)$rows['child_price'] : null,
+            'childPrice' => isset($rows['child_price']) ? (int)$rows['child_price'] : null,
         ];
+
+        // return [
+        //     'adult_price' => isset($rows['adult_price']) ? (int)$rows['adult_price'] : null,
+        //     'child_price' => isset($rows['child_price']) ? (int)$rows['child_price'] : null,
+        // ];
     }
 
     // Update Base pricing
@@ -81,7 +308,6 @@ class Admin {
             throw $e;
         }
     }
-
 
     // Get dashboard statistics
     public function getDashboardStats() {

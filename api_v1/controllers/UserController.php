@@ -119,5 +119,133 @@ class UserController {
             ]);
         }
     }
+
+    public function userlist(){
+        /*
+        // pass this parameters for the condition only, on seach
+        // To get the user list no need to pass these parameter without parameters also works
+        {
+            "conditions" : {"name" : "Malen Basumatary","email" : "null","phone" : "null","is_active":"null","role":"null"},
+            "order-key" : "name",
+            "order-by" : "ASC"
+        }
+        */
+        
+        try{
+            $user_data = JWTMiddleware::verifyToken();
+            if (!$user_data) {
+                http_response_code(401);
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Unauthorized'
+                ]);
+                return;
+            }
+
+            $input = file_get_contents("php://input");
+            $input = json_decode($input, true);
+
+            $getusers = $this->user->getAllUsers($input);
+            if($getusers && is_array($getusers)){
+                http_response_code(200);
+                echo json_encode([
+                    'success' => true,
+                    'status' => 'success',
+                    'message' => 'Users Lists Found',
+                    'data' => $getusers
+                ]);
+            }else{
+                http_response_code(404);
+                echo json_encode([
+                    'success' => false,
+                    'status' => 'failed',
+                    'message' => 'No users found',
+                    'data' => []
+                ]);
+            }
+        } catch (Exception $e) {
+            error_log("Get Users Error: " . $e->getMessage());
+            http_response_code(500);
+            echo json_encode([
+                'success' => false,
+                'message' => 'Internal server error'
+            ]);
+        }
+    }
+
+    public function useradd(){
+        //  {"name": "asdfafd","email": "asdfsafasdf","roles":"Ticket Scanner"}
+        try{
+
+            $inp_val = [
+                "name" => "User Name",
+                "email" => "Email",
+                "password" => "User Password",
+                "role" => "User Role"
+            ];
+
+            $user_data = JWTMiddleware::verifyToken();
+            if (!$user_data) {
+                http_response_code(401);
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Unauthorized'
+                ]);
+                return;
+            }
+
+            $input = file_get_contents("php://input");
+            $input = json_decode($input, true);
+
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                http_response_code(400);
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Invalid JSON data'
+                ]);
+                return;
+            }
+
+            $sanitized = [];
+
+            foreach ($inp_val as $key => $label) {
+                if (empty($input[$key])) {
+                    $errors[] = "$label is required.";
+                }else {
+                    $sanitized[$key] =  trim(strip_tags($input[$key]));  
+                }
+            }
+
+            if (!filter_var($input['email'], FILTER_VALIDATE_EMAIL)) {
+                $errors[] = "A valid email is required.";
+            }
+
+            if (!empty($errors)) {
+                http_response_code(422);
+                error_log("❗ " .  json_encode($errors));
+                echo json_encode([
+                    "success" => false,
+                    "message" => "Validation failed",
+                    "errors" => $errors
+                ]);
+                return;
+            }
+
+            $addUser = $this->user->userAdd($sanitized);
+
+            // print_r($addUser);
+
+            echo json_encode($addUser);
+            // return;
+
+        }catch (Exception $e) {
+            error_log("A Users Error: " . $e->getMessage());
+            http_response_code(500);
+            echo json_encode([
+                'success' => false,
+                'message' => 'Internal server error'
+            ]);
+        }
+    }
 }
 ?>

@@ -22,7 +22,7 @@ echo json_encode(
                 "date" => "27-06-2025",
                 "type" => "payment",
                 "amount" => "600",
-                "status" => "completed",
+                "status" => "paid",
             ]
         ]
     ]

@@ -122,13 +122,13 @@ class UserController {
 
     public function userlist(){
         /*
-        // pass this parameters for the condition only, on seach
-        // To get the user list no need to pass these parameter without parameters also works
-        {
-            "conditions" : {"name" : "Malen Basumatary","email" : "null","phone" : "null","is_active":"null","role":"null"},
-            "order-key" : "name",
-            "order-by" : "ASC"
-        }
+            // pass this parameters for the condition only, on seach
+            // To get the user list no need to pass these parameter without parameters also works
+            {
+                "conditions" : {"name" : "Malen Basumatary","email" : "null","phone" : "null","is_active":"null","role":"null"},
+                "order-key" : "name",
+                "order-by" : "ASC"
+            }
         */
         
         try{

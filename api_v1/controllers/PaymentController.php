@@ -35,7 +35,7 @@ class PaymentController {
             // }
 
             $body = json_decode(file_get_contents('php://input'), true) ?? [];
-            if (empty($body['id']) || empty($body['transactionid'])) {
+            if (empty($body['id']) || empty($body['transactionid']) || empty($body['phone_no'])) {
                 http_response_code(400);
                 header('Content-Type: application/json');
                 echo json_encode([
@@ -44,10 +44,11 @@ class PaymentController {
                 ]);
                 return;
             }
-            
+
             $data = [
                 'id'             => trim($body['id']),
                 'transactionid'  => trim($body['transactionid']),
+                'phone_no'       => trim($body['phone_no'])
             ];
 
             $apiResponse = $this->payment->recheckTransactionModel($data);

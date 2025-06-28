@@ -11,9 +11,14 @@ class BookingController {
 
 
     public function bookinglist(){
+        /*{
+            "conditions" : {"amount":"amounthere", "book-by":"booked-by", "booking-date":"updated_at", "sale_date":"sale date", "visited" :"0/1"}
+            ,"order-key" : "name"
+            ,"order-by" : "ASC"
+        }*/
+
         try{
-            // print_r("Hello here");
-            // exit();
+
             $user_data = JWTMiddleware::verifyToken();
             if (!$user_data) {
                 http_response_code(401);
@@ -25,9 +30,9 @@ class BookingController {
             }
 
             $input = file_get_contents("php://input");
-            $input = json_decode($input, true);
 
-            $this->booking->bookingList();
+            $input = json_decode($input, true);
+            echo json_encode($this->booking->bookingList($input));
 
         } catch (Exception $e) {
             error_log("Pricing API Error: " . $e->getMessage());

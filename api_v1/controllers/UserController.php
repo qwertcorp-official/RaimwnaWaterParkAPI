@@ -2,10 +2,12 @@
 require_once 'models/User.php';
 require_once 'middleware/JWTMiddleware.php';
 
-class UserController {
+class UserController
+{
     private $user;
 
-    public function __construct() {
+    public function __construct()
+    {
         try {
             $this->user = new User();
         } catch (Exception $e) {
@@ -19,11 +21,12 @@ class UserController {
         }
     }
 
-    public function getProfile() {
+    public function getProfile()
+    {
         try {
             // Verify JWT token
             $user_data = JWTMiddleware::verifyToken();
-            
+
             if (!$user_data) {
                 http_response_code(401);
                 echo json_encode([
@@ -35,10 +38,10 @@ class UserController {
 
             // Get fresh user data
             $fresh_user_data = $this->user->getUserById($user_data->id);
-            
+
             if ($fresh_user_data) {
                 $formatted_user = $this->user->formatUserData($fresh_user_data);
-                
+
                 http_response_code(200);
                 echo json_encode([
                     'success' => true,
@@ -52,7 +55,6 @@ class UserController {
                     'message' => 'User not found'
                 ]);
             }
-
         } catch (Exception $e) {
             error_log("Get profile error: " . $e->getMessage());
             http_response_code(500);
@@ -63,11 +65,12 @@ class UserController {
         }
     }
 
-    public function updateProfile() {
+    public function updateProfile()
+    {
         try {
             // Verify JWT token
             $user_data = JWTMiddleware::verifyToken();
-            
+
             if (!$user_data) {
                 http_response_code(401);
                 echo json_encode([
@@ -79,7 +82,7 @@ class UserController {
 
             $input = file_get_contents("php://input");
             $data = json_decode($input, true);
-            
+
             if (json_last_error() !== JSON_ERROR_NONE) {
                 http_response_code(400);
                 echo json_encode([
@@ -88,14 +91,14 @@ class UserController {
                 ]);
                 return;
             }
-            
+
             // Update profile
             $update_success = $this->user->updateProfile($user_data->id, $data);
-            
+
             if ($update_success) {
                 $updated_user_data = $this->user->getUserById($user_data->id);
                 $formatted_user = $this->user->formatUserData($updated_user_data);
-                
+
                 http_response_code(200);
                 echo json_encode([
                     'success' => true,
@@ -109,7 +112,6 @@ class UserController {
                     'message' => 'Failed to update profile'
                 ]);
             }
-
         } catch (Exception $e) {
             error_log("Update profile error: " . $e->getMessage());
             http_response_code(500);
@@ -120,7 +122,8 @@ class UserController {
         }
     }
 
-    public function userlist(){
+    public function userlist()
+    {
         /*
         // pass this parameters for the condition only, on seach
         // To get the user list no need to pass these parameter without parameters also works
@@ -130,8 +133,8 @@ class UserController {
             "order-by" : "ASC"
         }
         */
-        
-        try{
+
+        try {
             $user_data = JWTMiddleware::verifyToken();
             if (!$user_data) {
                 http_response_code(401);
@@ -146,7 +149,7 @@ class UserController {
             $input = json_decode($input, true);
 
             $getusers = $this->user->getAllUsers($input);
-            if($getusers && is_array($getusers)){
+            if ($getusers && is_array($getusers)) {
                 http_response_code(200);
                 echo json_encode([
                     'success' => true,
@@ -154,7 +157,7 @@ class UserController {
                     'message' => 'Users Lists Found',
                     'data' => $getusers
                 ]);
-            }else{
+            } else {
                 http_response_code(404);
                 echo json_encode([
                     'success' => false,
@@ -173,16 +176,16 @@ class UserController {
         }
     }
 
-    public function useradd(){
+    public function useradd()
+    {
         //  accespts this parameters must proviide these keys
         //  {"name": "asdfafd","email": "asdfsafasdf","roles":"Ticket Scanner"}
-        try{
+        try {
 
             $inp_val = [
                 "name" => "User Name",
-                "email" => "Email",
-                "password" => "User Password",
-                "role" => "User Role"
+                "email" => "Email", 
+                "roles" => "User Role"
             ];
 
             $user_data = JWTMiddleware::verifyToken();
@@ -197,7 +200,8 @@ class UserController {
 
             $input = file_get_contents("php://input");
             $input = json_decode($input, true);
-
+            print_r($input);
+            // die();
             if (json_last_error() !== JSON_ERROR_NONE) {
                 http_response_code(400);
                 echo json_encode([
@@ -206,20 +210,44 @@ class UserController {
                 ]);
                 return;
             }
+             
+            $input = filter_var_array($input, [
+                "email" =>  FILTER_VALIDATE_EMAIL ,
+                "name" => ["filter"=>FILTER_CALLBACK, "options"=> function ($n) {
+                    $n = strip_tags(trim(preg_replace('/\s{2,}/', ' ', $n)));
+                    return empty($n) ? false : $n;
+                }],
+                "roles" => [FILTER_DEFAULT]
+                
+                // [FILTER_CALLBACK, function ($roles) { 
+                //     echo "roles";
+                //     print_r($roles);
+                //     return $roles;
+                //     // $roles = array_map(function ($r) {
+                //     //     $r = trim(preg_replace('/\s{2,}/', ' ', $r));
+                //     //     return $r;
+                //     // }, $roles);
+                //     // print_r($roles);if (array_filter($roles, function ($r) {
+                //     //     return empty($r);
+                //     // })) return "";
+                //     // return json_encode($roles);
+                // } ]
+            ]); 
 
-            $sanitized = [];
+print_r($input);
+die();
+
+            // $sanitized = [];
 
             foreach ($inp_val as $key => $label) {
                 if (empty($input[$key])) {
                     $errors[] = "$label is required.";
-                }else {
-                    $sanitized[$key] =  trim(strip_tags($input[$key]));  
-                }
+                }  
             }
 
-            if (!filter_var($input['email'], FILTER_VALIDATE_EMAIL)) {
-                $errors[] = "A valid email is required.";
-            }
+            // if (!filter_var($input['email'], FILTER_VALIDATE_EMAIL)) {
+            //     $errors[] = "A valid email is required.";
+            // }
 
             if (!empty($errors)) {
                 http_response_code(422);
@@ -232,14 +260,14 @@ class UserController {
                 return;
             }
 
-            $addUser = $this->user->userAdd($sanitized);
+            $addUser = $this->user->userAdd($input);
 
             // print_r($addUser);
 
             echo json_encode($addUser);
             // return;
 
-        }catch (Exception $e) {
+        } catch (Exception $e) {
             error_log("A Users Error: " . $e->getMessage());
             http_response_code(500);
             echo json_encode([
@@ -393,7 +421,8 @@ class UserController {
         }
     }*/
 
-    public function userupdate() {
+    public function userupdate()
+    {
         // Accepts: {"update_id": "1", "update": {"name": "Updated Name", "email": "updated@example.com", "password":"ajlsdfnlsdjfwoeh", "role": "Admin"}}
         // for roll pass these values : 'user', 'admin', 'ticket scanner' or sql error may come
         try {
@@ -459,7 +488,6 @@ class UserController {
 
             $result = $this->user->userUpdate($sanitized);
             echo json_encode($result);
-
         } catch (Exception $e) {
             error_log("User Update Error: " . $e->getMessage());
             http_response_code(500);
@@ -467,7 +495,8 @@ class UserController {
         }
     }
 
-    public function userdelete(){
+    public function userdelete()
+    {
         // {"delete_id" : "1"}
 
         try {
@@ -485,7 +514,7 @@ class UserController {
                 return;
             }
 
-            if(!isset($input['delete_id']) || empty($input['delete_id']) || !is_numeric($input['delete_id'])) {
+            if (!isset($input['delete_id']) || empty($input['delete_id']) || !is_numeric($input['delete_id'])) {
                 http_response_code(422);
                 echo json_encode(['success' => false, 'message' => 'A valid update ID is required.']);
                 return;
@@ -493,8 +522,6 @@ class UserController {
 
             $result = $this->user->userDelete($input['delete_id']);
             echo json_encode($result);
-
-
         } catch (Exception $e) {
             error_log("User Delete Error: " . $e->getMessage());
             http_response_code(500);
@@ -502,8 +529,9 @@ class UserController {
         }
     }
 
-    public function roleList(){
-        try{
+    public function roleList()
+    {
+        try {
             // $user_data = JWTMiddleware::verifyToken();
             // if (!$user_data) {
             //     http_response_code(401);
@@ -519,7 +547,7 @@ class UserController {
             $userrole = [
                 "success" => true,
                 "status" => "success",
-                "message" => "User Role List", 
+                "message" => "User Role List",
                 "data" => []
             ];
             echo json_encode($userrole);
@@ -533,8 +561,9 @@ class UserController {
         }
     }
 
-    public function roleUpdate(){
-        try{
+    public function roleUpdate()
+    {
+        try {
             // $user_data = JWTMiddleware::verifyToken();
             // if (!$user_data) {
             //     http_response_code(401);
@@ -548,11 +577,10 @@ class UserController {
             $result = [
                 "success" => true,
                 "status" => "success",
-                "message" => "Role Updated Successfully", 
+                "message" => "Role Updated Successfully",
                 "data" => []
             ];
             echo json_encode($result);
-            
         } catch (Exception $e) {
             error_log("Update User Error: " . $e->getMessage());
             http_response_code(500);
@@ -563,8 +591,9 @@ class UserController {
         }
     }
 
-    public function roleAdd(){
-        try{
+    public function roleAdd()
+    {
+        try {
             // $user_data = JWTMiddleware::verifyToken();
             // if (!$user_data) {
             //     http_response_code(401);
@@ -578,11 +607,10 @@ class UserController {
             $result = [
                 "success" => true,
                 "status" => "success",
-                "message" => "Role Added Successfully", 
+                "message" => "Role Added Successfully",
                 "data" => []
             ];
             echo json_encode($result);
-            
         } catch (Exception $e) {
             error_log("Add User Error: " . $e->getMessage());
             http_response_code(500);
@@ -593,8 +621,9 @@ class UserController {
         }
     }
 
-    public function roleDelete(){
-        try{
+    public function roleDelete()
+    {
+        try {
             // $user_data = JWTMiddleware::verifyToken();
             // if (!$user_data) {
             //     http_response_code(401);
@@ -608,11 +637,10 @@ class UserController {
             $result = [
                 "success" => true,
                 "status" => "success",
-                "message" => "Role Deleted Successfully", 
+                "message" => "Role Deleted Successfully",
                 "data" => []
             ];
             echo json_encode($result);
-            
         } catch (Exception $e) {
             error_log("Delete User Error: " . $e->getMessage());
             http_response_code(500);
@@ -623,4 +651,3 @@ class UserController {
         }
     }
 }
-?>

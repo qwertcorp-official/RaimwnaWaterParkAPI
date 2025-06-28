@@ -424,12 +424,12 @@ class User {
                 error_log("Statement failed (addUser method) : " . $this->conn->error);
                 return false;
             }
-
+            $newPassword = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 8);
             if ($stmt->execute(
                 array(
                     ":name" => $input['name'],
                     ":email" => $input['email'],
-                    ":password" => md5($input['password']),
+                    ":password" => password_hash($newPassword, PASSWORD_DEFAULT) ,
                     ":role" => strtolower($input['role'])
                 )
             )) {
@@ -440,7 +440,7 @@ class User {
                     "insert_id" => $this->conn->lastInsertId()
                 ];
             } else {
-                error_log("🔺 User Add faied on Execution (getUsersMethod) ");
+                error_log("User Add failed on Execution (getUsersMethod) ");
                 return [
                     "success" => false,
                     "status" => "failed",

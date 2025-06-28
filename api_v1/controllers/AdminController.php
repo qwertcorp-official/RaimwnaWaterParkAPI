@@ -35,6 +35,159 @@ class AdminController {
         throw new \Exception("Unrecognized date format: $input");
     }
 
+    //Close park
+    public function closePark() {
+        try {
+            $admin = $this->verifyAdmin();
+
+            $body = json_decode(file_get_contents('php://input'), true) ?? [];
+
+            if(!isset($body['date']) || $body['date'] == null || empty($body['date'])) {
+                http_response_code(400);
+                header('Content-Type: application/json');
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Date field is empty',
+                ]);
+                return;
+            }
+
+            if(!isset($body['reason']) || $body['reason'] == null || empty($body['reason'])) {
+                http_response_code(400);
+                header('Content-Type: application/json');
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Reason field is empty',
+                ]);
+                return;
+            }
+
+            $data["date"] = $this->normalizeDate($body['date']) ?? null;
+
+            $data['reason'] = preg_replace('/\s+/', ' ', trim($body['reason']));
+            
+            if (!$data) {
+                http_response_code(400);
+                header('Content-Type: application/json');
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Invalid date format',
+                ]);
+                return;
+            }
+
+            $this->admin->closeParkModel($data, $admin['id']);
+
+            echo json_encode([
+                'success' => true,
+                'status' => 'success',
+                'message' => 'Park has been closed',
+            ]);
+        } catch (\InvalidArgumentException $e) {
+            // Missing/invalid input
+            http_response_code(400);
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => false,
+                'message' => $e->getMessage(),
+            ]);
+
+        } catch (\RuntimeException $e) {
+            // No matching record or model-level error
+            http_response_code(404);
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => false,
+                'message' => $e->getMessage(),
+            ]);
+
+        } catch (\Exception $e) {
+            // Unexpected error
+            error_log('Error closing park: ' . $e->getMessage());
+            http_response_code(500);
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => false,
+                'message' => 'Unable to close park status at this time.',
+            ]);
+        }
+    }
+
+    // Reopen closed park
+    public function reopenClosedPark() {
+        try {
+            $admin = $this->verifyAdmin();
+
+            $body = json_decode(file_get_contents('php://input'), true) ?? [];
+
+            if(!isset($body['date']) || $body['date'] == null || empty($body['date'])) {
+                http_response_code(400);
+                header('Content-Type: application/json');
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Date field is empty',
+                ]);
+                return;
+            }
+            $data["date"] = $this->normalizeDate($body['date']) ?? null;
+
+            $data["reason"] = $body['reason'] ?? null;
+            
+            if (!$data) {
+                http_response_code(400);
+                header('Content-Type: application/json');
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Invalid date format',
+                ]);
+                return;
+            }
+
+            $this->admin->reopenClosedParkModel($data, $admin['id']);
+
+            echo json_encode([
+                'success' => true,
+                'status' => 'success',
+                'message' => 'Park has been reopened',
+            ]);
+        } catch (\InvalidArgumentException $e) {
+            // Model threw for missing/invalid input
+            http_response_code(400);
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => false,
+                'message' => $e->getMessage(),
+            ]);
+
+        } catch (\RuntimeException $e) {
+            // Model threw when no record found or other logical error
+            http_response_code(404);
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => false,
+                'message' => $e->getMessage(),
+            ]);
+
+        } catch (\Exception $e) {
+            // Unexpected errors
+            error_log('Error reopening park: ' . $e->getMessage());
+            http_response_code(500);
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => false,
+                'message' => 'Unable to reopen park status at this time.',
+            ]);
+        }
+        
+        // catch (Exception $e) {
+        //     http_response_code(500);
+        //     echo json_encode([
+        //         'success' => false,
+        //         'message' => 'Server error: ' . $e->getMessage(),
+        //     ]);
+        // }
+    }
+
     // Add park status
     public function addParkStatus(){
         try {
@@ -100,6 +253,7 @@ class AdminController {
             header('Content-Type: application/json');
             echo json_encode([
                 'success' => true,
+                'status' => 'success',
                 'message' => 'Park status added successfully'
             ]);
 
@@ -112,7 +266,6 @@ class AdminController {
             ]);
         }
     }
-
 
     // Get list of park status
     public function listParkStatus(){
@@ -139,6 +292,7 @@ class AdminController {
             header('Content-Type: application/json');
             echo json_encode([
                 'success' => true,
+                'status' => 'success',
                 'data'    => $rows
             ]);
         } catch (Exception $e) {
@@ -176,6 +330,7 @@ class AdminController {
             if ($updated) {
                 echo json_encode([
                     'success' => true,
+                    'status' => 'success',
                     'message' => 'Offer status updated successfully',
                 ]);
             } else {
@@ -233,6 +388,7 @@ class AdminController {
             header('Content-Type: application/json');
             echo json_encode([
                 'success' => true,
+                'status' => 'success',
                 'data'    => $rows
             ]);
         } catch (Exception $e) {
@@ -299,6 +455,7 @@ class AdminController {
             if ($result) {
                 echo json_encode([
                     'success' => true,
+                    'status' => 'success',
                     'message' => 'Offer Price updated successfully'
                 ]);
             } else {
@@ -323,6 +480,7 @@ class AdminController {
 
             echo json_encode([
                 'success' => true,
+                'status' => 'success',
                 'data'    => $prices
             ]);
         } catch (Exception $e) {
@@ -363,6 +521,7 @@ class AdminController {
             if ($result) {
                 echo json_encode([
                     'success' => true,
+                    'status' => 'success',
                     'message' => 'Base Price updated successfully'
                 ]);
             } else {

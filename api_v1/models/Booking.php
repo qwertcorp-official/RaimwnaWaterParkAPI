@@ -11,6 +11,12 @@ class Booking {
         $this->conn = $database->getConnection();
     }
 
+    public function bookingList(){
+
+        
+
+    }
+
     // Get pricing for a specific date
     public function getPricingForDate($date) {
         try {

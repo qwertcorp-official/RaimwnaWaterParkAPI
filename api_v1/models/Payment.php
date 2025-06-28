@@ -1,0 +1,73 @@
+<?php
+require_once 'config/database.php';
+require_once 'config/conf.php';
+
+class Payment {
+    private $conn;
+    private $table = 'payments';
+
+    public function __construct() {
+        try {
+            $database = new Database();
+            $this->conn = $database->getConnection();
+            
+            if (!$this->conn) {
+                throw new Exception("Database connection failed");
+            }
+        } catch (Exception $e) {
+            error_log("Payment model constructor error: " . $e->getMessage());
+            throw $e;
+        }
+    }
+
+    // In your Model class
+
+    public function recheckTransactionModel(array $data): array{
+        if (empty($data['id']) || empty($data['transactionid'])) {
+            throw new \InvalidArgumentException('Both id and transactionid are required.');
+        }
+
+        $payload = [
+            'phone_no'       => '7987744644',
+            'client_id'      => QC_PAY['CLIENTID'],
+            'transaction_id' => $data['id'],
+            'transaction_no' => $data['transactionid'],
+        ];
+
+        $payload['hash'] = hash('sha256', 
+            $payload['transaction_no'] . '|' .
+            $payload['transaction_id']   . '|' .
+            QC_PAY['CLIENTID']           . '|' .
+            $payload['phone_no']         . '|' .
+            $payload['transaction_no']
+        );
+
+        $ch = curl_init(QC_PAY['RECHECK_URL']);
+        curl_setopt_array($ch, [
+            CURLOPT_POST           => true,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HTTPHEADER     => [
+                'Content-Type: application/json',
+                'Authentication: ' . QC_PAY['API_TOKEN'],
+            ],
+            CURLOPT_POSTFIELDS     => json_encode($payload),
+        ]);
+        $resp = curl_exec($ch);
+        if ($err = curl_error($ch)) {
+            curl_close($ch);
+            throw new \RuntimeException("cURL error: $err");
+        }
+        curl_close($ch);
+
+        $decoded = json_decode($resp, true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new \RuntimeException('Invalid JSON from payment API.');
+        }
+
+        return $decoded;
+    }
+
+
+
+}
+?>

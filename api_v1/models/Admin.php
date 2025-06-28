@@ -9,6 +9,91 @@ class Admin {
         $this->conn = $database->getConnection();
     }
 
+    // Close park
+    public function closeParkModel(array $data, int $adminId){
+        if (empty($data['date'])) {
+            throw new InvalidArgumentException('Date is required to close park status.');
+        }
+       
+        $sql = "
+            UPDATE `park_status`
+            SET 
+                `is_open` = 0,
+                `closure_reason` = :reason
+            WHERE 
+                `is_open` = 1
+                AND `date` = :date
+        ";        
+
+        $params = [
+            ':date' => $data['date'],
+            ':reason' => $data['reason'] ?? null,
+        ];
+
+        try {
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($params);
+
+            if ($stmt->rowCount() === 0) {
+                throw new RuntimeException("No open record found for date {$data['date']}.");
+            }
+
+            return true;
+        } catch (Exception $e) {
+            // throw new RuntimeException("Unable to close park status at this time.");
+            throw new RuntimeException($e->getMessage());
+        }
+    }
+
+    // Reopen closed park
+    public function reopenClosedParkModel(array $data, int $adminId){
+        if (empty($data['date'])) {
+            throw new InvalidArgumentException('Date is required to reopen park status.');
+        }
+
+        $params = [
+            ':date' => $data['date'],
+        ];
+
+        if (!empty($data['reason'])) {
+            $sql = "
+                UPDATE `park_status`
+                SET 
+                    `is_open` = 1,
+                    `closure_reason` = :reason
+                WHERE 
+                    `is_open` = 0
+                    AND `date` = :date
+            ";
+            $params[':reason'] = $data['reason'];
+        } else {
+            $sql = "
+                UPDATE `park_status`
+                SET 
+                    `is_open` = 1
+                WHERE 
+                    `is_open` = 0
+                    AND `date` = :date
+            ";
+        }
+
+        try {
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($params);
+
+            if ($stmt->rowCount() === 0) {
+                throw new RuntimeException("No closed record found for date {$data['date']}.");
+            }
+
+            return true;
+
+        } catch (\PDOException $e) {
+            error_log('DB error in reopenClosedParkModel: ' . $e->getMessage());
+
+            throw new RuntimeException('Unable to reopen park status at this time.');
+        }
+    }
+
     // Add park status
     public function addParkStatusModel(array $data, int $adminId): bool{
         $sql = "
@@ -48,8 +133,6 @@ class Admin {
             throw new RuntimeException('Could not add park status right now.');
         }
     }
-
-
 
     // List park status model
     public function listParkStatusModel(array $filters = []){

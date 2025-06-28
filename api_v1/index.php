@@ -155,6 +155,12 @@ try {
     require_once 'controllers/AdminController.php';
     error_log("✓ AdminController.php included");
 
+    require_once 'controllers/RoleController.php';
+    error_log("✓ RoleController.php included");
+
+    require_once 'controllers/PaymentController.php';
+    error_log("✓ PaymentController.php included");
+
     require_once 'middleware/JWTMiddleware.php';
     error_log("✓ JWTMiddleware.php included");
 
@@ -217,6 +223,8 @@ try {
     $authController = new AuthController();
     $adminController = new AdminController();
     $userController = new UserController();
+    $roleController = new RoleController();
+    $paymentController = new PaymentController();
     error_log("✓ AuthController initialized");
 } catch (Exception $e) {
     error_log("Controller initialization error: " . $e->getMessage());
@@ -231,6 +239,41 @@ try {
 
     switch ($request_uri) {
 
+        // Role routes
+        case '/role/list':
+            if ($request_method == 'POST') {
+                error_log("Calling role list on admin control...");
+                $roleController->roleList();
+            } else {
+                sendError('Method not allowed for /role/list', 405);
+            }
+            break;
+        case '/role/add':
+            if ($request_method == 'POST') {
+                error_log("Calling role add on admin control...");
+                $roleController->roleAdd();
+            } else {
+                sendError('Method not allowed for /role/add', 405);
+            }
+            break;
+        case '/role/update':
+            if ($request_method == 'POST') {
+                error_log("Calling role update on admin control...");
+                $roleController->roleUpdate();
+            } else {
+                sendError('Method not allowed for /role/update', 405);
+            }
+            break;
+        case '/role/delete':
+            if ($request_method == 'POST') {
+                error_log("Calling role delete on admin control...");
+                $roleController->roleDelete();
+            } else {
+                sendError('Method not allowed for /role/delete', 405);
+            }
+            break;
+
+        // User routes
         case '/user/list':
             if ($request_method == 'POST') {
                 if ($request_method == 'POST') {
@@ -251,6 +294,40 @@ try {
                 }
             }
             break;
+        case '/user/update':
+            if ($request_method == 'POST') {
+                if ($request_method == 'POST') {
+                    error_log("Calling user update on user control...");
+                    $userController->userupdate();
+                } else {
+                    sendError('Method not allowed for /user/update', 405);
+                }
+            }
+            break;
+        case '/user/delete':
+            if ($request_method == 'POST') {
+                if ($request_method == 'POST') {
+                    error_log("Calling user delete on user control...");
+                    $userController->userdelete();
+                } else {
+                    sendError('Method not allowed for /user/delete', 405);
+                }
+            }
+            break;
+
+        case '/bookings/list':
+            if ($request_method == 'POST') {
+                if ($bookingController) {
+                    error_log("Calling get user booking list method...");
+                    $bookingController->bookinglist();
+                } else {
+                    sendError('Booking list functionality not available', 503);
+                }
+            } else {
+                sendError('Method not allowed for /bookings/list', 405);
+            }
+            break;
+        
 
 
         // Authentication routes
@@ -506,8 +583,36 @@ try {
             }
             break;
 
+            
+        // Payment / Recheck routes
+
+        case '/transaction/status':
+            if ($request_method == 'POST') {
+                error_log("Calling /transaction/status method...");
+                $paymentController->recheckTransaction();
+            } else {
+                sendError('Method not allowed for /transaction/status', 405);  
+            }
+            break;
+
         // Admin Routes
 
+        case '/park/status/close':
+            if ($request_method == 'POST') {
+                error_log("Calling /park/status/close method...");
+                $adminController->closePark();
+            } else {
+                sendError('Method not allowed for /park/status/close', 405);
+            }
+            break;
+        case '/park/status/reopen':
+            if ($request_method == 'POST') {
+                error_log("Calling /park/status/reopen method...");
+                $adminController->reopenClosedPark();
+            } else {
+                sendError('Method not allowed for /park/status/reopen', 405);
+            }
+            break;
         case '/park/status/add':
             if ($request_method == 'POST') {
                 error_log("Calling /park/status/add method...");

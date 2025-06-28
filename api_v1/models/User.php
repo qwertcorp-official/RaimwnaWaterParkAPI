@@ -354,8 +354,12 @@ class User {
                 }
             }
 
+            if(empty($where)){
+                $query .= " WHERE deleted = 0";
+            }
+
             if (!empty($where)) {
-                $query .= " WHERE " . implode(" AND ", array: $where);
+                $query .= " WHERE " . implode(" AND ", array: $where) . " AND deleted = 0";
             }
 
             if (!empty($input['order-key']) && !empty($input['order-by'])) {
@@ -455,5 +459,207 @@ class User {
             ];
         }
     }
+
+    /*public function userUpdate($input = []){
+
+        $query = "SELECT COUNT(1) FROM `$this->table` WHERE id = :ref";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindValue(":ref", $input["id"]);
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+
+        if(!$count){
+            return [
+                "success" => false,
+                "status" => "failed",
+                "message" => "User do not exists !",
+            ];
+        }
+
+        if(isset($input["email"])){
+            $query = "SELECT COUNT(1) FROM `$this->table` WHERE email = :email";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindValue(":email", $input["id"]);
+            $stmt->execute();
+            $count = $stmt->fetchColumn();
+    
+            if(!$count){
+                return [
+                    "success" => false,
+                    "status" => "failed",
+                    "message" => "Email Already exists !",
+                ];
+            }
+        }
+
+
+        // check if name, email, roll any exists if any of these doesnot exists exept id then return 
+        // if exists any of them or allof them then upade
+
+
+        
+
+        return [
+            "success" => false,
+            "message" => "Okay"
+        ];
+    }*/
+
+    public function userUpdate($input = []) {
+        try{
+            // Step 1: Check if user exists
+            $query = "SELECT COUNT(1) FROM `$this->table` WHERE id = :ref";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindValue(":ref", $input["id"]);
+            $stmt->execute();
+            $count = $stmt->fetchColumn();
+
+            if (!$count) {
+                return [
+                    "success" => false,
+                    "status" => "failed",
+                    "message" => "User does not exist!"
+                ];
+            }
+
+            // Step 2: Check for email uniqueness
+            if (isset($input["email"])) {
+                $query = "SELECT COUNT(1) FROM `$this->table` WHERE email = :email";
+                $stmt = $this->conn->prepare($query);
+                $stmt->bindValue(":email", $input["email"]);
+                $stmt->execute();
+                $emailCount = $stmt->fetchColumn();
+
+                if ($emailCount > 0) {
+                    return [
+                        "success" => false,
+                        "status" => "failed",
+                        "message" => "Email already exists!"
+                    ];
+                }
+            }
+
+            // Step 3: Prepare update fields
+            $updatable = ["name", "email", "password", "role"];
+            $updateParts = [];
+            $params = [];
+
+            foreach ($updatable as $field) {
+                if (isset($input[$field])) {
+                    $updateParts[] = "`$field` = :$field";
+                    $params[":$field"] = $input[$field];
+                }
+            }
+
+            if (empty($updateParts)) {
+                return [
+                    "success" => false,
+                    "status" => "failed",
+                    "message" => "Nothing to update!"
+                ];
+            }
+
+
+            // Step 4: Perform update
+            $updateSQL = "UPDATE `$this->table` SET " . implode(", ", $updateParts) . ", updated_at = NOW() WHERE id = :id";
+            $params[":id"] = $input["id"];
+
+            $stmt = $this->conn->prepare($updateSQL);
+
+            if (!$stmt) {
+                error_log("Statement failed (addUser method) : " . $this->conn->error);
+                return false;
+            }
+
+            $success = $stmt->execute($params);
+
+            if ($success) {
+                return [
+                    "success" => true,
+                    "status" => "ok",
+                    "message" => "User updated successfully"
+                ];
+            } else {
+                error_log("🔺 User update faied on Execution (userUpdate method) ");
+                return [
+                    "success" => false,
+                    "status" => "failed",
+                    "message" => "Update failed"
+                ];
+            }
+        }
+    
+        catch(Exception $e){
+            error_log("Update User method error: " . $e->getMessage());
+            return [
+                "success" => false,
+                "status" => "failed",
+                "message" => "Update failed",
+                "error" => $e->getMessage()
+            ];
+        }
+    }
+
+    public function userDelete($input) {
+        try {
+            $userId = intval($input);
+
+            // Step 1: Check if user exists and whether already deleted
+            $query = "SELECT deleted FROM `$this->table` WHERE id = :ref";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindValue(":ref", $userId);
+            $stmt->execute();
+
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if (!$user) {
+                return [
+                    "success" => false,
+                    "status" => "failed",
+                    "message" => "User does not exist!"
+                ];
+            }
+
+            if ((int)$user['deleted'] === 1) {
+                return [
+                    "success" => false,
+                    "status" => "failed",
+                    "message" => "User already deleted!"
+                ];
+            }
+
+            // Step 2: Soft delete the user
+            $query = "UPDATE `$this->table` SET deleted = :deleted, deleted_on = NOW() WHERE id = :ref";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindValue(":deleted", 1);
+            $stmt->bindValue(":ref", $userId);
+
+            if ($stmt->execute()) {
+                return [
+                    "success" => true,
+                    "status" => "success",
+                    "message" => "User deleted successfully"
+                ];
+            } else {
+                error_log("❌ User delete failed during execution");
+                return [
+                    "success" => false,
+                    "status" => "failed",
+                    "message" => "Delete failed",
+                    "error" => $stmt->errorInfo()
+                ];
+            }
+
+        } catch (Exception $e) {
+            error_log("❌ Delete User error: " . $e->getMessage());
+            return [
+                "success" => false,
+                "status" => "failed",
+                "message" => "Unexpected server error",
+                "error" => $e->getMessage()
+            ];
+        }
+    }
+
 }
 ?>

@@ -8115,3 +8115,1654 @@ Stack trace:
 [27-Jun-2025 11:25:05 UTC] Calling user add on user control...
 [27-Jun-2025 11:25:05 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
 [27-Jun-2025 11:25:05 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[27-Jun-2025 14:18:28 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 14:18:28 UTC] === NEW REQUEST ===
+[27-Jun-2025 14:18:28 UTC] Method: GET
+[27-Jun-2025 14:18:28 UTC] URI: /api_v1/
+[27-Jun-2025 14:18:28 UTC] Content-Type: not set
+[27-Jun-2025 14:18:28 UTC] Raw input: 
+[27-Jun-2025 14:18:28 UTC] Processed URI: /
+[27-Jun-2025 14:18:28 UTC] Method: GET
+[27-Jun-2025 14:18:28 UTC] Including required files...
+[27-Jun-2025 14:18:28 UTC] ✓ database.php included
+[27-Jun-2025 14:18:28 UTC] ✓ jwt.php included
+[27-Jun-2025 14:18:28 UTC] ✓ User.php included
+[27-Jun-2025 14:18:28 UTC] ✓ AuthController.php included
+[27-Jun-2025 14:18:28 UTC] ✓ UserController.php included
+[27-Jun-2025 14:18:28 UTC] ✓ AdminController.php included
+[27-Jun-2025 14:18:28 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 14:18:28 UTC] ✓ Booking files included
+[27-Jun-2025 14:18:29 UTC] All files included successfully
+[27-Jun-2025 14:18:29 UTC] Testing database connection...
+[27-Jun-2025 14:18:29 UTC] Database error: Failed to get database connection
+[27-Jun-2025 14:21:53 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 14:21:53 UTC] === NEW REQUEST ===
+[27-Jun-2025 14:21:53 UTC] Method: GET
+[27-Jun-2025 14:21:53 UTC] URI: /api_v1/
+[27-Jun-2025 14:21:53 UTC] Content-Type: not set
+[27-Jun-2025 14:21:53 UTC] Raw input: 
+[27-Jun-2025 14:21:53 UTC] Processed URI: /
+[27-Jun-2025 14:21:53 UTC] Method: GET
+[27-Jun-2025 14:21:53 UTC] Including required files...
+[27-Jun-2025 14:21:53 UTC] ✓ database.php included
+[27-Jun-2025 14:21:53 UTC] ✓ jwt.php included
+[27-Jun-2025 14:21:53 UTC] ✓ User.php included
+[27-Jun-2025 14:21:53 UTC] ✓ AuthController.php included
+[27-Jun-2025 14:21:53 UTC] ✓ UserController.php included
+[27-Jun-2025 14:21:53 UTC] ✓ AdminController.php included
+[27-Jun-2025 14:21:53 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 14:21:53 UTC] ✓ Booking files included
+[27-Jun-2025 14:21:53 UTC] All files included successfully
+[27-Jun-2025 14:21:53 UTC] Testing database connection...
+[27-Jun-2025 14:21:53 UTC] ✓ Database connection successful
+[27-Jun-2025 14:21:53 UTC] Initializing AuthController...
+[27-Jun-2025 14:21:53 UTC] ✓ AuthController initialized
+[27-Jun-2025 14:21:53 UTC] Processing route: /
+[27-Jun-2025 15:52:26 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 15:52:26 UTC] === NEW REQUEST ===
+[27-Jun-2025 15:52:26 UTC] Method: POST
+[27-Jun-2025 15:52:26 UTC] URI: /api_v1/login
+[27-Jun-2025 15:52:26 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 15:52:26 UTC] Raw input: {"email":"t@g.com","password":"123456"}
+[27-Jun-2025 15:52:26 UTC] Processed URI: /login
+[27-Jun-2025 15:52:26 UTC] Method: POST
+[27-Jun-2025 15:52:26 UTC] Including required files...
+[27-Jun-2025 15:52:26 UTC] ✓ database.php included
+[27-Jun-2025 15:52:26 UTC] ✓ jwt.php included
+[27-Jun-2025 15:52:26 UTC] ✓ User.php included
+[27-Jun-2025 15:52:26 UTC] ✓ AuthController.php included
+[27-Jun-2025 15:52:26 UTC] ✓ UserController.php included
+[27-Jun-2025 15:52:27 UTC] ✓ AdminController.php included
+[27-Jun-2025 15:52:27 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 15:52:27 UTC] ✓ Booking files included
+[27-Jun-2025 15:52:27 UTC] All files included successfully
+[27-Jun-2025 15:52:27 UTC] Testing database connection...
+[27-Jun-2025 15:52:27 UTC] ✓ Database connection successful
+[27-Jun-2025 15:52:27 UTC] Initializing AuthController...
+[27-Jun-2025 15:52:27 UTC] ✓ AuthController initialized
+[27-Jun-2025 15:52:27 UTC] Processing route: /login
+[27-Jun-2025 15:52:27 UTC] Calling login method...
+[27-Jun-2025 15:52:27 UTC] === LOGIN DEBUG START ===
+[27-Jun-2025 15:52:27 UTC] REQUEST_METHOD: POST
+[27-Jun-2025 15:52:27 UTC] CONTENT_TYPE: application/json; charset=utf-8
+[27-Jun-2025 15:52:27 UTC] RAW LOGIN INPUT: {"email":"t@g.com","password":"123456"}
+[27-Jun-2025 15:52:27 UTC] LOGIN INPUT LENGTH: 39
+[27-Jun-2025 15:52:27 UTC] LOGIN JSON_DECODE_RESULT: SUCCESS
+[27-Jun-2025 15:52:27 UTC] LOGIN JSON_LAST_ERROR: 0
+[27-Jun-2025 15:52:27 UTC] LOGIN DECODED_DATA: Array
+(
+    [email] => t@g.com
+    [password] => 123456
+)
+
+[27-Jun-2025 15:52:27 UTC] ATTEMPTING LOGIN FOR: t@g.com
+[27-Jun-2025 15:52:27 UTC] Login successful for: t@g.com
+[27-Jun-2025 15:52:27 UTC] Generating JWT token for user: t@g.com
+[27-Jun-2025 15:52:27 UTC] JWT token generated successfully
+[27-Jun-2025 15:52:27 UTC] LOGIN SUCCESS for: t@g.com
+[27-Jun-2025 15:52:27 UTC] === LOGIN DEBUG END ===
+[27-Jun-2025 16:02:11 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 16:02:11 UTC] === NEW REQUEST ===
+[27-Jun-2025 16:02:11 UTC] Method: POST
+[27-Jun-2025 16:02:11 UTC] URI: /api_v1/login
+[27-Jun-2025 16:02:11 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 16:02:11 UTC] Raw input: {"email":"t@g.com","password":"123456"}
+[27-Jun-2025 16:02:11 UTC] Processed URI: /login
+[27-Jun-2025 16:02:11 UTC] Method: POST
+[27-Jun-2025 16:02:11 UTC] Including required files...
+[27-Jun-2025 16:02:11 UTC] ✓ database.php included
+[27-Jun-2025 16:02:11 UTC] ✓ jwt.php included
+[27-Jun-2025 16:02:11 UTC] ✓ User.php included
+[27-Jun-2025 16:02:11 UTC] ✓ AuthController.php included
+[27-Jun-2025 16:02:11 UTC] ✓ UserController.php included
+[27-Jun-2025 16:02:11 UTC] ✓ AdminController.php included
+[27-Jun-2025 16:02:11 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 16:02:11 UTC] ✓ Booking files included
+[27-Jun-2025 16:02:11 UTC] All files included successfully
+[27-Jun-2025 16:02:11 UTC] Testing database connection...
+[27-Jun-2025 16:02:11 UTC] ✓ Database connection successful
+[27-Jun-2025 16:02:11 UTC] Initializing AuthController...
+[27-Jun-2025 16:02:11 UTC] ✓ AuthController initialized
+[27-Jun-2025 16:02:11 UTC] Processing route: /login
+[27-Jun-2025 16:02:11 UTC] Calling login method...
+[27-Jun-2025 16:02:11 UTC] === LOGIN DEBUG START ===
+[27-Jun-2025 16:02:11 UTC] REQUEST_METHOD: POST
+[27-Jun-2025 16:02:11 UTC] CONTENT_TYPE: application/json; charset=utf-8
+[27-Jun-2025 16:02:11 UTC] RAW LOGIN INPUT: {"email":"t@g.com","password":"123456"}
+[27-Jun-2025 16:02:11 UTC] LOGIN INPUT LENGTH: 39
+[27-Jun-2025 16:02:11 UTC] LOGIN JSON_DECODE_RESULT: SUCCESS
+[27-Jun-2025 16:02:11 UTC] LOGIN JSON_LAST_ERROR: 0
+[27-Jun-2025 16:02:11 UTC] LOGIN DECODED_DATA: Array
+(
+    [email] => t@g.com
+    [password] => 123456
+)
+
+[27-Jun-2025 16:02:11 UTC] ATTEMPTING LOGIN FOR: t@g.com
+[27-Jun-2025 16:02:11 UTC] Login successful for: t@g.com
+[27-Jun-2025 16:02:11 UTC] Generating JWT token for user: t@g.com
+[27-Jun-2025 16:02:11 UTC] JWT token generated successfully
+[27-Jun-2025 16:02:11 UTC] LOGIN SUCCESS for: t@g.com
+[27-Jun-2025 16:02:11 UTC] === LOGIN DEBUG END ===
+[27-Jun-2025 16:09:36 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 16:09:36 UTC] === NEW REQUEST ===
+[27-Jun-2025 16:09:36 UTC] Method: POST
+[27-Jun-2025 16:09:36 UTC] URI: /api_v1/user/list
+[27-Jun-2025 16:09:36 UTC] Content-Type: text/plain; charset=utf-8
+[27-Jun-2025 16:09:36 UTC] Raw input: {}
+[27-Jun-2025 16:09:36 UTC] Processed URI: /user/list
+[27-Jun-2025 16:09:36 UTC] Method: POST
+[27-Jun-2025 16:09:36 UTC] Including required files...
+[27-Jun-2025 16:09:36 UTC] ✓ database.php included
+[27-Jun-2025 16:09:36 UTC] ✓ jwt.php included
+[27-Jun-2025 16:09:36 UTC] ✓ User.php included
+[27-Jun-2025 16:09:36 UTC] ✓ AuthController.php included
+[27-Jun-2025 16:09:36 UTC] ✓ UserController.php included
+[27-Jun-2025 16:09:36 UTC] ✓ AdminController.php included
+[27-Jun-2025 16:09:36 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 16:09:36 UTC] ✓ Booking files included
+[27-Jun-2025 16:09:36 UTC] All files included successfully
+[27-Jun-2025 16:09:36 UTC] Testing database connection...
+[27-Jun-2025 16:09:36 UTC] ✓ Database connection successful
+[27-Jun-2025 16:09:36 UTC] Initializing AuthController...
+[27-Jun-2025 16:09:36 UTC] ✓ AuthController initialized
+[27-Jun-2025 16:09:36 UTC] Processing route: /user/list
+[27-Jun-2025 16:09:36 UTC] Calling user list on user control...
+[27-Jun-2025 16:09:36 UTC] No authorization token found in any method
+[27-Jun-2025 16:09:36 UTC] Available $_SERVER keys with HTTP_: HTTP_HOST, HTTP_CONNECTION, HTTP_USER_AGENT, HTTP_ACCEPT, HTTP_ORIGIN, HTTP_REFERER, HTTP_ACCEPT_ENCODING, HTTP_ACCEPT_LANGUAGE
+[27-Jun-2025 16:09:36 UTC] Token from headers: null
+[27-Jun-2025 16:09:36 UTC] No token found in headers
+[27-Jun-2025 16:10:20 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 16:10:20 UTC] === NEW REQUEST ===
+[27-Jun-2025 16:10:20 UTC] Method: POST
+[27-Jun-2025 16:10:20 UTC] URI: /api_v1/user/list
+[27-Jun-2025 16:10:20 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 16:10:20 UTC] Raw input: {}
+[27-Jun-2025 16:10:20 UTC] Processed URI: /user/list
+[27-Jun-2025 16:10:20 UTC] Method: POST
+[27-Jun-2025 16:10:20 UTC] Including required files...
+[27-Jun-2025 16:10:20 UTC] ✓ database.php included
+[27-Jun-2025 16:10:20 UTC] ✓ jwt.php included
+[27-Jun-2025 16:10:20 UTC] ✓ User.php included
+[27-Jun-2025 16:10:20 UTC] ✓ AuthController.php included
+[27-Jun-2025 16:10:20 UTC] ✓ UserController.php included
+[27-Jun-2025 16:10:20 UTC] ✓ AdminController.php included
+[27-Jun-2025 16:10:20 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 16:10:20 UTC] ✓ Booking files included
+[27-Jun-2025 16:10:20 UTC] All files included successfully
+[27-Jun-2025 16:10:20 UTC] Testing database connection...
+[27-Jun-2025 16:10:20 UTC] ✓ Database connection successful
+[27-Jun-2025 16:10:20 UTC] Initializing AuthController...
+[27-Jun-2025 16:10:20 UTC] ✓ AuthController initialized
+[27-Jun-2025 16:10:20 UTC] Processing route: /user/list
+[27-Jun-2025 16:10:20 UTC] Calling user list on user control...
+[27-Jun-2025 16:10:20 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[27-Jun-2025 16:10:20 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[27-Jun-2025 16:11:52 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 16:11:52 UTC] === NEW REQUEST ===
+[27-Jun-2025 16:11:52 UTC] Method: POST
+[27-Jun-2025 16:11:52 UTC] URI: /api_v1/user/list
+[27-Jun-2025 16:11:52 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 16:11:52 UTC] Raw input: {}
+[27-Jun-2025 16:11:52 UTC] Processed URI: /user/list
+[27-Jun-2025 16:11:52 UTC] Method: POST
+[27-Jun-2025 16:11:52 UTC] Including required files...
+[27-Jun-2025 16:11:52 UTC] ✓ database.php included
+[27-Jun-2025 16:11:52 UTC] ✓ jwt.php included
+[27-Jun-2025 16:11:52 UTC] ✓ User.php included
+[27-Jun-2025 16:11:52 UTC] ✓ AuthController.php included
+[27-Jun-2025 16:11:52 UTC] ✓ UserController.php included
+[27-Jun-2025 16:11:52 UTC] ✓ AdminController.php included
+[27-Jun-2025 16:11:52 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 16:11:52 UTC] ✓ Booking files included
+[27-Jun-2025 16:11:52 UTC] All files included successfully
+[27-Jun-2025 16:11:52 UTC] Testing database connection...
+[27-Jun-2025 16:11:52 UTC] ✓ Database connection successful
+[27-Jun-2025 16:11:52 UTC] Initializing AuthController...
+[27-Jun-2025 16:11:52 UTC] ✓ AuthController initialized
+[27-Jun-2025 16:11:52 UTC] Processing route: /user/list
+[27-Jun-2025 16:11:52 UTC] Calling user list on user control...
+[27-Jun-2025 16:11:52 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[27-Jun-2025 16:11:52 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[27-Jun-2025 16:12:13 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 16:12:13 UTC] === NEW REQUEST ===
+[27-Jun-2025 16:12:13 UTC] Method: POST
+[27-Jun-2025 16:12:13 UTC] URI: /api_v1/user/add
+[27-Jun-2025 16:12:13 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 16:12:13 UTC] Raw input: {"userid":"2434","name":"test","email":"afdadfsdf","roles":["Administrator"]}
+[27-Jun-2025 16:12:13 UTC] Processed URI: /user/add
+[27-Jun-2025 16:12:13 UTC] Method: POST
+[27-Jun-2025 16:12:13 UTC] Including required files...
+[27-Jun-2025 16:12:13 UTC] ✓ database.php included
+[27-Jun-2025 16:12:13 UTC] ✓ jwt.php included
+[27-Jun-2025 16:12:13 UTC] ✓ User.php included
+[27-Jun-2025 16:12:13 UTC] ✓ AuthController.php included
+[27-Jun-2025 16:12:13 UTC] ✓ UserController.php included
+[27-Jun-2025 16:12:13 UTC] ✓ AdminController.php included
+[27-Jun-2025 16:12:13 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 16:12:13 UTC] ✓ Booking files included
+[27-Jun-2025 16:12:13 UTC] All files included successfully
+[27-Jun-2025 16:12:13 UTC] Testing database connection...
+[27-Jun-2025 16:12:13 UTC] ✓ Database connection successful
+[27-Jun-2025 16:12:13 UTC] Initializing AuthController...
+[27-Jun-2025 16:12:13 UTC] ✓ AuthController initialized
+[27-Jun-2025 16:12:13 UTC] Processing route: /user/add
+[27-Jun-2025 16:12:13 UTC] Calling user add on user control...
+[27-Jun-2025 16:12:13 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[27-Jun-2025 16:12:13 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[27-Jun-2025 16:12:13 UTC] ❗ ["User Password is required.","User Role is required.","A valid email is required."]
+[27-Jun-2025 16:59:57 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 16:59:57 UTC] === NEW REQUEST ===
+[27-Jun-2025 16:59:57 UTC] Method: POST
+[27-Jun-2025 16:59:57 UTC] URI: /api_v1/login
+[27-Jun-2025 16:59:57 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 16:59:57 UTC] Raw input: {"email":"t@g.com","password":"123456"}
+[27-Jun-2025 16:59:57 UTC] Processed URI: /login
+[27-Jun-2025 16:59:57 UTC] Method: POST
+[27-Jun-2025 16:59:57 UTC] Including required files...
+[27-Jun-2025 16:59:57 UTC] ✓ database.php included
+[27-Jun-2025 16:59:57 UTC] ✓ jwt.php included
+[27-Jun-2025 16:59:57 UTC] ✓ User.php included
+[27-Jun-2025 16:59:57 UTC] ✓ AuthController.php included
+[27-Jun-2025 16:59:57 UTC] ✓ UserController.php included
+[27-Jun-2025 16:59:57 UTC] ✓ AdminController.php included
+[27-Jun-2025 16:59:57 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 16:59:57 UTC] ✓ Booking files included
+[27-Jun-2025 16:59:57 UTC] All files included successfully
+[27-Jun-2025 16:59:57 UTC] Testing database connection...
+[27-Jun-2025 16:59:57 UTC] ✓ Database connection successful
+[27-Jun-2025 16:59:57 UTC] Initializing AuthController...
+[27-Jun-2025 16:59:57 UTC] ✓ AuthController initialized
+[27-Jun-2025 16:59:57 UTC] Processing route: /login
+[27-Jun-2025 16:59:57 UTC] Calling login method...
+[27-Jun-2025 16:59:57 UTC] === LOGIN DEBUG START ===
+[27-Jun-2025 16:59:57 UTC] REQUEST_METHOD: POST
+[27-Jun-2025 16:59:57 UTC] CONTENT_TYPE: application/json; charset=utf-8
+[27-Jun-2025 16:59:57 UTC] RAW LOGIN INPUT: {"email":"t@g.com","password":"123456"}
+[27-Jun-2025 16:59:57 UTC] LOGIN INPUT LENGTH: 39
+[27-Jun-2025 16:59:57 UTC] LOGIN JSON_DECODE_RESULT: SUCCESS
+[27-Jun-2025 16:59:57 UTC] LOGIN JSON_LAST_ERROR: 0
+[27-Jun-2025 16:59:57 UTC] LOGIN DECODED_DATA: Array
+(
+    [email] => t@g.com
+    [password] => 123456
+)
+
+[27-Jun-2025 16:59:57 UTC] ATTEMPTING LOGIN FOR: t@g.com
+[27-Jun-2025 16:59:57 UTC] Login successful for: t@g.com
+[27-Jun-2025 16:59:57 UTC] Generating JWT token for user: t@g.com
+[27-Jun-2025 16:59:57 UTC] JWT token generated successfully
+[27-Jun-2025 16:59:57 UTC] LOGIN SUCCESS for: t@g.com
+[27-Jun-2025 16:59:57 UTC] === LOGIN DEBUG END ===
+[27-Jun-2025 17:00:05 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:00:05 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:00:05 UTC] Method: POST
+[27-Jun-2025 17:00:05 UTC] URI: /api_v1/user/list
+[27-Jun-2025 17:00:05 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:00:05 UTC] Raw input: {}
+[27-Jun-2025 17:00:05 UTC] Processed URI: /user/list
+[27-Jun-2025 17:00:05 UTC] Method: POST
+[27-Jun-2025 17:00:05 UTC] Including required files...
+[27-Jun-2025 17:00:05 UTC] ✓ database.php included
+[27-Jun-2025 17:00:05 UTC] ✓ jwt.php included
+[27-Jun-2025 17:00:05 UTC] ✓ User.php included
+[27-Jun-2025 17:00:05 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:00:05 UTC] ✓ UserController.php included
+[27-Jun-2025 17:00:05 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:00:05 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:00:05 UTC] ✓ Booking files included
+[27-Jun-2025 17:00:05 UTC] All files included successfully
+[27-Jun-2025 17:00:05 UTC] Testing database connection...
+[27-Jun-2025 17:00:05 UTC] ✓ Database connection successful
+[27-Jun-2025 17:00:05 UTC] Initializing AuthController...
+[27-Jun-2025 17:00:05 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:00:05 UTC] Processing route: /user/list
+[27-Jun-2025 17:00:05 UTC] Calling user list on user control...
+[27-Jun-2025 17:00:05 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[27-Jun-2025 17:00:05 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[27-Jun-2025 17:00:05 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:00:05 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:00:05 UTC] Method: POST
+[27-Jun-2025 17:00:05 UTC] URI: /api_v1/role/list
+[27-Jun-2025 17:00:05 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:00:05 UTC] Raw input: {}
+[27-Jun-2025 17:00:05 UTC] Processed URI: /role/list
+[27-Jun-2025 17:00:05 UTC] Method: POST
+[27-Jun-2025 17:00:05 UTC] Including required files...
+[27-Jun-2025 17:00:05 UTC] ✓ database.php included
+[27-Jun-2025 17:00:05 UTC] ✓ jwt.php included
+[27-Jun-2025 17:00:05 UTC] ✓ User.php included
+[27-Jun-2025 17:00:05 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:00:05 UTC] ✓ UserController.php included
+[27-Jun-2025 17:00:05 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:00:05 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:00:05 UTC] ✓ Booking files included
+[27-Jun-2025 17:00:05 UTC] All files included successfully
+[27-Jun-2025 17:00:05 UTC] Testing database connection...
+[27-Jun-2025 17:00:05 UTC] ✓ Database connection successful
+[27-Jun-2025 17:00:05 UTC] Initializing AuthController...
+[27-Jun-2025 17:00:05 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:00:05 UTC] Processing route: /role/list
+[27-Jun-2025 17:00:05 UTC] Unknown endpoint: /role/list
+[27-Jun-2025 17:01:11 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:01:11 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:01:11 UTC] Method: POST
+[27-Jun-2025 17:01:11 UTC] URI: /api_v1/user/list
+[27-Jun-2025 17:01:11 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:01:11 UTC] Raw input: {}
+[27-Jun-2025 17:01:11 UTC] Processed URI: /user/list
+[27-Jun-2025 17:01:11 UTC] Method: POST
+[27-Jun-2025 17:01:11 UTC] Including required files...
+[27-Jun-2025 17:01:11 UTC] ✓ database.php included
+[27-Jun-2025 17:01:11 UTC] ✓ jwt.php included
+[27-Jun-2025 17:01:11 UTC] ✓ User.php included
+[27-Jun-2025 17:01:11 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:01:11 UTC] ✓ UserController.php included
+[27-Jun-2025 17:01:11 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:01:11 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:01:11 UTC] ✓ Booking files included
+[27-Jun-2025 17:01:11 UTC] All files included successfully
+[27-Jun-2025 17:01:11 UTC] Testing database connection...
+[27-Jun-2025 17:01:11 UTC] ✓ Database connection successful
+[27-Jun-2025 17:01:11 UTC] Initializing AuthController...
+[27-Jun-2025 17:01:11 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:01:11 UTC] Processing route: /user/list
+[27-Jun-2025 17:01:11 UTC] Calling user list on user control...
+[27-Jun-2025 17:01:11 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[27-Jun-2025 17:01:11 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[27-Jun-2025 17:01:11 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:01:11 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:01:11 UTC] Method: POST
+[27-Jun-2025 17:01:11 UTC] URI: /api_v1/role/list
+[27-Jun-2025 17:01:11 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:01:11 UTC] Raw input: {}
+[27-Jun-2025 17:01:11 UTC] Processed URI: /role/list
+[27-Jun-2025 17:01:11 UTC] Method: POST
+[27-Jun-2025 17:01:11 UTC] Including required files...
+[27-Jun-2025 17:01:11 UTC] ✓ database.php included
+[27-Jun-2025 17:01:11 UTC] ✓ jwt.php included
+[27-Jun-2025 17:01:11 UTC] ✓ User.php included
+[27-Jun-2025 17:01:11 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:01:11 UTC] ✓ UserController.php included
+[27-Jun-2025 17:01:11 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:01:11 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:01:11 UTC] ✓ Booking files included
+[27-Jun-2025 17:01:11 UTC] All files included successfully
+[27-Jun-2025 17:01:11 UTC] Testing database connection...
+[27-Jun-2025 17:01:11 UTC] ✓ Database connection successful
+[27-Jun-2025 17:01:11 UTC] Initializing AuthController...
+[27-Jun-2025 17:01:11 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:01:11 UTC] Processing route: /role/list
+[27-Jun-2025 17:01:11 UTC] Unknown endpoint: /role/list
+[27-Jun-2025 17:01:37 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:01:37 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:01:37 UTC] Method: POST
+[27-Jun-2025 17:01:37 UTC] URI: /api_v1/user/list
+[27-Jun-2025 17:01:37 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:01:37 UTC] Raw input: {}
+[27-Jun-2025 17:01:37 UTC] Processed URI: /user/list
+[27-Jun-2025 17:01:37 UTC] Method: POST
+[27-Jun-2025 17:01:37 UTC] Including required files...
+[27-Jun-2025 17:01:37 UTC] ✓ database.php included
+[27-Jun-2025 17:01:37 UTC] ✓ jwt.php included
+[27-Jun-2025 17:01:37 UTC] ✓ User.php included
+[27-Jun-2025 17:01:37 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:01:37 UTC] ✓ UserController.php included
+[27-Jun-2025 17:01:37 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:01:37 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:01:37 UTC] ✓ Booking files included
+[27-Jun-2025 17:01:37 UTC] All files included successfully
+[27-Jun-2025 17:01:37 UTC] Testing database connection...
+[27-Jun-2025 17:01:37 UTC] ✓ Database connection successful
+[27-Jun-2025 17:01:37 UTC] Initializing AuthController...
+[27-Jun-2025 17:01:37 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:01:37 UTC] Processing route: /user/list
+[27-Jun-2025 17:01:37 UTC] Calling user list on user control...
+[27-Jun-2025 17:01:37 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[27-Jun-2025 17:01:37 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[27-Jun-2025 17:01:38 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:01:38 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:01:38 UTC] Method: POST
+[27-Jun-2025 17:01:38 UTC] URI: /api_v1/role/list
+[27-Jun-2025 17:01:38 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:01:38 UTC] Raw input: {}
+[27-Jun-2025 17:01:38 UTC] Processed URI: /role/list
+[27-Jun-2025 17:01:38 UTC] Method: POST
+[27-Jun-2025 17:01:38 UTC] Including required files...
+[27-Jun-2025 17:01:38 UTC] ✓ database.php included
+[27-Jun-2025 17:01:38 UTC] ✓ jwt.php included
+[27-Jun-2025 17:01:38 UTC] ✓ User.php included
+[27-Jun-2025 17:01:38 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:01:38 UTC] ✓ UserController.php included
+[27-Jun-2025 17:01:38 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:01:38 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:01:38 UTC] ✓ Booking files included
+[27-Jun-2025 17:01:38 UTC] All files included successfully
+[27-Jun-2025 17:01:38 UTC] Testing database connection...
+[27-Jun-2025 17:01:38 UTC] ✓ Database connection successful
+[27-Jun-2025 17:01:38 UTC] Initializing AuthController...
+[27-Jun-2025 17:01:38 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:01:38 UTC] Processing route: /role/list
+[27-Jun-2025 17:01:38 UTC] Unknown endpoint: /role/list
+[27-Jun-2025 17:02:48 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:02:48 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:02:48 UTC] Method: POST
+[27-Jun-2025 17:02:48 UTC] URI: /api_v1/user/list
+[27-Jun-2025 17:02:48 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:02:48 UTC] Raw input: {}
+[27-Jun-2025 17:02:48 UTC] Processed URI: /user/list
+[27-Jun-2025 17:02:48 UTC] Method: POST
+[27-Jun-2025 17:02:48 UTC] Including required files...
+[27-Jun-2025 17:02:48 UTC] ✓ database.php included
+[27-Jun-2025 17:02:48 UTC] ✓ jwt.php included
+[27-Jun-2025 17:02:48 UTC] ✓ User.php included
+[27-Jun-2025 17:02:48 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:02:48 UTC] ✓ UserController.php included
+[27-Jun-2025 17:02:48 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:02:48 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:02:48 UTC] ✓ Booking files included
+[27-Jun-2025 17:02:48 UTC] All files included successfully
+[27-Jun-2025 17:02:48 UTC] Testing database connection...
+[27-Jun-2025 17:02:48 UTC] ✓ Database connection successful
+[27-Jun-2025 17:02:48 UTC] Initializing AuthController...
+[27-Jun-2025 17:02:48 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:02:48 UTC] Processing route: /user/list
+[27-Jun-2025 17:02:48 UTC] Calling user list on user control...
+[27-Jun-2025 17:02:48 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[27-Jun-2025 17:02:48 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[27-Jun-2025 17:07:15 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:07:15 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:07:15 UTC] Method: POST
+[27-Jun-2025 17:07:15 UTC] URI: /api_v1/user/list
+[27-Jun-2025 17:07:15 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:07:15 UTC] Raw input: {}
+[27-Jun-2025 17:07:15 UTC] Processed URI: /user/list
+[27-Jun-2025 17:07:15 UTC] Method: POST
+[27-Jun-2025 17:07:15 UTC] Including required files...
+[27-Jun-2025 17:07:15 UTC] ✓ database.php included
+[27-Jun-2025 17:07:15 UTC] ✓ jwt.php included
+[27-Jun-2025 17:07:15 UTC] ✓ User.php included
+[27-Jun-2025 17:07:15 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:07:15 UTC] ✓ UserController.php included
+[27-Jun-2025 17:07:15 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:07:15 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:07:15 UTC] ✓ Booking files included
+[27-Jun-2025 17:07:15 UTC] All files included successfully
+[27-Jun-2025 17:07:15 UTC] Testing database connection...
+[27-Jun-2025 17:07:15 UTC] ✓ Database connection successful
+[27-Jun-2025 17:07:15 UTC] Initializing AuthController...
+[27-Jun-2025 17:07:15 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:07:15 UTC] Processing route: /user/list
+[27-Jun-2025 17:07:15 UTC] Calling user list on user control...
+[27-Jun-2025 17:07:15 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[27-Jun-2025 17:07:15 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[27-Jun-2025 17:07:15 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:07:15 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:07:15 UTC] Method: POST
+[27-Jun-2025 17:07:15 UTC] URI: /api_v1/role/list
+[27-Jun-2025 17:07:15 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:07:15 UTC] Raw input: {}
+[27-Jun-2025 17:07:15 UTC] Processed URI: /role/list
+[27-Jun-2025 17:07:15 UTC] Method: POST
+[27-Jun-2025 17:07:15 UTC] Including required files...
+[27-Jun-2025 17:07:15 UTC] ✓ database.php included
+[27-Jun-2025 17:07:15 UTC] ✓ jwt.php included
+[27-Jun-2025 17:07:15 UTC] ✓ User.php included
+[27-Jun-2025 17:07:15 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:07:15 UTC] ✓ UserController.php included
+[27-Jun-2025 17:07:15 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:07:15 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:07:15 UTC] ✓ Booking files included
+[27-Jun-2025 17:07:15 UTC] All files included successfully
+[27-Jun-2025 17:07:15 UTC] Testing database connection...
+[27-Jun-2025 17:07:15 UTC] ✓ Database connection successful
+[27-Jun-2025 17:07:15 UTC] Initializing AuthController...
+[27-Jun-2025 17:07:15 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:07:15 UTC] Processing route: /role/list
+[27-Jun-2025 17:07:15 UTC] Unknown endpoint: /role/list
+[27-Jun-2025 17:19:24 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:19:24 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:19:24 UTC] Method: POST
+[27-Jun-2025 17:19:24 UTC] URI: /api_v1/user/list
+[27-Jun-2025 17:19:24 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:19:24 UTC] Raw input: {}
+[27-Jun-2025 17:19:24 UTC] Processed URI: /user/list
+[27-Jun-2025 17:19:24 UTC] Method: POST
+[27-Jun-2025 17:19:24 UTC] Including required files...
+[27-Jun-2025 17:19:24 UTC] ✓ database.php included
+[27-Jun-2025 17:19:24 UTC] ✓ jwt.php included
+[27-Jun-2025 17:19:24 UTC] ✓ User.php included
+[27-Jun-2025 17:19:24 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:19:24 UTC] ✓ UserController.php included
+[27-Jun-2025 17:19:24 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:19:24 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:19:24 UTC] ✓ Booking files included
+[27-Jun-2025 17:19:24 UTC] All files included successfully
+[27-Jun-2025 17:19:24 UTC] Testing database connection...
+[27-Jun-2025 17:19:24 UTC] ✓ Database connection successful
+[27-Jun-2025 17:19:24 UTC] Initializing AuthController...
+[27-Jun-2025 17:19:24 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:19:24 UTC] Processing route: /user/list
+[27-Jun-2025 17:19:24 UTC] Calling user list on user control...
+[27-Jun-2025 17:19:24 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[27-Jun-2025 17:19:24 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[27-Jun-2025 17:19:24 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:19:24 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:19:24 UTC] Method: POST
+[27-Jun-2025 17:19:24 UTC] URI: /api_v1/role/list
+[27-Jun-2025 17:19:24 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:19:24 UTC] Raw input: {}
+[27-Jun-2025 17:19:24 UTC] Processed URI: /role/list
+[27-Jun-2025 17:19:24 UTC] Method: POST
+[27-Jun-2025 17:19:24 UTC] Including required files...
+[27-Jun-2025 17:19:24 UTC] ✓ database.php included
+[27-Jun-2025 17:19:24 UTC] ✓ jwt.php included
+[27-Jun-2025 17:19:24 UTC] ✓ User.php included
+[27-Jun-2025 17:19:24 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:19:24 UTC] ✓ UserController.php included
+[27-Jun-2025 17:19:24 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:19:24 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:19:24 UTC] ✓ Booking files included
+[27-Jun-2025 17:19:24 UTC] All files included successfully
+[27-Jun-2025 17:19:24 UTC] Testing database connection...
+[27-Jun-2025 17:19:24 UTC] ✓ Database connection successful
+[27-Jun-2025 17:19:24 UTC] Initializing AuthController...
+[27-Jun-2025 17:19:24 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:19:24 UTC] Processing route: /role/list
+[27-Jun-2025 17:19:24 UTC] Unknown endpoint: /role/list
+[27-Jun-2025 17:19:33 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:19:33 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:19:33 UTC] Method: POST
+[27-Jun-2025 17:19:33 UTC] URI: /api_v1/role/add
+[27-Jun-2025 17:19:33 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:19:33 UTC] Raw input: {"name":"a","description":"b","permissions":["Manage Users"]}
+[27-Jun-2025 17:19:33 UTC] Processed URI: /role/add
+[27-Jun-2025 17:19:33 UTC] Method: POST
+[27-Jun-2025 17:19:33 UTC] Including required files...
+[27-Jun-2025 17:19:33 UTC] ✓ database.php included
+[27-Jun-2025 17:19:33 UTC] ✓ jwt.php included
+[27-Jun-2025 17:19:33 UTC] ✓ User.php included
+[27-Jun-2025 17:19:33 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:19:33 UTC] ✓ UserController.php included
+[27-Jun-2025 17:19:33 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:19:33 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:19:33 UTC] ✓ Booking files included
+[27-Jun-2025 17:19:33 UTC] All files included successfully
+[27-Jun-2025 17:19:33 UTC] Testing database connection...
+[27-Jun-2025 17:19:33 UTC] ✓ Database connection successful
+[27-Jun-2025 17:19:33 UTC] Initializing AuthController...
+[27-Jun-2025 17:19:33 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:19:33 UTC] Processing route: /role/add
+[27-Jun-2025 17:19:33 UTC] Unknown endpoint: /role/add
+[27-Jun-2025 17:29:50 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:29:50 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:29:50 UTC] Method: POST
+[27-Jun-2025 17:29:50 UTC] URI: /api_v1/user/list
+[27-Jun-2025 17:29:50 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:29:50 UTC] Raw input: {}
+[27-Jun-2025 17:29:50 UTC] Processed URI: /user/list
+[27-Jun-2025 17:29:50 UTC] Method: POST
+[27-Jun-2025 17:29:50 UTC] Including required files...
+[27-Jun-2025 17:29:50 UTC] ✓ database.php included
+[27-Jun-2025 17:29:50 UTC] ✓ jwt.php included
+[27-Jun-2025 17:29:50 UTC] ✓ User.php included
+[27-Jun-2025 17:29:50 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:29:50 UTC] ✓ UserController.php included
+[27-Jun-2025 17:29:50 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:29:50 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:29:50 UTC] ✓ Booking files included
+[27-Jun-2025 17:29:50 UTC] All files included successfully
+[27-Jun-2025 17:29:50 UTC] Testing database connection...
+[27-Jun-2025 17:29:50 UTC] ✓ Database connection successful
+[27-Jun-2025 17:29:50 UTC] Initializing AuthController...
+[27-Jun-2025 17:29:50 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:29:50 UTC] Processing route: /user/list
+[27-Jun-2025 17:29:50 UTC] Calling user list on user control...
+[27-Jun-2025 17:29:50 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[27-Jun-2025 17:29:50 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[27-Jun-2025 17:29:50 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:29:50 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:29:50 UTC] Method: POST
+[27-Jun-2025 17:29:50 UTC] URI: /api_v1/role/list
+[27-Jun-2025 17:29:50 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:29:50 UTC] Raw input: {}
+[27-Jun-2025 17:29:50 UTC] Processed URI: /role/list
+[27-Jun-2025 17:29:50 UTC] Method: POST
+[27-Jun-2025 17:29:50 UTC] Including required files...
+[27-Jun-2025 17:29:50 UTC] ✓ database.php included
+[27-Jun-2025 17:29:50 UTC] ✓ jwt.php included
+[27-Jun-2025 17:29:50 UTC] ✓ User.php included
+[27-Jun-2025 17:29:50 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:29:50 UTC] ✓ UserController.php included
+[27-Jun-2025 17:29:50 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:29:50 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:29:50 UTC] ✓ Booking files included
+[27-Jun-2025 17:29:50 UTC] All files included successfully
+[27-Jun-2025 17:29:50 UTC] Testing database connection...
+[27-Jun-2025 17:29:50 UTC] ✓ Database connection successful
+[27-Jun-2025 17:29:50 UTC] Initializing AuthController...
+[27-Jun-2025 17:29:50 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:29:50 UTC] Processing route: /role/list
+[27-Jun-2025 17:29:50 UTC] Unknown endpoint: /role/list
+[27-Jun-2025 17:30:43 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:30:43 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:30:43 UTC] Method: POST
+[27-Jun-2025 17:30:43 UTC] URI: /api_v1/user/list
+[27-Jun-2025 17:30:43 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:30:43 UTC] Raw input: {}
+[27-Jun-2025 17:30:43 UTC] Processed URI: /user/list
+[27-Jun-2025 17:30:43 UTC] Method: POST
+[27-Jun-2025 17:30:43 UTC] Including required files...
+[27-Jun-2025 17:30:43 UTC] ✓ database.php included
+[27-Jun-2025 17:30:43 UTC] ✓ jwt.php included
+[27-Jun-2025 17:30:43 UTC] ✓ User.php included
+[27-Jun-2025 17:30:43 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:30:43 UTC] ✓ UserController.php included
+[27-Jun-2025 17:30:43 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:30:43 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:30:43 UTC] ✓ Booking files included
+[27-Jun-2025 17:30:43 UTC] All files included successfully
+[27-Jun-2025 17:30:43 UTC] Testing database connection...
+[27-Jun-2025 17:30:43 UTC] ✓ Database connection successful
+[27-Jun-2025 17:30:43 UTC] Initializing AuthController...
+[27-Jun-2025 17:30:43 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:30:43 UTC] Processing route: /user/list
+[27-Jun-2025 17:30:43 UTC] Calling user list on user control...
+[27-Jun-2025 17:30:43 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[27-Jun-2025 17:30:43 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[27-Jun-2025 17:30:44 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:30:44 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:30:44 UTC] Method: POST
+[27-Jun-2025 17:30:44 UTC] URI: /api_v1/role/list
+[27-Jun-2025 17:30:44 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:30:44 UTC] Raw input: {}
+[27-Jun-2025 17:30:44 UTC] Processed URI: /role/list
+[27-Jun-2025 17:30:44 UTC] Method: POST
+[27-Jun-2025 17:30:44 UTC] Including required files...
+[27-Jun-2025 17:30:44 UTC] ✓ database.php included
+[27-Jun-2025 17:30:44 UTC] ✓ jwt.php included
+[27-Jun-2025 17:30:44 UTC] ✓ User.php included
+[27-Jun-2025 17:30:44 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:30:44 UTC] ✓ UserController.php included
+[27-Jun-2025 17:30:44 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:30:44 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:30:44 UTC] ✓ Booking files included
+[27-Jun-2025 17:30:44 UTC] All files included successfully
+[27-Jun-2025 17:30:44 UTC] Testing database connection...
+[27-Jun-2025 17:30:44 UTC] ✓ Database connection successful
+[27-Jun-2025 17:30:44 UTC] Initializing AuthController...
+[27-Jun-2025 17:30:44 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:30:44 UTC] Processing route: /role/list
+[27-Jun-2025 17:30:44 UTC] Unknown endpoint: /role/list
+[27-Jun-2025 17:30:54 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:30:54 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:30:54 UTC] Method: POST
+[27-Jun-2025 17:30:54 UTC] URI: /api_v1/role/add
+[27-Jun-2025 17:30:54 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:30:54 UTC] Raw input: {"name":"a","description":"b","permissions":["Manage Users"]}
+[27-Jun-2025 17:30:54 UTC] Processed URI: /role/add
+[27-Jun-2025 17:30:54 UTC] Method: POST
+[27-Jun-2025 17:30:54 UTC] Including required files...
+[27-Jun-2025 17:30:54 UTC] ✓ database.php included
+[27-Jun-2025 17:30:54 UTC] ✓ jwt.php included
+[27-Jun-2025 17:30:54 UTC] ✓ User.php included
+[27-Jun-2025 17:30:54 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:30:54 UTC] ✓ UserController.php included
+[27-Jun-2025 17:30:54 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:30:54 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:30:54 UTC] ✓ Booking files included
+[27-Jun-2025 17:30:54 UTC] All files included successfully
+[27-Jun-2025 17:30:54 UTC] Testing database connection...
+[27-Jun-2025 17:30:54 UTC] ✓ Database connection successful
+[27-Jun-2025 17:30:54 UTC] Initializing AuthController...
+[27-Jun-2025 17:30:54 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:30:54 UTC] Processing route: /role/add
+[27-Jun-2025 17:30:54 UTC] Unknown endpoint: /role/add
+[27-Jun-2025 17:31:00 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:31:00 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:31:00 UTC] Method: POST
+[27-Jun-2025 17:31:00 UTC] URI: /api_v1/role/add
+[27-Jun-2025 17:31:00 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:31:00 UTC] Raw input: {"name":"a","description":"b","permissions":["Manage Users"]}
+[27-Jun-2025 17:31:00 UTC] Processed URI: /role/add
+[27-Jun-2025 17:31:00 UTC] Method: POST
+[27-Jun-2025 17:31:00 UTC] Including required files...
+[27-Jun-2025 17:31:00 UTC] ✓ database.php included
+[27-Jun-2025 17:31:00 UTC] ✓ jwt.php included
+[27-Jun-2025 17:31:00 UTC] ✓ User.php included
+[27-Jun-2025 17:31:00 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:31:00 UTC] ✓ UserController.php included
+[27-Jun-2025 17:31:00 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:31:00 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:31:00 UTC] ✓ Booking files included
+[27-Jun-2025 17:31:00 UTC] All files included successfully
+[27-Jun-2025 17:31:00 UTC] Testing database connection...
+[27-Jun-2025 17:31:00 UTC] ✓ Database connection successful
+[27-Jun-2025 17:31:00 UTC] Initializing AuthController...
+[27-Jun-2025 17:31:00 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:31:00 UTC] Processing route: /role/add
+[27-Jun-2025 17:31:00 UTC] Unknown endpoint: /role/add
+[27-Jun-2025 17:31:34 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:31:34 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:31:34 UTC] Method: POST
+[27-Jun-2025 17:31:34 UTC] URI: /api_v1/user/list
+[27-Jun-2025 17:31:34 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:31:34 UTC] Raw input: {}
+[27-Jun-2025 17:31:34 UTC] Processed URI: /user/list
+[27-Jun-2025 17:31:34 UTC] Method: POST
+[27-Jun-2025 17:31:34 UTC] Including required files...
+[27-Jun-2025 17:31:34 UTC] ✓ database.php included
+[27-Jun-2025 17:31:34 UTC] ✓ jwt.php included
+[27-Jun-2025 17:31:34 UTC] ✓ User.php included
+[27-Jun-2025 17:31:34 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:31:34 UTC] ✓ UserController.php included
+[27-Jun-2025 17:31:34 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:31:34 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:31:34 UTC] ✓ Booking files included
+[27-Jun-2025 17:31:34 UTC] All files included successfully
+[27-Jun-2025 17:31:34 UTC] Testing database connection...
+[27-Jun-2025 17:31:34 UTC] ✓ Database connection successful
+[27-Jun-2025 17:31:34 UTC] Initializing AuthController...
+[27-Jun-2025 17:31:34 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:31:34 UTC] Processing route: /user/list
+[27-Jun-2025 17:31:34 UTC] Calling user list on user control...
+[27-Jun-2025 17:31:34 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[27-Jun-2025 17:31:34 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[27-Jun-2025 17:31:34 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:31:34 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:31:34 UTC] Method: POST
+[27-Jun-2025 17:31:34 UTC] URI: /api_v1/role/list
+[27-Jun-2025 17:31:34 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:31:34 UTC] Raw input: {}
+[27-Jun-2025 17:31:34 UTC] Processed URI: /role/list
+[27-Jun-2025 17:31:34 UTC] Method: POST
+[27-Jun-2025 17:31:34 UTC] Including required files...
+[27-Jun-2025 17:31:34 UTC] ✓ database.php included
+[27-Jun-2025 17:31:34 UTC] ✓ jwt.php included
+[27-Jun-2025 17:31:34 UTC] ✓ User.php included
+[27-Jun-2025 17:31:34 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:31:34 UTC] ✓ UserController.php included
+[27-Jun-2025 17:31:34 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:31:34 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:31:34 UTC] ✓ Booking files included
+[27-Jun-2025 17:31:34 UTC] All files included successfully
+[27-Jun-2025 17:31:34 UTC] Testing database connection...
+[27-Jun-2025 17:31:34 UTC] ✓ Database connection successful
+[27-Jun-2025 17:31:34 UTC] Initializing AuthController...
+[27-Jun-2025 17:31:34 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:31:34 UTC] Processing route: /role/list
+[27-Jun-2025 17:31:34 UTC] Unknown endpoint: /role/list
+[27-Jun-2025 17:31:42 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:31:42 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:31:42 UTC] Method: POST
+[27-Jun-2025 17:31:42 UTC] URI: /api_v1/role/add
+[27-Jun-2025 17:31:42 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:31:42 UTC] Raw input: {"name":"a","description":"b","permissions":["Manage Users"]}
+[27-Jun-2025 17:31:42 UTC] Processed URI: /role/add
+[27-Jun-2025 17:31:42 UTC] Method: POST
+[27-Jun-2025 17:31:42 UTC] Including required files...
+[27-Jun-2025 17:31:42 UTC] ✓ database.php included
+[27-Jun-2025 17:31:42 UTC] ✓ jwt.php included
+[27-Jun-2025 17:31:42 UTC] ✓ User.php included
+[27-Jun-2025 17:31:42 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:31:42 UTC] ✓ UserController.php included
+[27-Jun-2025 17:31:42 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:31:42 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:31:42 UTC] ✓ Booking files included
+[27-Jun-2025 17:31:42 UTC] All files included successfully
+[27-Jun-2025 17:31:42 UTC] Testing database connection...
+[27-Jun-2025 17:31:42 UTC] ✓ Database connection successful
+[27-Jun-2025 17:31:42 UTC] Initializing AuthController...
+[27-Jun-2025 17:31:42 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:31:42 UTC] Processing route: /role/add
+[27-Jun-2025 17:31:42 UTC] Unknown endpoint: /role/add
+[27-Jun-2025 17:31:45 UTC] 🔥 Debug Start: index.php running
+[27-Jun-2025 17:31:45 UTC] === NEW REQUEST ===
+[27-Jun-2025 17:31:45 UTC] Method: POST
+[27-Jun-2025 17:31:45 UTC] URI: /api_v1/role/add
+[27-Jun-2025 17:31:45 UTC] Content-Type: application/json; charset=utf-8
+[27-Jun-2025 17:31:45 UTC] Raw input: {"name":"a","description":"b","permissions":["Manage Users"]}
+[27-Jun-2025 17:31:45 UTC] Processed URI: /role/add
+[27-Jun-2025 17:31:45 UTC] Method: POST
+[27-Jun-2025 17:31:45 UTC] Including required files...
+[27-Jun-2025 17:31:45 UTC] ✓ database.php included
+[27-Jun-2025 17:31:45 UTC] ✓ jwt.php included
+[27-Jun-2025 17:31:45 UTC] ✓ User.php included
+[27-Jun-2025 17:31:45 UTC] ✓ AuthController.php included
+[27-Jun-2025 17:31:45 UTC] ✓ UserController.php included
+[27-Jun-2025 17:31:45 UTC] ✓ AdminController.php included
+[27-Jun-2025 17:31:45 UTC] ✓ JWTMiddleware.php included
+[27-Jun-2025 17:31:45 UTC] ✓ Booking files included
+[27-Jun-2025 17:31:45 UTC] All files included successfully
+[27-Jun-2025 17:31:45 UTC] Testing database connection...
+[27-Jun-2025 17:31:45 UTC] ✓ Database connection successful
+[27-Jun-2025 17:31:45 UTC] Initializing AuthController...
+[27-Jun-2025 17:31:45 UTC] ✓ AuthController initialized
+[27-Jun-2025 17:31:45 UTC] Processing route: /role/add
+[27-Jun-2025 17:31:45 UTC] Unknown endpoint: /role/add
+[28-Jun-2025 04:39:51 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 04:39:51 UTC] === NEW REQUEST ===
+[28-Jun-2025 04:39:51 UTC] Method: POST
+[28-Jun-2025 04:39:51 UTC] URI: /api_v1/login
+[28-Jun-2025 04:39:51 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 04:39:51 UTC] Raw input: {"email":"t@g.com","password":"123456"}
+[28-Jun-2025 04:39:51 UTC] Processed URI: /login
+[28-Jun-2025 04:39:51 UTC] Method: POST
+[28-Jun-2025 04:39:51 UTC] Including required files...
+[28-Jun-2025 04:39:51 UTC] ✓ database.php included
+[28-Jun-2025 04:39:51 UTC] ✓ jwt.php included
+[28-Jun-2025 04:39:51 UTC] ✓ User.php included
+[28-Jun-2025 04:39:51 UTC] ✓ AuthController.php included
+[28-Jun-2025 04:39:51 UTC] ✓ UserController.php included
+[28-Jun-2025 04:39:51 UTC] ✓ AdminController.php included
+[28-Jun-2025 04:39:51 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 04:39:51 UTC] ✓ Booking files included
+[28-Jun-2025 04:39:51 UTC] All files included successfully
+[28-Jun-2025 04:39:51 UTC] Testing database connection...
+[28-Jun-2025 04:39:51 UTC] ✓ Database connection successful
+[28-Jun-2025 04:39:51 UTC] Initializing AuthController...
+[28-Jun-2025 04:39:51 UTC] ✓ AuthController initialized
+[28-Jun-2025 04:39:51 UTC] Processing route: /login
+[28-Jun-2025 04:39:51 UTC] Calling login method...
+[28-Jun-2025 04:39:51 UTC] === LOGIN DEBUG START ===
+[28-Jun-2025 04:39:51 UTC] REQUEST_METHOD: POST
+[28-Jun-2025 04:39:51 UTC] CONTENT_TYPE: application/json; charset=utf-8
+[28-Jun-2025 04:39:51 UTC] RAW LOGIN INPUT: {"email":"t@g.com","password":"123456"}
+[28-Jun-2025 04:39:51 UTC] LOGIN INPUT LENGTH: 39
+[28-Jun-2025 04:39:51 UTC] LOGIN JSON_DECODE_RESULT: SUCCESS
+[28-Jun-2025 04:39:51 UTC] LOGIN JSON_LAST_ERROR: 0
+[28-Jun-2025 04:39:51 UTC] LOGIN DECODED_DATA: Array
+(
+    [email] => t@g.com
+    [password] => 123456
+)
+
+[28-Jun-2025 04:39:51 UTC] ATTEMPTING LOGIN FOR: t@g.com
+[28-Jun-2025 04:39:51 UTC] Login successful for: t@g.com
+[28-Jun-2025 04:39:51 UTC] Generating JWT token for user: t@g.com
+[28-Jun-2025 04:39:51 UTC] JWT token generated successfully
+[28-Jun-2025 04:39:51 UTC] LOGIN SUCCESS for: t@g.com
+[28-Jun-2025 04:39:51 UTC] === LOGIN DEBUG END ===
+[28-Jun-2025 08:36:39 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 08:36:39 UTC] === NEW REQUEST ===
+[28-Jun-2025 08:36:39 UTC] Method: POST
+[28-Jun-2025 08:36:39 UTC] URI: /api_v1/login
+[28-Jun-2025 08:36:39 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 08:36:39 UTC] Raw input: {"email":"t@g.com","password":"123456"}
+[28-Jun-2025 08:36:39 UTC] Processed URI: /login
+[28-Jun-2025 08:36:39 UTC] Method: POST
+[28-Jun-2025 08:36:39 UTC] Including required files...
+[28-Jun-2025 08:36:39 UTC] ✓ database.php included
+[28-Jun-2025 08:36:39 UTC] ✓ jwt.php included
+[28-Jun-2025 08:36:39 UTC] ✓ User.php included
+[28-Jun-2025 08:36:39 UTC] ✓ AuthController.php included
+[28-Jun-2025 08:36:39 UTC] ✓ UserController.php included
+[28-Jun-2025 08:36:39 UTC] ✓ AdminController.php included
+[28-Jun-2025 08:36:39 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 08:36:39 UTC] ✓ Booking files included
+[28-Jun-2025 08:36:39 UTC] All files included successfully
+[28-Jun-2025 08:36:39 UTC] Testing database connection...
+[28-Jun-2025 08:36:39 UTC] ✓ Database connection successful
+[28-Jun-2025 08:36:39 UTC] Initializing AuthController...
+[28-Jun-2025 08:36:39 UTC] ✓ AuthController initialized
+[28-Jun-2025 08:36:39 UTC] Processing route: /login
+[28-Jun-2025 08:36:39 UTC] Calling login method...
+[28-Jun-2025 08:36:39 UTC] === LOGIN DEBUG START ===
+[28-Jun-2025 08:36:39 UTC] REQUEST_METHOD: POST
+[28-Jun-2025 08:36:39 UTC] CONTENT_TYPE: application/json; charset=utf-8
+[28-Jun-2025 08:36:39 UTC] RAW LOGIN INPUT: {"email":"t@g.com","password":"123456"}
+[28-Jun-2025 08:36:39 UTC] LOGIN INPUT LENGTH: 39
+[28-Jun-2025 08:36:39 UTC] LOGIN JSON_DECODE_RESULT: SUCCESS
+[28-Jun-2025 08:36:39 UTC] LOGIN JSON_LAST_ERROR: 0
+[28-Jun-2025 08:36:39 UTC] LOGIN DECODED_DATA: Array
+(
+    [email] => t@g.com
+    [password] => 123456
+)
+
+[28-Jun-2025 08:36:39 UTC] ATTEMPTING LOGIN FOR: t@g.com
+[28-Jun-2025 08:36:39 UTC] Login successful for: t@g.com
+[28-Jun-2025 08:36:39 UTC] Generating JWT token for user: t@g.com
+[28-Jun-2025 08:36:39 UTC] JWT token generated successfully
+[28-Jun-2025 08:36:39 UTC] LOGIN SUCCESS for: t@g.com
+[28-Jun-2025 08:36:39 UTC] === LOGIN DEBUG END ===
+[28-Jun-2025 08:51:46 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 08:51:46 UTC] === NEW REQUEST ===
+[28-Jun-2025 08:51:46 UTC] Method: POST
+[28-Jun-2025 08:51:46 UTC] URI: /api_v1/user/list
+[28-Jun-2025 08:51:46 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 08:51:46 UTC] Raw input: {}
+[28-Jun-2025 08:51:46 UTC] Processed URI: /user/list
+[28-Jun-2025 08:51:46 UTC] Method: POST
+[28-Jun-2025 08:51:46 UTC] Including required files...
+[28-Jun-2025 08:51:46 UTC] ✓ database.php included
+[28-Jun-2025 08:51:46 UTC] ✓ jwt.php included
+[28-Jun-2025 08:51:46 UTC] ✓ User.php included
+[28-Jun-2025 08:51:46 UTC] ✓ AuthController.php included
+[28-Jun-2025 08:51:46 UTC] ✓ UserController.php included
+[28-Jun-2025 08:51:46 UTC] ✓ AdminController.php included
+[28-Jun-2025 08:51:46 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 08:51:46 UTC] ✓ Booking files included
+[28-Jun-2025 08:51:46 UTC] All files included successfully
+[28-Jun-2025 08:51:46 UTC] Testing database connection...
+[28-Jun-2025 08:51:46 UTC] ✓ Database connection successful
+[28-Jun-2025 08:51:46 UTC] Initializing AuthController...
+[28-Jun-2025 08:51:46 UTC] ✓ AuthController initialized
+[28-Jun-2025 08:51:46 UTC] Processing route: /user/list
+[28-Jun-2025 08:51:46 UTC] Calling user list on user control...
+[28-Jun-2025 08:51:46 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[28-Jun-2025 08:51:46 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[28-Jun-2025 08:51:46 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 08:51:46 UTC] === NEW REQUEST ===
+[28-Jun-2025 08:51:46 UTC] Method: POST
+[28-Jun-2025 08:51:46 UTC] URI: /api_v1/role/list
+[28-Jun-2025 08:51:46 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 08:51:46 UTC] Raw input: {}
+[28-Jun-2025 08:51:46 UTC] Processed URI: /role/list
+[28-Jun-2025 08:51:46 UTC] Method: POST
+[28-Jun-2025 08:51:46 UTC] Including required files...
+[28-Jun-2025 08:51:46 UTC] ✓ database.php included
+[28-Jun-2025 08:51:46 UTC] ✓ jwt.php included
+[28-Jun-2025 08:51:46 UTC] ✓ User.php included
+[28-Jun-2025 08:51:46 UTC] ✓ AuthController.php included
+[28-Jun-2025 08:51:46 UTC] ✓ UserController.php included
+[28-Jun-2025 08:51:46 UTC] ✓ AdminController.php included
+[28-Jun-2025 08:51:46 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 08:51:46 UTC] ✓ Booking files included
+[28-Jun-2025 08:51:46 UTC] All files included successfully
+[28-Jun-2025 08:51:46 UTC] Testing database connection...
+[28-Jun-2025 08:51:46 UTC] ✓ Database connection successful
+[28-Jun-2025 08:51:46 UTC] Initializing AuthController...
+[28-Jun-2025 08:51:46 UTC] ✓ AuthController initialized
+[28-Jun-2025 08:51:46 UTC] Processing route: /role/list
+[28-Jun-2025 08:51:46 UTC] Unknown endpoint: /role/list
+[28-Jun-2025 09:25:17 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 09:25:17 UTC] === NEW REQUEST ===
+[28-Jun-2025 09:25:17 UTC] Method: POST
+[28-Jun-2025 09:25:17 UTC] URI: /api_v1/offer/price/get
+[28-Jun-2025 09:25:17 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 09:25:17 UTC] Raw input: {}
+[28-Jun-2025 09:25:17 UTC] Processed URI: /offer/price/get
+[28-Jun-2025 09:25:17 UTC] Method: POST
+[28-Jun-2025 09:25:17 UTC] Including required files...
+[28-Jun-2025 09:25:17 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 09:25:17 UTC] === NEW REQUEST ===
+[28-Jun-2025 09:25:17 UTC] ✓ database.php included
+[28-Jun-2025 09:25:17 UTC] Method: POST
+[28-Jun-2025 09:25:17 UTC] URI: /api_v1/base/price/get
+[28-Jun-2025 09:25:17 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 09:25:17 UTC] Raw input: {}
+[28-Jun-2025 09:25:17 UTC] Processed URI: /base/price/get
+[28-Jun-2025 09:25:17 UTC] Method: POST
+[28-Jun-2025 09:25:17 UTC] Including required files...
+[28-Jun-2025 09:25:17 UTC] ✓ database.php included
+[28-Jun-2025 09:25:17 UTC] ✓ jwt.php included
+[28-Jun-2025 09:25:17 UTC] ✓ User.php included
+[28-Jun-2025 09:25:17 UTC] ✓ jwt.php included
+[28-Jun-2025 09:25:17 UTC] ✓ User.php included
+[28-Jun-2025 09:25:17 UTC] ✓ AuthController.php included
+[28-Jun-2025 09:25:17 UTC] ✓ AuthController.php included
+[28-Jun-2025 09:25:17 UTC] ✓ UserController.php included
+[28-Jun-2025 09:25:17 UTC] ✓ UserController.php included
+[28-Jun-2025 09:25:18 UTC] ✓ AdminController.php included
+[28-Jun-2025 09:25:18 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 09:25:18 UTC] ✓ AdminController.php included
+[28-Jun-2025 09:25:18 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 09:25:18 UTC] ✓ Booking files included
+[28-Jun-2025 09:25:18 UTC] ✓ Booking files included
+[28-Jun-2025 09:25:18 UTC] All files included successfully
+[28-Jun-2025 09:25:18 UTC] Testing database connection...
+[28-Jun-2025 09:25:18 UTC] All files included successfully
+[28-Jun-2025 09:25:18 UTC] Testing database connection...
+[28-Jun-2025 09:25:18 UTC] ✓ Database connection successful
+[28-Jun-2025 09:25:18 UTC] Initializing AuthController...
+[28-Jun-2025 09:25:18 UTC] ✓ Database connection successful
+[28-Jun-2025 09:25:18 UTC] Initializing AuthController...
+[28-Jun-2025 09:25:18 UTC] ✓ AuthController initialized
+[28-Jun-2025 09:25:18 UTC] Processing route: /offer/price/get
+[28-Jun-2025 09:25:18 UTC] Unknown endpoint: /offer/price/get
+[28-Jun-2025 09:25:18 UTC] ✓ AuthController initialized
+[28-Jun-2025 09:25:18 UTC] Processing route: /base/price/get
+[28-Jun-2025 09:25:18 UTC] Calling /base/price/get method...
+[28-Jun-2025 09:25:18 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[28-Jun-2025 09:25:18 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[28-Jun-2025 10:03:47 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:03:47 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:03:47 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:03:47 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:03:47 UTC] Method: POST
+[28-Jun-2025 10:03:47 UTC] Method: POST
+[28-Jun-2025 10:03:47 UTC] URI: /api_v1/base/price/get
+[28-Jun-2025 10:03:47 UTC] URI: /api_v1/offer/price/get
+[28-Jun-2025 10:03:47 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:03:47 UTC] Raw input: {}
+[28-Jun-2025 10:03:47 UTC] Processed URI: /base/price/get
+[28-Jun-2025 10:03:47 UTC] Method: POST
+[28-Jun-2025 10:03:47 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:03:47 UTC] Raw input: {}
+[28-Jun-2025 10:03:47 UTC] Processed URI: /offer/price/get
+[28-Jun-2025 10:03:47 UTC] Including required files...
+[28-Jun-2025 10:03:47 UTC] Method: POST
+[28-Jun-2025 10:03:47 UTC] ✓ database.php included
+[28-Jun-2025 10:03:47 UTC] Including required files...
+[28-Jun-2025 10:03:47 UTC] ✓ database.php included
+[28-Jun-2025 10:03:47 UTC] ✓ jwt.php included
+[28-Jun-2025 10:03:47 UTC] ✓ jwt.php included
+[28-Jun-2025 10:03:47 UTC] ✓ User.php included
+[28-Jun-2025 10:03:47 UTC] ✓ User.php included
+[28-Jun-2025 10:03:47 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:03:47 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:03:47 UTC] ✓ UserController.php included
+[28-Jun-2025 10:03:47 UTC] ✓ UserController.php included
+[28-Jun-2025 10:03:47 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:03:47 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:03:47 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:03:47 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:03:47 UTC] ✓ Booking files included
+[28-Jun-2025 10:03:47 UTC] ✓ Booking files included
+[28-Jun-2025 10:03:47 UTC] All files included successfully
+[28-Jun-2025 10:03:47 UTC] Testing database connection...
+[28-Jun-2025 10:03:47 UTC] ✓ Database connection successful
+[28-Jun-2025 10:03:47 UTC] Initializing AuthController...
+[28-Jun-2025 10:03:47 UTC] All files included successfully
+[28-Jun-2025 10:03:47 UTC] Testing database connection...
+[28-Jun-2025 10:03:47 UTC] ✓ Database connection successful
+[28-Jun-2025 10:03:47 UTC] Initializing AuthController...
+[28-Jun-2025 10:03:47 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:03:47 UTC] Processing route: /base/price/get
+[28-Jun-2025 10:03:47 UTC] Calling /base/price/get method...
+[28-Jun-2025 10:03:47 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[28-Jun-2025 10:03:47 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[28-Jun-2025 10:03:47 UTC] JWT validation error: Expired token
+[28-Jun-2025 10:03:47 UTC] Token validation failed
+[28-Jun-2025 10:03:47 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:03:47 UTC] Processing route: /offer/price/get
+[28-Jun-2025 10:03:47 UTC] Unknown endpoint: /offer/price/get
+[28-Jun-2025 10:07:29 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:07:29 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:07:29 UTC] Method: POST
+[28-Jun-2025 10:07:29 UTC] URI: /api_v1/offer/price/get
+[28-Jun-2025 10:07:29 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:07:29 UTC] Raw input: {}
+[28-Jun-2025 10:07:29 UTC] Processed URI: /offer/price/get
+[28-Jun-2025 10:07:29 UTC] Method: POST
+[28-Jun-2025 10:07:29 UTC] Including required files...
+[28-Jun-2025 10:07:29 UTC] ✓ database.php included
+[28-Jun-2025 10:07:29 UTC] ✓ jwt.php included
+[28-Jun-2025 10:07:29 UTC] ✓ User.php included
+[28-Jun-2025 10:07:29 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:07:29 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:07:29 UTC] Method: POST
+[28-Jun-2025 10:07:29 UTC] URI: /api_v1/base/price/get
+[28-Jun-2025 10:07:29 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:07:29 UTC] Raw input: {}
+[28-Jun-2025 10:07:29 UTC] Processed URI: /base/price/get
+[28-Jun-2025 10:07:29 UTC] Method: POST
+[28-Jun-2025 10:07:29 UTC] Including required files...
+[28-Jun-2025 10:07:29 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:07:29 UTC] ✓ database.php included
+[28-Jun-2025 10:07:29 UTC] ✓ UserController.php included
+[28-Jun-2025 10:07:29 UTC] ✓ jwt.php included
+[28-Jun-2025 10:07:29 UTC] ✓ User.php included
+[28-Jun-2025 10:07:29 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:07:29 UTC] ✓ UserController.php included
+[28-Jun-2025 10:07:29 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:07:29 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:07:29 UTC] ✓ Booking files included
+[28-Jun-2025 10:07:29 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:07:29 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:07:29 UTC] ✓ Booking files included
+[28-Jun-2025 10:07:29 UTC] All files included successfully
+[28-Jun-2025 10:07:29 UTC] Testing database connection...
+[28-Jun-2025 10:07:29 UTC] ✓ Database connection successful
+[28-Jun-2025 10:07:29 UTC] Initializing AuthController...
+[28-Jun-2025 10:07:29 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:07:29 UTC] Processing route: /base/price/get
+[28-Jun-2025 10:07:29 UTC] Calling /base/price/get method...
+[28-Jun-2025 10:07:29 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[28-Jun-2025 10:07:29 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[28-Jun-2025 10:07:29 UTC] JWT validation error: Expired token
+[28-Jun-2025 10:07:29 UTC] Token validation failed
+[28-Jun-2025 10:07:29 UTC] All files included successfully
+[28-Jun-2025 10:07:29 UTC] Testing database connection...
+[28-Jun-2025 10:07:29 UTC] ✓ Database connection successful
+[28-Jun-2025 10:07:29 UTC] Initializing AuthController...
+[28-Jun-2025 10:07:29 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:07:29 UTC] Processing route: /offer/price/get
+[28-Jun-2025 10:07:29 UTC] Unknown endpoint: /offer/price/get
+[28-Jun-2025 10:07:36 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:07:36 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:07:36 UTC] Method: POST
+[28-Jun-2025 10:07:36 UTC] URI: /api_v1/base/price/update
+[28-Jun-2025 10:07:36 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:07:36 UTC] Raw input: {"adultPrice":"222","childPrice":"0"}
+[28-Jun-2025 10:07:36 UTC] Processed URI: /base/price/update
+[28-Jun-2025 10:07:36 UTC] Method: POST
+[28-Jun-2025 10:07:36 UTC] Including required files...
+[28-Jun-2025 10:07:36 UTC] ✓ database.php included
+[28-Jun-2025 10:07:36 UTC] ✓ jwt.php included
+[28-Jun-2025 10:07:36 UTC] ✓ User.php included
+[28-Jun-2025 10:07:36 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:07:36 UTC] ✓ UserController.php included
+[28-Jun-2025 10:07:36 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:07:36 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:07:36 UTC] ✓ Booking files included
+[28-Jun-2025 10:07:36 UTC] All files included successfully
+[28-Jun-2025 10:07:36 UTC] Testing database connection...
+[28-Jun-2025 10:07:36 UTC] ✓ Database connection successful
+[28-Jun-2025 10:07:36 UTC] Initializing AuthController...
+[28-Jun-2025 10:07:36 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:07:36 UTC] Processing route: /base/price/update
+[28-Jun-2025 10:07:36 UTC] Unknown endpoint: /base/price/update
+[28-Jun-2025 10:09:42 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:09:42 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:09:42 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:09:42 UTC] Method: POST
+[28-Jun-2025 10:09:42 UTC] URI: /api_v1/base/price/get
+[28-Jun-2025 10:09:42 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:09:42 UTC] Raw input: {}
+[28-Jun-2025 10:09:42 UTC] Processed URI: /base/price/get
+[28-Jun-2025 10:09:42 UTC] Method: POST
+[28-Jun-2025 10:09:42 UTC] Including required files...
+[28-Jun-2025 10:09:42 UTC] ✓ database.php included
+[28-Jun-2025 10:09:42 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:09:42 UTC] Method: POST
+[28-Jun-2025 10:09:42 UTC] URI: /api_v1/offer/price/get
+[28-Jun-2025 10:09:42 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:09:42 UTC] Raw input: {}
+[28-Jun-2025 10:09:42 UTC] Processed URI: /offer/price/get
+[28-Jun-2025 10:09:42 UTC] Method: POST
+[28-Jun-2025 10:09:42 UTC] ✓ jwt.php included
+[28-Jun-2025 10:09:42 UTC] Including required files...
+[28-Jun-2025 10:09:42 UTC] ✓ User.php included
+[28-Jun-2025 10:09:42 UTC] ✓ database.php included
+[28-Jun-2025 10:09:42 UTC] ✓ jwt.php included
+[28-Jun-2025 10:09:42 UTC] ✓ User.php included
+[28-Jun-2025 10:09:42 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:09:42 UTC] ✓ UserController.php included
+[28-Jun-2025 10:09:42 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:09:42 UTC] ✓ UserController.php included
+[28-Jun-2025 10:09:42 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:09:42 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:09:42 UTC] ✓ Booking files included
+[28-Jun-2025 10:09:42 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:09:42 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:09:42 UTC] ✓ Booking files included
+[28-Jun-2025 10:09:42 UTC] All files included successfully
+[28-Jun-2025 10:09:42 UTC] Testing database connection...
+[28-Jun-2025 10:09:42 UTC] ✓ Database connection successful
+[28-Jun-2025 10:09:42 UTC] Initializing AuthController...
+[28-Jun-2025 10:09:42 UTC] All files included successfully
+[28-Jun-2025 10:09:42 UTC] Testing database connection...
+[28-Jun-2025 10:09:42 UTC] ✓ Database connection successful
+[28-Jun-2025 10:09:42 UTC] Initializing AuthController...
+[28-Jun-2025 10:09:42 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:09:42 UTC] Processing route: /offer/price/get
+[28-Jun-2025 10:09:42 UTC] Unknown endpoint: /offer/price/get
+[28-Jun-2025 10:09:42 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:09:42 UTC] Processing route: /base/price/get
+[28-Jun-2025 10:09:42 UTC] Calling /base/price/get method...
+[28-Jun-2025 10:09:42 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[28-Jun-2025 10:09:42 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[28-Jun-2025 10:09:42 UTC] JWT validation error: Expired token
+[28-Jun-2025 10:09:42 UTC] Token validation failed
+[28-Jun-2025 10:09:49 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:09:49 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:09:49 UTC] Method: POST
+[28-Jun-2025 10:09:49 UTC] URI: /api_v1/base/price/update
+[28-Jun-2025 10:09:49 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:09:49 UTC] Raw input: {"adultPrice":"200","childPrice":"0"}
+[28-Jun-2025 10:09:49 UTC] Processed URI: /base/price/update
+[28-Jun-2025 10:09:49 UTC] Method: POST
+[28-Jun-2025 10:09:49 UTC] Including required files...
+[28-Jun-2025 10:09:49 UTC] ✓ database.php included
+[28-Jun-2025 10:09:49 UTC] ✓ jwt.php included
+[28-Jun-2025 10:09:49 UTC] ✓ User.php included
+[28-Jun-2025 10:09:49 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:09:49 UTC] ✓ UserController.php included
+[28-Jun-2025 10:09:49 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:09:49 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:09:49 UTC] ✓ Booking files included
+[28-Jun-2025 10:09:49 UTC] All files included successfully
+[28-Jun-2025 10:09:49 UTC] Testing database connection...
+[28-Jun-2025 10:09:49 UTC] ✓ Database connection successful
+[28-Jun-2025 10:09:49 UTC] Initializing AuthController...
+[28-Jun-2025 10:09:49 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:09:49 UTC] Processing route: /base/price/update
+[28-Jun-2025 10:09:49 UTC] Unknown endpoint: /base/price/update
+[28-Jun-2025 10:10:30 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:10:30 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:10:30 UTC] Method: POST
+[28-Jun-2025 10:10:30 UTC] URI: /api_v1/base/price/update
+[28-Jun-2025 10:10:30 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:10:30 UTC] Raw input: {"adultPrice":"0","childPrice":"255"}
+[28-Jun-2025 10:10:30 UTC] Processed URI: /base/price/update
+[28-Jun-2025 10:10:30 UTC] Method: POST
+[28-Jun-2025 10:10:30 UTC] Including required files...
+[28-Jun-2025 10:10:30 UTC] ✓ database.php included
+[28-Jun-2025 10:10:30 UTC] ✓ jwt.php included
+[28-Jun-2025 10:10:30 UTC] ✓ User.php included
+[28-Jun-2025 10:10:30 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:10:30 UTC] ✓ UserController.php included
+[28-Jun-2025 10:10:30 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:10:30 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:10:30 UTC] ✓ Booking files included
+[28-Jun-2025 10:10:30 UTC] All files included successfully
+[28-Jun-2025 10:10:30 UTC] Testing database connection...
+[28-Jun-2025 10:10:30 UTC] ✓ Database connection successful
+[28-Jun-2025 10:10:30 UTC] Initializing AuthController...
+[28-Jun-2025 10:10:30 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:10:30 UTC] Processing route: /base/price/update
+[28-Jun-2025 10:10:30 UTC] Unknown endpoint: /base/price/update
+[28-Jun-2025 10:13:49 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:13:49 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:13:49 UTC] Method: POST
+[28-Jun-2025 10:13:49 UTC] URI: /api_v1/base/price/update
+[28-Jun-2025 10:13:49 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:13:49 UTC] Raw input: {"adultPrice":"0","childPrice":"255"}
+[28-Jun-2025 10:13:49 UTC] Processed URI: /base/price/update
+[28-Jun-2025 10:13:49 UTC] Method: POST
+[28-Jun-2025 10:13:49 UTC] Including required files...
+[28-Jun-2025 10:13:49 UTC] ✓ database.php included
+[28-Jun-2025 10:13:49 UTC] ✓ jwt.php included
+[28-Jun-2025 10:13:49 UTC] ✓ User.php included
+[28-Jun-2025 10:13:49 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:13:49 UTC] ✓ UserController.php included
+[28-Jun-2025 10:13:49 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:13:49 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:13:49 UTC] ✓ Booking files included
+[28-Jun-2025 10:13:49 UTC] All files included successfully
+[28-Jun-2025 10:13:49 UTC] Testing database connection...
+[28-Jun-2025 10:13:49 UTC] ✓ Database connection successful
+[28-Jun-2025 10:13:49 UTC] Initializing AuthController...
+[28-Jun-2025 10:13:49 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:13:49 UTC] Processing route: /base/price/update
+[28-Jun-2025 10:13:49 UTC] Unknown endpoint: /base/price/update
+[28-Jun-2025 10:14:12 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:14:12 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:14:12 UTC] Method: POST
+[28-Jun-2025 10:14:12 UTC] URI: /api_v1/base/price/get
+[28-Jun-2025 10:14:12 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:14:12 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:14:12 UTC] Method: POST
+[28-Jun-2025 10:14:12 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:14:12 UTC] URI: /api_v1/offer/price/get
+[28-Jun-2025 10:14:12 UTC] Raw input: {}
+[28-Jun-2025 10:14:12 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:14:12 UTC] Processed URI: /base/price/get
+[28-Jun-2025 10:14:12 UTC] Raw input: {}
+[28-Jun-2025 10:14:12 UTC] Method: POST
+[28-Jun-2025 10:14:12 UTC] Processed URI: /offer/price/get
+[28-Jun-2025 10:14:12 UTC] Method: POST
+[28-Jun-2025 10:14:12 UTC] Including required files...
+[28-Jun-2025 10:14:12 UTC] ✓ database.php included
+[28-Jun-2025 10:14:12 UTC] Including required files...
+[28-Jun-2025 10:14:12 UTC] ✓ database.php included
+[28-Jun-2025 10:14:12 UTC] ✓ jwt.php included
+[28-Jun-2025 10:14:12 UTC] ✓ User.php included
+[28-Jun-2025 10:14:12 UTC] ✓ jwt.php included
+[28-Jun-2025 10:14:12 UTC] ✓ User.php included
+[28-Jun-2025 10:14:12 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:14:12 UTC] ✓ UserController.php included
+[28-Jun-2025 10:14:12 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:14:12 UTC] ✓ UserController.php included
+[28-Jun-2025 10:14:12 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:14:12 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:14:12 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:14:12 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:14:12 UTC] ✓ Booking files included
+[28-Jun-2025 10:14:12 UTC] ✓ Booking files included
+[28-Jun-2025 10:14:12 UTC] All files included successfully
+[28-Jun-2025 10:14:12 UTC] Testing database connection...
+[28-Jun-2025 10:14:12 UTC] All files included successfully
+[28-Jun-2025 10:14:12 UTC] Testing database connection...
+[28-Jun-2025 10:14:12 UTC] ✓ Database connection successful
+[28-Jun-2025 10:14:12 UTC] Initializing AuthController...
+[28-Jun-2025 10:14:12 UTC] ✓ Database connection successful
+[28-Jun-2025 10:14:12 UTC] Initializing AuthController...
+[28-Jun-2025 10:14:12 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:14:12 UTC] Processing route: /base/price/get
+[28-Jun-2025 10:14:12 UTC] Calling /base/price/get method...
+[28-Jun-2025 10:14:12 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[28-Jun-2025 10:14:12 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[28-Jun-2025 10:14:12 UTC] JWT validation error: Expired token
+[28-Jun-2025 10:14:12 UTC] Token validation failed
+[28-Jun-2025 10:14:12 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:14:13 UTC] Processing route: /offer/price/get
+[28-Jun-2025 10:14:13 UTC] Unknown endpoint: /offer/price/get
+[28-Jun-2025 10:14:18 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:14:18 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:14:18 UTC] Method: POST
+[28-Jun-2025 10:14:18 UTC] URI: /api_v1/base/price/update
+[28-Jun-2025 10:14:18 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:14:18 UTC] Raw input: {"adultPrice":"120","childPrice":"0"}
+[28-Jun-2025 10:14:18 UTC] Processed URI: /base/price/update
+[28-Jun-2025 10:14:18 UTC] Method: POST
+[28-Jun-2025 10:14:18 UTC] Including required files...
+[28-Jun-2025 10:14:18 UTC] ✓ database.php included
+[28-Jun-2025 10:14:18 UTC] ✓ jwt.php included
+[28-Jun-2025 10:14:18 UTC] ✓ User.php included
+[28-Jun-2025 10:14:18 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:14:18 UTC] ✓ UserController.php included
+[28-Jun-2025 10:14:18 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:14:18 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:14:18 UTC] ✓ Booking files included
+[28-Jun-2025 10:14:19 UTC] All files included successfully
+[28-Jun-2025 10:14:19 UTC] Testing database connection...
+[28-Jun-2025 10:14:19 UTC] ✓ Database connection successful
+[28-Jun-2025 10:14:19 UTC] Initializing AuthController...
+[28-Jun-2025 10:14:19 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:14:19 UTC] Processing route: /base/price/update
+[28-Jun-2025 10:14:19 UTC] Unknown endpoint: /base/price/update
+[28-Jun-2025 10:16:18 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:16:18 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:16:18 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:16:18 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:16:18 UTC] Method: POST
+[28-Jun-2025 10:16:18 UTC] URI: /api_v1/offer/price/get
+[28-Jun-2025 10:16:18 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:16:18 UTC] Raw input: {}
+[28-Jun-2025 10:16:18 UTC] Processed URI: /offer/price/get
+[28-Jun-2025 10:16:18 UTC] Method: POST
+[28-Jun-2025 10:16:18 UTC] Including required files...
+[28-Jun-2025 10:16:18 UTC] Method: POST
+[28-Jun-2025 10:16:18 UTC] URI: /api_v1/base/price/get
+[28-Jun-2025 10:16:18 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:16:18 UTC] Raw input: {}
+[28-Jun-2025 10:16:18 UTC] Processed URI: /base/price/get
+[28-Jun-2025 10:16:18 UTC] Method: POST
+[28-Jun-2025 10:16:18 UTC] ✓ database.php included
+[28-Jun-2025 10:16:18 UTC] Including required files...
+[28-Jun-2025 10:16:18 UTC] ✓ database.php included
+[28-Jun-2025 10:16:18 UTC] ✓ jwt.php included
+[28-Jun-2025 10:16:18 UTC] ✓ jwt.php included
+[28-Jun-2025 10:16:18 UTC] ✓ User.php included
+[28-Jun-2025 10:16:18 UTC] ✓ User.php included
+[28-Jun-2025 10:16:18 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:16:18 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:16:18 UTC] ✓ UserController.php included
+[28-Jun-2025 10:16:18 UTC] ✓ UserController.php included
+[28-Jun-2025 10:16:18 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:16:18 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:16:18 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:16:18 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:16:18 UTC] ✓ Booking files included
+[28-Jun-2025 10:16:18 UTC] ✓ Booking files included
+[28-Jun-2025 10:16:18 UTC] All files included successfully
+[28-Jun-2025 10:16:18 UTC] All files included successfully
+[28-Jun-2025 10:16:18 UTC] Testing database connection...
+[28-Jun-2025 10:16:18 UTC] Testing database connection...
+[28-Jun-2025 10:16:18 UTC] ✓ Database connection successful
+[28-Jun-2025 10:16:18 UTC] Initializing AuthController...
+[28-Jun-2025 10:16:18 UTC] ✓ Database connection successful
+[28-Jun-2025 10:16:18 UTC] Initializing AuthController...
+[28-Jun-2025 10:16:18 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:16:18 UTC] Processing route: /base/price/get
+[28-Jun-2025 10:16:18 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:16:18 UTC] Processing route: /offer/price/get
+[28-Jun-2025 10:16:18 UTC] Calling /base/price/get method...
+[28-Jun-2025 10:16:18 UTC] Unknown endpoint: /offer/price/get
+[28-Jun-2025 10:16:18 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[28-Jun-2025 10:16:18 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[28-Jun-2025 10:16:18 UTC] JWT validation error: Expired token
+[28-Jun-2025 10:16:18 UTC] Token validation failed
+[28-Jun-2025 10:16:23 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:16:23 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:16:23 UTC] Method: POST
+[28-Jun-2025 10:16:23 UTC] URI: /api_v1/base/price/update
+[28-Jun-2025 10:16:23 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:16:23 UTC] Raw input: {"adultPrice":"233","childPrice":"0"}
+[28-Jun-2025 10:16:23 UTC] Processed URI: /base/price/update
+[28-Jun-2025 10:16:23 UTC] Method: POST
+[28-Jun-2025 10:16:23 UTC] Including required files...
+[28-Jun-2025 10:16:23 UTC] ✓ database.php included
+[28-Jun-2025 10:16:23 UTC] ✓ jwt.php included
+[28-Jun-2025 10:16:23 UTC] ✓ User.php included
+[28-Jun-2025 10:16:23 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:16:23 UTC] ✓ UserController.php included
+[28-Jun-2025 10:16:23 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:16:23 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:16:23 UTC] ✓ Booking files included
+[28-Jun-2025 10:16:23 UTC] All files included successfully
+[28-Jun-2025 10:16:23 UTC] Testing database connection...
+[28-Jun-2025 10:16:23 UTC] ✓ Database connection successful
+[28-Jun-2025 10:16:23 UTC] Initializing AuthController...
+[28-Jun-2025 10:16:23 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:16:23 UTC] Processing route: /base/price/update
+[28-Jun-2025 10:16:23 UTC] Unknown endpoint: /base/price/update
+[28-Jun-2025 10:18:26 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:18:26 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:18:26 UTC] Method: POST
+[28-Jun-2025 10:18:26 UTC] URI: /api_v1/offer/price/get
+[28-Jun-2025 10:18:26 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:18:26 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:18:26 UTC] Method: POST
+[28-Jun-2025 10:18:26 UTC] URI: /api_v1/base/price/get
+[28-Jun-2025 10:18:26 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:18:26 UTC] Raw input: {}
+[28-Jun-2025 10:18:26 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:18:26 UTC] Raw input: {}
+[28-Jun-2025 10:18:26 UTC] Processed URI: /offer/price/get
+[28-Jun-2025 10:18:26 UTC] Method: POST
+[28-Jun-2025 10:18:26 UTC] Processed URI: /base/price/get
+[28-Jun-2025 10:18:26 UTC] Method: POST
+[28-Jun-2025 10:18:26 UTC] Including required files...
+[28-Jun-2025 10:18:26 UTC] Including required files...
+[28-Jun-2025 10:18:26 UTC] ✓ database.php included
+[28-Jun-2025 10:18:26 UTC] ✓ database.php included
+[28-Jun-2025 10:18:26 UTC] ✓ jwt.php included
+[28-Jun-2025 10:18:26 UTC] ✓ jwt.php included
+[28-Jun-2025 10:18:26 UTC] ✓ User.php included
+[28-Jun-2025 10:18:26 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:18:26 UTC] ✓ User.php included
+[28-Jun-2025 10:18:26 UTC] ✓ UserController.php included
+[28-Jun-2025 10:18:26 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:18:26 UTC] ✓ UserController.php included
+[28-Jun-2025 10:18:26 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:18:26 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:18:26 UTC] ✓ Booking files included
+[28-Jun-2025 10:18:26 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:18:26 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:18:26 UTC] All files included successfully
+[28-Jun-2025 10:18:26 UTC] Testing database connection...
+[28-Jun-2025 10:18:26 UTC] ✓ Database connection successful
+[28-Jun-2025 10:18:26 UTC] Initializing AuthController...
+[28-Jun-2025 10:18:26 UTC] ✓ Booking files included
+[28-Jun-2025 10:18:26 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:18:26 UTC] Processing route: /offer/price/get
+[28-Jun-2025 10:18:26 UTC] Unknown endpoint: /offer/price/get
+[28-Jun-2025 10:18:26 UTC] All files included successfully
+[28-Jun-2025 10:18:26 UTC] Testing database connection...
+[28-Jun-2025 10:18:26 UTC] ✓ Database connection successful
+[28-Jun-2025 10:18:26 UTC] Initializing AuthController...
+[28-Jun-2025 10:18:26 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:18:26 UTC] Processing route: /base/price/get
+[28-Jun-2025 10:18:26 UTC] Calling /base/price/get method...
+[28-Jun-2025 10:18:26 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[28-Jun-2025 10:18:26 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[28-Jun-2025 10:18:26 UTC] JWT validation error: Expired token
+[28-Jun-2025 10:18:26 UTC] Token validation failed
+[28-Jun-2025 10:18:50 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:18:50 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:18:50 UTC] Method: POST
+[28-Jun-2025 10:18:50 UTC] URI: /api_v1/offer/price/add
+[28-Jun-2025 10:18:50 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:18:50 UTC] Raw input: {"adultPrice":"45","childPrice":"45","from":"2025-06-04","to":"2025-06-28"}
+[28-Jun-2025 10:18:50 UTC] Processed URI: /offer/price/add
+[28-Jun-2025 10:18:50 UTC] Method: POST
+[28-Jun-2025 10:18:50 UTC] Including required files...
+[28-Jun-2025 10:18:50 UTC] ✓ database.php included
+[28-Jun-2025 10:18:50 UTC] ✓ jwt.php included
+[28-Jun-2025 10:18:50 UTC] ✓ User.php included
+[28-Jun-2025 10:18:50 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:18:50 UTC] ✓ UserController.php included
+[28-Jun-2025 10:18:50 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:18:50 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:18:50 UTC] ✓ Booking files included
+[28-Jun-2025 10:18:50 UTC] All files included successfully
+[28-Jun-2025 10:18:50 UTC] Testing database connection...
+[28-Jun-2025 10:18:50 UTC] ✓ Database connection successful
+[28-Jun-2025 10:18:50 UTC] Initializing AuthController...
+[28-Jun-2025 10:18:50 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:18:50 UTC] Processing route: /offer/price/add
+[28-Jun-2025 10:18:50 UTC] Calling /offer/price/add method...
+[28-Jun-2025 10:18:50 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[28-Jun-2025 10:18:50 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[28-Jun-2025 10:18:50 UTC] JWT validation error: Expired token
+[28-Jun-2025 10:18:50 UTC] Token validation failed
+[28-Jun-2025 10:19:06 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:19:06 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:19:06 UTC] Method: POST
+[28-Jun-2025 10:19:06 UTC] URI: /api_v1/offer/price/add
+[28-Jun-2025 10:19:06 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:19:06 UTC] Raw input: {"adultPrice":"45","childPrice":"45","from":"2025-06-04","to":"2025-06-28"}
+[28-Jun-2025 10:19:06 UTC] Processed URI: /offer/price/add
+[28-Jun-2025 10:19:06 UTC] Method: POST
+[28-Jun-2025 10:19:06 UTC] Including required files...
+[28-Jun-2025 10:19:06 UTC] ✓ database.php included
+[28-Jun-2025 10:19:06 UTC] ✓ jwt.php included
+[28-Jun-2025 10:19:06 UTC] ✓ User.php included
+[28-Jun-2025 10:19:06 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:19:06 UTC] ✓ UserController.php included
+[28-Jun-2025 10:19:06 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:19:06 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:19:06 UTC] ✓ Booking files included
+[28-Jun-2025 10:19:06 UTC] All files included successfully
+[28-Jun-2025 10:19:06 UTC] Testing database connection...
+[28-Jun-2025 10:19:06 UTC] ✓ Database connection successful
+[28-Jun-2025 10:19:06 UTC] Initializing AuthController...
+[28-Jun-2025 10:19:06 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:19:06 UTC] Processing route: /offer/price/add
+[28-Jun-2025 10:19:06 UTC] Calling /offer/price/add method...
+[28-Jun-2025 10:19:06 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[28-Jun-2025 10:19:06 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[28-Jun-2025 10:19:06 UTC] JWT validation error: Expired token
+[28-Jun-2025 10:19:06 UTC] Token validation failed
+[28-Jun-2025 10:32:57 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:32:57 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:32:57 UTC] Method: POST
+[28-Jun-2025 10:32:57 UTC] URI: /api_v1/base/price/get
+[28-Jun-2025 10:32:57 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:32:57 UTC] Raw input: {}
+[28-Jun-2025 10:32:57 UTC] Processed URI: /base/price/get
+[28-Jun-2025 10:32:57 UTC] Method: POST
+[28-Jun-2025 10:32:57 UTC] Including required files...
+[28-Jun-2025 10:32:57 UTC] ✓ database.php included
+[28-Jun-2025 10:32:57 UTC] ✓ jwt.php included
+[28-Jun-2025 10:32:57 UTC] ✓ User.php included
+[28-Jun-2025 10:32:57 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:32:57 UTC] ✓ UserController.php included
+[28-Jun-2025 10:32:57 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:32:57 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:32:57 UTC] ✓ Booking files included
+[28-Jun-2025 10:32:57 UTC] All files included successfully
+[28-Jun-2025 10:32:57 UTC] Testing database connection...
+[28-Jun-2025 10:32:57 UTC] ✓ Database connection successful
+[28-Jun-2025 10:32:57 UTC] Initializing AuthController...
+[28-Jun-2025 10:32:57 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:32:57 UTC] Processing route: /base/price/get
+[28-Jun-2025 10:32:57 UTC] Calling /base/price/get method...
+[28-Jun-2025 10:32:57 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[28-Jun-2025 10:32:57 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[28-Jun-2025 10:32:57 UTC] JWT validation error: Expired token
+[28-Jun-2025 10:32:57 UTC] Token validation failed
+[28-Jun-2025 10:32:57 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:32:57 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:32:57 UTC] Method: POST
+[28-Jun-2025 10:32:57 UTC] URI: /api_v1/offer/price/get
+[28-Jun-2025 10:32:57 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:32:57 UTC] Raw input: {}
+[28-Jun-2025 10:32:57 UTC] Processed URI: /offer/price/get
+[28-Jun-2025 10:32:57 UTC] Method: POST
+[28-Jun-2025 10:32:57 UTC] Including required files...
+[28-Jun-2025 10:32:57 UTC] ✓ database.php included
+[28-Jun-2025 10:32:57 UTC] ✓ jwt.php included
+[28-Jun-2025 10:32:57 UTC] ✓ User.php included
+[28-Jun-2025 10:32:57 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:32:57 UTC] ✓ UserController.php included
+[28-Jun-2025 10:32:57 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:32:57 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:32:57 UTC] ✓ Booking files included
+[28-Jun-2025 10:32:57 UTC] All files included successfully
+[28-Jun-2025 10:32:57 UTC] Testing database connection...
+[28-Jun-2025 10:32:57 UTC] ✓ Database connection successful
+[28-Jun-2025 10:32:57 UTC] Initializing AuthController...
+[28-Jun-2025 10:32:57 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:32:57 UTC] Processing route: /offer/price/get
+[28-Jun-2025 10:32:57 UTC] Unknown endpoint: /offer/price/get
+[28-Jun-2025 10:33:00 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:33:00 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:33:00 UTC] Method: POST
+[28-Jun-2025 10:33:00 UTC] URI: /api_v1/user/list
+[28-Jun-2025 10:33:00 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:33:00 UTC] Raw input: {}
+[28-Jun-2025 10:33:00 UTC] Processed URI: /user/list
+[28-Jun-2025 10:33:00 UTC] Method: POST
+[28-Jun-2025 10:33:00 UTC] Including required files...
+[28-Jun-2025 10:33:00 UTC] ✓ database.php included
+[28-Jun-2025 10:33:00 UTC] ✓ jwt.php included
+[28-Jun-2025 10:33:00 UTC] ✓ User.php included
+[28-Jun-2025 10:33:00 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:33:00 UTC] ✓ UserController.php included
+[28-Jun-2025 10:33:00 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:33:00 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:33:00 UTC] ✓ Booking files included
+[28-Jun-2025 10:33:01 UTC] All files included successfully
+[28-Jun-2025 10:33:01 UTC] Testing database connection...
+[28-Jun-2025 10:33:01 UTC] ✓ Database connection successful
+[28-Jun-2025 10:33:01 UTC] Initializing AuthController...
+[28-Jun-2025 10:33:01 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:33:01 UTC] Processing route: /user/list
+[28-Jun-2025 10:33:01 UTC] Calling user list on user control...
+[28-Jun-2025 10:33:01 UTC] Found token via getallheaders(): eyJ0eXAiOiJKV1QiLCJh...
+[28-Jun-2025 10:33:01 UTC] Token from headers: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyY
+[28-Jun-2025 10:33:01 UTC] JWT validation error: Expired token
+[28-Jun-2025 10:33:01 UTC] Token validation failed
+[28-Jun-2025 10:33:01 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:33:01 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:33:01 UTC] Method: POST
+[28-Jun-2025 10:33:01 UTC] URI: /api_v1/role/list
+[28-Jun-2025 10:33:01 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:33:01 UTC] Raw input: {}
+[28-Jun-2025 10:33:01 UTC] Processed URI: /role/list
+[28-Jun-2025 10:33:01 UTC] Method: POST
+[28-Jun-2025 10:33:01 UTC] Including required files...
+[28-Jun-2025 10:33:01 UTC] ✓ database.php included
+[28-Jun-2025 10:33:01 UTC] ✓ jwt.php included
+[28-Jun-2025 10:33:01 UTC] ✓ User.php included
+[28-Jun-2025 10:33:01 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:33:01 UTC] ✓ UserController.php included
+[28-Jun-2025 10:33:01 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:33:01 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:33:01 UTC] ✓ Booking files included
+[28-Jun-2025 10:33:01 UTC] All files included successfully
+[28-Jun-2025 10:33:01 UTC] Testing database connection...
+[28-Jun-2025 10:33:01 UTC] ✓ Database connection successful
+[28-Jun-2025 10:33:01 UTC] Initializing AuthController...
+[28-Jun-2025 10:33:01 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:33:01 UTC] Processing route: /role/list
+[28-Jun-2025 10:33:01 UTC] Unknown endpoint: /role/list
+[28-Jun-2025 10:33:12 UTC] 🔥 Debug Start: index.php running
+[28-Jun-2025 10:33:12 UTC] === NEW REQUEST ===
+[28-Jun-2025 10:33:12 UTC] Method: POST
+[28-Jun-2025 10:33:12 UTC] URI: /api_v1/role/add
+[28-Jun-2025 10:33:12 UTC] Content-Type: application/json; charset=utf-8
+[28-Jun-2025 10:33:12 UTC] Raw input: {"name":"gsdf","description":"sdasfsdf","permissions":["Manage Users"]}
+[28-Jun-2025 10:33:12 UTC] Processed URI: /role/add
+[28-Jun-2025 10:33:12 UTC] Method: POST
+[28-Jun-2025 10:33:12 UTC] Including required files...
+[28-Jun-2025 10:33:12 UTC] ✓ database.php included
+[28-Jun-2025 10:33:12 UTC] ✓ jwt.php included
+[28-Jun-2025 10:33:12 UTC] ✓ User.php included
+[28-Jun-2025 10:33:12 UTC] ✓ AuthController.php included
+[28-Jun-2025 10:33:12 UTC] ✓ UserController.php included
+[28-Jun-2025 10:33:12 UTC] ✓ AdminController.php included
+[28-Jun-2025 10:33:12 UTC] ✓ JWTMiddleware.php included
+[28-Jun-2025 10:33:12 UTC] ✓ Booking files included
+[28-Jun-2025 10:33:12 UTC] All files included successfully
+[28-Jun-2025 10:33:12 UTC] Testing database connection...
+[28-Jun-2025 10:33:12 UTC] ✓ Database connection successful
+[28-Jun-2025 10:33:12 UTC] Initializing AuthController...
+[28-Jun-2025 10:33:12 UTC] ✓ AuthController initialized
+[28-Jun-2025 10:33:12 UTC] Processing route: /role/add
+[28-Jun-2025 10:33:12 UTC] Unknown endpoint: /role/add

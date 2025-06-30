@@ -23,16 +23,16 @@ class PaymentController {
 
     public function recheckTransaction(){
         try {
-            // $user_data = JWTMiddleware::verifyToken();
-            // if (!$user_data) {
-            //     http_response_code(401);
-            //     header('Content-Type: application/json');
-            //     echo json_encode([
-            //         'success' => false,
-            //         'message' => 'Unauthorized'
-            //     ]);
-            //     return;
-            // }
+            $user_data = JWTMiddleware::verifyToken();
+            if (!$user_data) {
+                http_response_code(401);
+                header('Content-Type: application/json');
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Unauthorized'
+                ]);
+                return;
+            }
 
             $body = json_decode(file_get_contents('php://input'), true) ?? [];
             if (empty($body['id']) || empty($body['transactionid']) || empty($body['phone_no'])) {

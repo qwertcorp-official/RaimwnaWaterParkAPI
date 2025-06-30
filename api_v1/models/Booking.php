@@ -4,12 +4,243 @@ require_once 'config/database.php';
 class Booking {
     private $conn;
     private $table = 'bookings';
+    private $tickets = 'tickets';
     private $pricing_table = 'daily_pricing';
 
     public function __construct() {
         $database = new Database();
         $this->conn = $database->getConnection();
     }
+
+    /*public function bookingList($input = []){
+
+        try {
+
+            $defaultParamsForCondition = [
+                "amount" => [
+                    "column" => "ticket_amount",
+                    "val" => null,
+                ],
+                "book_by" => [
+                    "column" => "user_id",
+                    "val" => null,
+                ],
+                "booking_date" => [
+                    "column" => "updated_at",
+                    "val" => null,
+                ],
+                "sale_date" => [
+                    "column" => "updated_at",
+                    "val" => null, // 0/1
+                ],
+                "visited" => [
+                    "column" => "scan_status",
+                    "val" => null, // 0/1
+                ],
+            ];
+
+            $defaultConditions = [
+                "amount" => null,
+                "book_by" => null,
+                "booking_date" => null,
+                "sale_date" => null,
+                "visited" => null,
+            ];
+
+            $query = "SELECT * FROM " . $this->tickets;
+            // $query = "SELECT id, amount, book_by, booking_date, sale_date, visited, created_at, updated_at FROM " . $this->table;
+
+            $where = [];
+            $params = [];
+
+            $finalConditions = $defaultConditions;
+            if (!empty($input['conditions']) && is_array($input['conditions'])) {
+                foreach ($input['conditions'] as $key => $value) {
+                    if (strtolower($value) !== 'null') {
+                        $finalConditions[$key] = $value;
+                    }
+                }
+            }
+
+            foreach ($finalConditions as $key => $value) {
+                if (!is_null($value)) {
+                    $where[] = "$key = :$key";
+                    $params[":$key"] = $value;
+                }
+            }
+
+
+            // if (empty($where)) {
+            //     $query .= " WHERE deleted = 0";
+            // } else {
+            //     $query .= " WHERE " . implode(" AND ", $where) . " AND deleted = 0";
+            // }
+
+            if (!empty($where)){
+                $query .= " WHERE " . implode(" AND ", $where);
+            }
+
+
+            if (!empty($input['order-key']) && !empty($input['order-by'])) {
+                $orderKey = trim($input['order-key']);
+                $orderBy = strtoupper(trim($input['order-by']));
+
+                $allowedDirs = ['ASC', 'DESC'];
+                $allowedColumns = ['id', 'amount', 'book_by', 'booking_date', 'sale_date', 'visited', 'created_at', 'updated_at'];
+
+                if (in_array($orderBy, $allowedDirs) && in_array($orderKey, $allowedColumns)) {
+                    $query .= " ORDER BY `$orderKey` $orderBy";
+                }
+            }
+
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            
+            print_r($stmt->fetchAll(PDO::FETCH_ASSOC));
+
+            exit();
+
+            if (!$stmt) {
+                error_log("Fetching Bookings failed (getAllBookings method): " . $this->conn->error);
+                return false;
+            }
+
+            foreach ($params as $param => $val) {
+                $stmt->bindValue($param, $val);
+            }
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            } else {
+                error_log("🔺Bookings not found (getAllBookings)");
+                return false;
+            }
+
+        } catch (Exception $e) {
+            error_log("Get All Bookings method error: " . $e->getMessage());
+            return false;
+        }
+
+    }*/
+
+    public function bookingList($input = []) {
+        try {
+            $defaultParamsForCondition = [
+                "amount" => [
+                    "column" => "ticket_amount",
+                    "val" => null,
+                ],
+                "book_by" => [
+                    "column" => "user_id",
+                    "val" => null,
+                ],
+                "booking_date" => [
+                    "column" => "updated_at",
+                    "val" => null,
+                ],
+                "sale_date" => [
+                    "column" => "sale_date",
+                    "val" => null,
+                ],
+                "visited" => [
+                    "column" => "scan_status",
+                    "val" => null,
+                ],
+            ];
+
+            $query = "SELECT * FROM " . $this->tickets;
+            // $query = "SELECT id, ticket_amount FROM " . $this->tickets;
+            $where = [];
+            $params = [];
+
+            // Assign incoming values to $defaultParamsForCondition
+            if (!empty($input['conditions']) && is_array($input['conditions'])) {
+                foreach ($defaultParamsForCondition as $key => &$config) {
+                    if (isset($input['conditions'][$key]) && strtolower($input['conditions'][$key]) !== 'null') {
+                        $config['val'] = $input['conditions'][$key];
+                    }
+                }
+            }
+
+            // Build WHERE conditions
+            foreach ($defaultParamsForCondition as $key => $config) {
+                if (!is_null($config['val'])) {
+                    $where[] = "{$config['column']} = :$key";
+                    $params[":$key"] = $config['val'];
+                }
+            }
+
+            if (!empty($where)) {
+                $query .= " WHERE " . implode(" AND ", $where);
+            }
+
+            // Order clause
+            if (!empty($input['order-key']) && !empty($input['order-by'])) {
+                $orderKey = trim($input['order-key']);
+                $orderBy = strtoupper(trim($input['order-by']));
+
+                $allowedDirs = ['ASC', 'DESC'];
+                $allowedColumns = [
+                    'id', 'ticket_amount', 'user_id', 'booking_date', 'sale_date',
+                    'scan_status', 'created_at', 'updated_at'
+                ];
+
+                if (in_array($orderBy, $allowedDirs) && in_array($orderKey, $allowedColumns)) {
+                    $query .= " ORDER BY `$orderKey` $orderBy";
+                }
+            }
+
+            $stmt = $this->conn->prepare($query);
+
+            if (!$stmt) {
+                error_log("Fetching Bookings failed (bookingList method): " . $this->conn->error);
+                return [
+                    "success" => false,
+                    "status" => "error",
+                    "message" => "Failed to prepare statement",
+                    "data" => []
+                ];
+            }
+
+            foreach ($params as $param => $val) {
+                $stmt->bindValue($param, $val);
+            }
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                return [
+                    "success" => true,
+                    "status" => "success",
+                    "message" => "Booking records fetched successfully.",
+                    "data" => $stmt->fetchAll(PDO::FETCH_ASSOC)
+                ];
+            } else {
+                return [
+                    "success" => false,
+                    "status" => "not_found",
+                    "message" => "No bookings found for given filters.",
+                    "data" => []
+                ];
+            }
+
+        } catch (Exception $e) {
+            error_log("Booking List method error: " . $e->getMessage());
+            return [
+                "success" => false,
+                "status" => "exception",
+                "message" => "An error occurred while fetching booking list.",
+                "error" => $e->getMessage(),
+                "data" => []
+            ];
+        }
+    }
+
+
+
+
 
     // Get pricing for a specific date
     public function getPricingForDate($date) {

@@ -6,10 +6,10 @@ ini_set('log_errors', 1);
 ini_set('error_log', 'php_errors.log');
 
 // Set headers first
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
+// header('Content-Type: application/json');
+// header('Access-Control-Allow-Origin: *');
+// header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+// header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
 
 error_log("🔥 Debug Start: index.php running");
 
@@ -20,24 +20,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 }
 
 // Function to send JSON error and exit
-function sendError($message, $code = 500, $debug_info = []) {
+function sendError($message, $code = 500, $debug_info = [])
+{
     http_response_code($code);
     $response = [
         'success' => false,
         'message' => $message
     ];
-    
+
     // Add debug info if provided
     if (!empty($debug_info)) {
         $response['debug'] = $debug_info;
     }
-    
+
     echo json_encode($response);
     exit();
 }
 
 // Function to send JSON success
-function sendSuccess($data) {
+function sendSuccess($data)
+{
     echo json_encode($data);
     exit();
 }
@@ -101,11 +103,12 @@ $required_files = [
 
 $required_files = [
     'config/database.php',
-    'config/jwt.php', 
+    'config/jwt.php',
     'models/User.php',
     'models/Admin.php',
     'controllers/AuthController.php',
     'controllers/AdminController.php',
+    'controllers/UserController.php',
     'middleware/JWTMiddleware.php'
 ];
 
@@ -133,25 +136,34 @@ if (!empty($missing_files)) {
 // Include the ESSENTIAL files only
 try {
     error_log("Including required files...");
-    
+
     require_once 'config/database.php';
     error_log("✓ database.php included");
-    
+
     require_once 'config/jwt.php';
     error_log("✓ jwt.php included");
-    
+
     require_once 'models/User.php';
     error_log("✓ User.php included");
-    
+
     require_once 'controllers/AuthController.php';
     error_log("✓ AuthController.php included");
 
+    require_once 'controllers/UserController.php';
+    error_log("✓ UserController.php included");
+
     require_once 'controllers/AdminController.php';
     error_log("✓ AdminController.php included");
-    
+
+    require_once 'controllers/RoleController.php';
+    error_log("✓ RoleController.php included");
+
+    require_once 'controllers/PaymentController.php';
+    error_log("✓ PaymentController.php included");
+
     require_once 'middleware/JWTMiddleware.php';
     error_log("✓ JWTMiddleware.php included");
-    
+
     // Include booking files if they exist
     $bookingController = null;
     if (file_exists('models/Booking.php') && file_exists('controllers/BookingController.php')) {
@@ -162,10 +174,12 @@ try {
 
         require_once 'controllers/TicketController.php';
         $ticketController = new TicketController();
+
+        // require_once 'controllers/TicketController.php';
+        // $ticketController = new TicketController();
     }
-    
+
     error_log("All files included successfully");
-    
 } catch (ParseError $e) {
     error_log("Parse error in file: " . $e->getMessage());
     sendError('Syntax error in server files', 500, [
@@ -208,6 +222,9 @@ try {
     error_log("Initializing AuthController...");
     $authController = new AuthController();
     $adminController = new AdminController();
+    $userController = new UserController();
+    $roleController = new RoleController();
+    $paymentController = new PaymentController();
     error_log("✓ AuthController initialized");
 } catch (Exception $e) {
     error_log("Controller initialization error: " . $e->getMessage());
@@ -219,8 +236,100 @@ try {
 // Route handling - EXPANDED with booking endpoints
 try {
     error_log("Processing route: $request_uri");
-    
+
     switch ($request_uri) {
+
+        // Role routes
+        case '/role/list':
+            if ($request_method == 'POST') {
+                error_log("Calling role list on admin control...");
+                $roleController->roleList();
+            } else {
+                sendError('Method not allowed for /role/list', 405);
+            }
+            break;
+        case '/role/add':
+            if ($request_method == 'POST') {
+                error_log("Calling role add on admin control...");
+                $roleController->roleAdd();
+            } else {
+                sendError('Method not allowed for /role/add', 405);
+            }
+            break;
+        case '/role/update':
+            if ($request_method == 'POST') {
+                error_log("Calling role update on admin control...");
+                $roleController->roleUpdate();
+            } else {
+                sendError('Method not allowed for /role/update', 405);
+            }
+            break;
+        case '/role/delete':
+            if ($request_method == 'POST') {
+                error_log("Calling role delete on admin control...");
+                $roleController->roleDelete();
+            } else {
+                sendError('Method not allowed for /role/delete', 405);
+            }
+            break;
+
+        // User routes
+        case '/user/list':
+            if ($request_method == 'POST') {
+                if ($request_method == 'POST') {
+                    error_log("Calling user list on user control...");
+                    $userController->userlist();
+                } else {
+                    sendError('Method not allowed for /user/list', 405);
+                }
+            }
+            break;
+        case '/user/add':
+            if ($request_method == 'POST') {
+                if ($request_method == 'POST') {
+                    error_log("Calling user add on user control...");
+                    $userController->useradd();
+                } else {
+                    sendError('Method not allowed for /user/add', 405);
+                }
+            }
+            break;
+        case '/user/update':
+            if ($request_method == 'POST') {
+                if ($request_method == 'POST') {
+                    error_log("Calling user update on user control...");
+                    $userController->userupdate();
+                } else {
+                    sendError('Method not allowed for /user/update', 405);
+                }
+            }
+            break;
+        case '/user/delete':
+            if ($request_method == 'POST') {
+                if ($request_method == 'POST') {
+                    error_log("Calling user delete on user control...");
+                    $userController->userdelete();
+                } else {
+                    sendError('Method not allowed for /user/delete', 405);
+                }
+            }
+            break;
+
+        case '/bookings/list':
+            if ($request_method == 'POST') {
+                if ($bookingController) {
+                    error_log("Calling get user booking list method...");
+                    $bookingController->bookinglist();
+                } else {
+                    sendError('Booking list functionality not available', 503);
+                }
+            } else {
+                sendError('Method not allowed for /bookings/list', 405);
+            }
+            break;
+        
+
+
         // Authentication routes
         case '/register':
             if ($request_method == 'POST') {
@@ -230,7 +339,7 @@ try {
                 sendError('Method not allowed for /register', 405);
             }
             break;
-            
+
         case '/login':
             if ($request_method == 'POST') {
                 error_log("Calling login method...");
@@ -340,7 +449,7 @@ try {
                 sendError('Method not allowed for /bookings/test', 405);
             }
             break;
-            
+
         // Root endpoint
         case '/':
         case '':
@@ -377,7 +486,7 @@ try {
                 ]
             ]);
             break;
-            
+
         case '/file-check':
             // Special endpoint to check file structure
             $file_status = [];
@@ -389,7 +498,7 @@ try {
                     'size' => file_exists($file) ? filesize($file) : 0
                 ];
             }
-            
+
             sendSuccess([
                 'message' => 'File structure check',
                 'files' => $file_status,
@@ -400,39 +509,39 @@ try {
             ]);
             break;
 
-           case '/jwt-debug':
-                if ($request_method == 'GET') {
-                    error_log("=== JWT DEBUG START ===");
-                    
-                    // Get all headers
-                    $allHeaders = function_exists('getallheaders') ? getallheaders() : [];
-                    
-                    // Get all $_SERVER vars that might contain auth info
-                    $authServerVars = [];
-                    foreach ($_SERVER as $key => $value) {
-                        if (stripos($key, 'auth') !== false || substr($key, 0, 5) === 'HTTP_') {
-                            $authServerVars[$key] = substr($value, 0, 100); // Truncate for security
-                        }
+        case '/jwt-debug':
+            if ($request_method == 'GET') {
+                error_log("=== JWT DEBUG START ===");
+
+                // Get all headers
+                $allHeaders = function_exists('getallheaders') ? getallheaders() : [];
+
+                // Get all $_SERVER vars that might contain auth info
+                $authServerVars = [];
+                foreach ($_SERVER as $key => $value) {
+                    if (stripos($key, 'auth') !== false || substr($key, 0, 5) === 'HTTP_') {
+                        $authServerVars[$key] = substr($value, 0, 100); // Truncate for security
                     }
-                    
-                    // Try JWT verification
-                    $user = null;
-                    if ($bookingController) {
-                        $user = JWTMiddleware::verifyToken();
-                    }
-                    
-                    sendSuccess([
-                        'message' => 'Enhanced JWT Debug Information',
-                        'all_headers' => $allHeaders,
-                        'auth_server_vars' => $authServerVars,
-                        'booking_controller_exists' => $bookingController ? true : false,
-                        'jwt_verification_result' => $user ? 'SUCCESS' : 'FAILED',
-                        'user_id' => $user ? ($user['id'] ?? 'not found') : null,
-                        'timestamp' => date('Y-m-d H:i:s'),
-                        'php_version' => PHP_VERSION
-                    ]);
                 }
-                break;
+
+                // Try JWT verification
+                $user = null;
+                if ($bookingController) {
+                    $user = JWTMiddleware::verifyToken();
+                }
+
+                sendSuccess([
+                    'message' => 'Enhanced JWT Debug Information',
+                    'all_headers' => $allHeaders,
+                    'auth_server_vars' => $authServerVars,
+                    'booking_controller_exists' => $bookingController ? true : false,
+                    'jwt_verification_result' => $user ? 'SUCCESS' : 'FAILED',
+                    'user_id' => $user ? ($user['id'] ?? 'not found') : null,
+                    'timestamp' => date('Y-m-d H:i:s'),
+                    'php_version' => PHP_VERSION
+                ]);
+            }
+            break;
 
         case '/tickets':
             if ($request_method == 'POST') {
@@ -452,126 +561,195 @@ try {
             }
             break;
 
-            // Add these routes to your index.php switch statement:
+        // Add these routes to your index.php switch statement:
 
-    case '/payments/temp':
-        if ($request_method == 'POST') {
-            // Store temporary payment data
-            try {
-                $data = json_decode(file_get_contents("php://input"), true);
-                
-                // You can store this in database or just return success for now
-                sendSuccess([
-                    'message' => 'Temporary payment data stored',
-                    'txnId' => $data['txnId'] ?? 'unknown'
-                ]);
-            } catch (Exception $e) {
-                sendError('Failed to store temp payment data', 500);
+        //
+        case '/payments/temp':
+            if ($request_method == 'POST') {
+                // Store temporary payment data
+                try {
+                    $data = json_decode(file_get_contents("php://input"), true);
+
+                    // You can store this in database or just return success for now
+                    sendSuccess([
+                        'message' => 'Temporary payment data stored',
+                        'txnId' => $data['txnId'] ?? 'unknown'
+                    ]);
+                } catch (Exception $e) {
+                    sendError('Failed to store temp payment data', 500);
+                }
+            } else {
+                sendError('Method not allowed for /payments/temp', 405);
             }
-        } else {
-            sendError('Method not allowed for /payments/temp', 405);
-        }
-        break;
-    
-    case '/base/price/manage':
-        if ($request_method == 'POST') {
+            break;
 
+            
+        // Payment / Recheck routes
+
+        case '/transaction/status':
+            if ($request_method == 'POST') {
+                error_log("Calling /transaction/status method...");
+                $paymentController->recheckTransaction();
+            } else {
+                sendError('Method not allowed for /transaction/status', 405);  
+            }
+            break;
+
+        // Admin Routes
+
+        case '/park/status/close':
+            if ($request_method == 'POST') {
+                error_log("Calling /park/status/close method...");
+                $adminController->closePark();
+            } else {
+                sendError('Method not allowed for /park/status/close', 405);
+            }
+            break;
+        case '/park/status/reopen':
+            if ($request_method == 'POST') {
+                error_log("Calling /park/status/reopen method...");
+                $adminController->reopenClosedPark();
+            } else {
+                sendError('Method not allowed for /park/status/reopen', 405);
+            }
+            break;
+        case '/park/status/add':
+            if ($request_method == 'POST') {
+                error_log("Calling /park/status/add method...");
+                $adminController->addParkStatus();
+            } else {
+                sendError('Method not allowed for /park/status/add', 405);
+            }
+            break;
+        case '/park/status/list':
+            if ($request_method == 'POST') {
+                error_log("Calling /park/status/list method...");
+                $adminController->listParkStatus();
+            } else {
+                sendError('Method not allowed for /park/status/list', 405);
+            }
+            break;
+        case '/base/price/manage':
             if ($request_method == 'POST') {
                 error_log("Calling /base/price/manage method...");
                 $adminController->updateBasePrice();
             } else {
                 sendError('Method not allowed for /base/price/manage', 405);
             }
-        } 
-        break;
+            break;
+        
 
-    case '/base/price/get':
-        if ($request_method == 'POST') {
-
+        case '/base/price/get':
             if ($request_method == 'POST') {
-                error_log("Calling /manage/base/get method...");
+                error_log("Calling /base/price/get method...");
                 $adminController->getBasePrice();
             } else {
                 sendError('Method not allowed for /manage/base/get', 405);
             }
-        } 
-        break;
+            break;
 
-    case '/bookings/pending':
-        if ($request_method == 'POST') {
-            // Store pending booking
-            try {
-                $data = json_decode(file_get_contents("php://input"), true);
-                
-                sendSuccess([
-                    'message' => 'Pending booking stored',
-                    'txnId' => $data['txnId'] ?? 'unknown'
-                ]);
-            } catch (Exception $e) {
-                sendError('Failed to store pending booking', 500);
+        case '/offer/price/status':
+            if ($request_method == 'POST') {
+                error_log("Calling /offer/price/status method...");
+                $adminController->activateDeactivateOfferPrice();
+            } else {
+                sendError('Method not allowed for /offer/price/status', 405);
             }
-        } else {
-            sendError('Method not allowed for /bookings/pending', 405);
-        }
-        break;
-
-    case '/tickets/failed':
-        if ($request_method == 'POST') {
-            // Store failed ticket creation
-            try {
-                $data = json_decode(file_get_contents("php://input"), true);
-                
-                sendSuccess([
-                    'message' => 'Failed ticket data stored for manual processing'
-                ]);
-            } catch (Exception $e) {
-                sendError('Failed to store failed ticket data', 500);
+            break;
+        
+        case '/offer/price/add':
+            if ($request_method == 'POST') {
+                error_log("Calling /offer/price/add method...");
+                $adminController->addOfferPrice();
+            } else {
+                sendError('Method not allowed for /offer/price/add', 405);
             }
-        } else {
-            sendError('Method not allowed for /tickets/failed', 405);
-        }
-        break;
+            break;
+
+        case '/offer/price/list':
+            if ($request_method == 'POST') {
+                error_log("Calling /offer/price/list method...");
+                $adminController->listOfferPricing();
+            } else {
+                sendError('Method not allowed for /offer/price/list', 405);
+            }
+            break;
+
+        case '/bookings/pending':
+            if ($request_method == 'POST') {
+                // Store pending booking
+                try {
+                    $data = json_decode(file_get_contents("php://input"), true);
+
+                    sendSuccess([
+                        'message' => 'Pending booking stored',
+                        'txnId' => $data['txnId'] ?? 'unknown'
+                    ]);
+                } catch (Exception $e) {
+                    sendError('Failed to store pending booking', 500);
+                }
+            } else {
+                sendError('Method not allowed for /bookings/pending', 405);
+            }
+            break;
+
+        case '/tickets/failed':
+            if ($request_method == 'POST') {
+                // Store failed ticket creation
+                try {
+                    $data = json_decode(file_get_contents("php://input"), true);
+
+                    sendSuccess([
+                        'message' => 'Failed ticket data stored for manual processing'
+                    ]);
+                } catch (Exception $e) {
+                    sendError('Failed to store failed ticket data', 500);
+                }
+            } else {
+                sendError('Method not allowed for /tickets/failed', 405);
+            }
+            break;
 
 
-    case '/payment/status':
-    if ($request_method == 'GET') {
-        $txnId = $_GET['txnid'] ?? '';
-        
-        if (empty($txnId)) {
-            http_response_code(400);
-            echo json_encode(['success' => false, 'message' => 'Transaction ID required']);
-            exit;
-        }
-        
-        // Check if payment result file exists
-        $resultFile = __DIR__ . "/payment_success_{$txnId}.json";
-        
-        if (file_exists($resultFile)) {
-            $result = json_decode(file_get_contents($resultFile), true);
-            
-            echo json_encode([
-                'success' => true,
-                'message' => 'Payment completed successfully',
-                'data' => $result
-            ]);
-            
-            // Don't delete the file immediately, let it expire naturally
-        } else {
-            echo json_encode([
-                'success' => false,
-                'message' => 'Payment still pending or failed',
-                'data' => null
-            ]);
-        }
-        exit;
-    } else {
-        http_response_code(405);
-        echo json_encode(['success' => false, 'message' => 'Method not allowed']);
-        exit;
-    }
-    break;
+        case '/payment/status':
+            if ($request_method == 'GET') {
+                $txnId = $_GET['txnid'] ?? '';
 
-            
+                if (empty($txnId)) {
+                    http_response_code(400);
+                    echo json_encode(['success' => false, 'message' => 'Transaction ID required']);
+                    exit;
+                }
+
+                // Check if payment result file exists
+                $resultFile = __DIR__ . "/payment_success_{$txnId}.json";
+
+                if (file_exists($resultFile)) {
+                    $result = json_decode(file_get_contents($resultFile), true);
+
+                    echo json_encode([
+                        'success' => true,
+                        'message' => 'Payment completed successfully',
+                        'data' => $result
+                    ]);
+
+                    // Don't delete the file immediately, let it expire naturally
+                } else {
+                    echo json_encode([
+                        'success' => false,
+                        'message' => 'Payment still pending or failed',
+                        'data' => null
+                    ]);
+                }
+                exit;
+            } else {
+                http_response_code(405);
+                echo json_encode(['success' => false, 'message' => 'Method not allowed']);
+                exit;
+            }
+            break;
+
+
         default:
             // Check for dynamic booking routes
             if (preg_match('/^\/bookings\/([a-zA-Z0-9]+)$/', $request_uri, $matches)) {
@@ -607,4 +785,3 @@ try {
         'line' => $e->getLine()
     ]);
 }
-?>

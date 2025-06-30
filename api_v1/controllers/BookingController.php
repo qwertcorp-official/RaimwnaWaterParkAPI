@@ -9,8 +9,44 @@ class BookingController {
         $this->booking = new Booking();
     }
 
+
+    public function bookinglist(){
+        /*{
+            "conditions" : {"amount":"amounthere", "book-by":"booked-by", "booking-date":"updated_at", "sale_date":"sale date", "visited" :"0/1"}
+            ,"order-key" : "name"
+            ,"order-by" : "ASC"
+        }*/
+
+        try{
+
+            $user_data = JWTMiddleware::verifyToken();
+            if (!$user_data) {
+                http_response_code(401);
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Unauthorized'
+                ]);
+                return;
+            }
+
+            $input = file_get_contents("php://input");
+
+            $input = json_decode($input, true);
+            echo json_encode($this->booking->bookingList($input));
+
+        } catch (Exception $e) {
+            error_log("Pricing API Error: " . $e->getMessage());
+            http_response_code(500);
+            echo json_encode([
+                'success' => false,
+                'error' => true, 
+                'message' => 'Server error occurred while fetching pricing'
+            ]);
+        }
+    }
+
+
     // Get pricing for a specific date
-    
     public function getPricing() {
         try {
             // Verify JWT token
@@ -173,7 +209,6 @@ class BookingController {
             ]);
         }
     }
-
 
     // Create a new booking
     public function createBooking() {
